@@ -6,17 +6,20 @@ Die Aufgabe war es, je nach dem Gewicht und des Hungergefühles einen Snack/ ein
 Je größer der Wert von Gewichttyp + Hungergefühl desto mehr gibt es zu essen.
 
 
-**Gewichittypen** :```	untergewichtig  - value 2``` <br>
-			```normal 	- value 1``` <br>
-			```übergewichtig   - value 0```
+**Gewichittypen** :
+```untergewichtig  - value 2``` <br>
+```normal 	- value 1``` <br>
+```übergewichtig   - value 0```
 
-**Hungergefühl**  :``` 	nicht wirklich  - value 0``` <br>
+**Hungergefühl**  :
+``` 	nicht wirklich  - value 0``` <br>
 		   ```	etwas 		- value 1``` <br>
 		   ```	sehr hungrig	- value 2```
 
 **Output**: 
 *Gewichttypen + Hungergefühl* <br>
-value = ```	0 : Salad``` <br>
+value = 
+```	0 : Salad``` <br>
 		```1 : Salad with meat``` <br>
 		```2 : French with bread rolls``` <br>
 		```3 : Bratwurst with bread rolls``` <br>
