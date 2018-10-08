@@ -1,1 +1,3 @@
-This repo contains all the exercises that I had to do in my vocational training or that I did voluntarily
+#Schulrepo
+##Ordneraufbau
+Jeder Ordner representiert ein Unterrichtsfach, in welchem die Aufgaben gelöst werden.
