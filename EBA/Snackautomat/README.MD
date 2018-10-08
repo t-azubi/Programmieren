@@ -3,7 +3,9 @@
 ### Version 1.0.0 	8-10-2018
 #### Aufgabe 
 Die Aufgabe war es, je nach dem Gewicht und des Hungergefühles einen Snack/ eine Mahlzeit auszugeben.
+Der Gewichttyp und das Hungergefühl sollen über radiobuttons in Groupboxen ausgewählt werden.
 Je größer der Wert von Gewichttyp + Hungergefühl desto mehr gibt es zu essen.
+
 
 
 **Gewichittypen** :<br>
