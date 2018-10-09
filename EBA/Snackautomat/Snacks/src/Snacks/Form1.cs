@@ -43,11 +43,11 @@ namespace Snacks
                 case 3:
                     return "Bratwurst with bread rolls";
                 case 4:
-                    return "Extra large Döner with cheese";
+                    return "Extra large DÃ¶ner with cheese";
                 default:
-                    break;
+                   return "Whatever you want";
             }
-            return "Whatever you want";
+            
         }
 
     }
