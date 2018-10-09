@@ -31,5 +31,5 @@ value = <br>
 ## Was hab ich gelernt
 
 Static Classes :
-Ist eine Klasse Static, so können in ihk keine Objekte mehr erzeugt werden.
+Ist eine Klasse Static, so können in ihk keine Objekte mehr erzeugt werden. <br>
 Desweiteren müssen alle Methoden in ihr auch das Schlüsselwort Static enthalten. 
