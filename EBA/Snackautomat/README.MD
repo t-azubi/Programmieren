@@ -26,3 +26,10 @@ value = <br>
 		```2 : French with bread rolls``` <br>
 		```3 : Bratwurst with bread rolls``` <br>
 		```4 : Extra large Döner with cheese```
+		
+		
+## Was hab ich gelernt
+
+Static Classes :
+Ist eine Klasse Static, so können in ihk keine Objekte mehr erzeugt werden. <br>
+Desweiteren müssen alle Methoden in ihr auch das Schlüsselwort Static enthalten. 
