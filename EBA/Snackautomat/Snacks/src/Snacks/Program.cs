@@ -19,7 +19,7 @@ namespace Snacks
             Application.Run(new Form1());
         }
     }
-    class Hunger
+       static class Hunger
     {
         public static int hungry(int hungervalue)
         {
@@ -32,9 +32,9 @@ namespace Snacks
                 case 2:
              return 0;
                 default:
-             break;
+             return -1;
             }
-            return -1;
+            
         }
         public static int weight(int weightvalue)
         {
@@ -47,9 +47,9 @@ namespace Snacks
                 case 2:
                     return 2;
                 default:
-                    break;
+                    return -1;
             }
-            return -1;
+           
         }
         
     }
