@@ -32,4 +32,7 @@ value = <br>
 
 Static Classes :
 Ist eine Klasse Static, so können in ihk keine Objekte mehr erzeugt werden. <br>
-Desweiteren müssen alle Methoden in ihr auch das Schlüsselwort Static enthalten. 
+Desweiteren müssen alle Methoden in ihr auch das Schlüsselwort Static enthalten. <br> 
+Wenn euch das mehr interessiert könnt ihr es [hier](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members) noch einmal genauer nachlesen.
+
+
