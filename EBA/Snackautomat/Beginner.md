@@ -17,7 +17,7 @@ kein Fall (Case) zu trifft. <br>
 Um die Switch Case Anwendung zu beenden, schreibt man nach der Anweisung des Falls ein break um aus der Auswahlanweisung zu kommen. [Doc](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/switch)
 
 ## Schleifen 
-Schleifen sind eine einfache Möglichkeit die selbe Anweisung n-Fach anzuwenden. [Doc](https://docs.microsoft.com/de-de/dotnet/visual-basic/programming-guide/language-features/control-flow/loop-structures) [Doc](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/iteration-statements)
+Schleifen sind eine einfache Möglichkeit die selbe Anweisung n-Fach anzuwenden. [Doc](https://docs.microsoft.com/de-de/dotnet/visual-basic/programming-guide/language-features/control-flow/loop-structures) [Doc](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/iteration-statements) <br>
 Man unterscheidet 3 verschiedene Arten von Schleifen : 
 * Kopfgesteuerte Schleifen (Bedingun für Schleife steht im Schleifenkopf -> ```while(a = b){...}```)
 * Fußgesteuerte Schleifen (Bedingung für Schleife steht im Schleifenfuß -> ```do {...} while(a != b)```)
