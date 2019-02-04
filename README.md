@@ -5,7 +5,14 @@ Gerne nehme ich verbesserungsvorschläge auf und ich werde mein bestes versuchen
 ## Ordneraufbau
 Jeder Ordner representiert ein Unterrichtsfach, in welchem die Aufgaben gelöst wurden. <br>
 In jedem dieser Ordner könnt ihr euch dann die Aufgaben suchen, die ihr braucht oder nicht versteht. <br>
+Desweiteren werde ich im Ordner Nett2Know, ein paar zusätzliche Dinge versuchen zu erklären. <br>
 
 
 ## Quicklinks 
 1. [EBA](https://github.com/Zeroks77/Schule/tree/Aufgabe1/EBA)
+2. [N2K](https://github.com/Zeroks77/Schule/tree/master/Nett2Know)
+
+
+## Dokus die ich benutz habe
+1. [Mircosoft Docs basic C#](https://docs.microsoft.com/de-de/dotnet/csharp/)
+2. [git Doku](https://git-scm.com/docs) 
