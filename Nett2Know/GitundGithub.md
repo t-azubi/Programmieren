@@ -35,4 +35,4 @@ Wollt ihr nun die beiden Versionen zusammen bringen, könnt ihr das via Powershe
 
 Dazu wechseltst du mit ```git checkout <branch>```zu dem Branch, in welchen ein anderer hinein gemerged werden soll. <br>
 Hast du das gemacht, kannst du  ```git merge <branch>``` deinen anderen Branch in den Branch auf welchem du dich befindest hinein mergen. <br>
-War der Merge erfolgreich kannst du nun den "Fixbranch" löschen. Das geht über ```git branch -d <Fixbranch">```   vgl. [hier](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) <br>
+War der Merge erfolgreich kannst du nun den "Fixbranch" löschen. Das geht über ```git branch -d <Fixbranch>```   vgl. [hier](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) <br>
