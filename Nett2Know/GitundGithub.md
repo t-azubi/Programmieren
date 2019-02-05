@@ -2,7 +2,7 @@
 
 ## Git
 
-Git ist ein System zur Versionsverwaltung in Entwicklungsprojekten (wie beispielsweise CVS oder SVN). <br>
+Git ist ein System zur Versionsverwaltung in Entwicklungsprojekten (wie beispielsweise CVS, TFVC oder SVN). <br>
 Git kann man entweder auf einem eigenen Server selbst installieren oder alternativ bei einem Hoster anmieten. <br>
 GitHub ist ein solcher webbasierter Hosting-Dienst zum Hosting der Git-Repositories und hat mittlerweile einen hohen Bekanntheisgrad. <br>
 
