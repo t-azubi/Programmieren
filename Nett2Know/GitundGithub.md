@@ -43,18 +43,29 @@ Angenommen, wir haben eine neue Branch-Funktion, die auf dem Master-Branch basie
 
 Der Aufruf dieses Befehls führt die angegebene Verzweigungsfunktion mit dem aktuellen Zweig zusammen, wir gehen davon aus, dass es sich um einen Master handelt. Git bestimmt den Zusammenführungsalgorithmus automatisch.
 
-Merge Commits sind einzigartig gegenüber anderen Commits, da sie zwei übergeordnete Commits haben. Beim Erstellen eines Merge-Commits versucht Git, die einzelnen Historien für Sie automatisch magisch zusammenzuführen. Wenn Git auf ein Datenstück trifft, das in beiden Historien geändert wird, kann es diese nicht automatisch kombinieren. Dieses Szenario ist ein Versionskontrollkonflikt und Git benötigt Benutzereingriffe, um fortzufahren. Mehr dazu findest du hier [hier](https://www.atlassian.com/git/tutorials/using-branches/git-merge).
+Merge Commits sind einzigartig gegenüber anderen Commits, da sie zwei übergeordnete Commits haben. Beim Erstellen eines Merge-Commits versucht Git, die einzelnen Historien für duautomatisch magisch zusammenzuführen. Wenn Git auf ein Datenstück trifft, das in beiden Historien geändert wird, kann es diese nicht automatisch kombinieren. Dieses Szenario ist ein Versionskontrollkonflikt und Git benötigt Benutzereingriffe, um fortzufahren. Mehr dazu findest du hier [hier](https://www.atlassian.com/git/tutorials/using-branches/git-merge).
 
 ### Was ist Rebasen?
 
 Rebasing ist der Prozess des Verschiebens oder Kombinierens einer Sequenz von Commits auf einen neuen Basis-Commit. Das Rebasing ist am nützlichsten und lässt sich im Rahmen eines Feature Branching Workflows leicht visualisieren.
 
-Aus inhaltlicher Sicht verändert Rebasing die Basis Ihres Zweiges von einem Commit zum anderen und lässt ihn so aussehen, als hätten Sie Ihren Zweig aus einem anderen Commit erstellt. Intern erreicht Git dies, indem es neue Commits erstellt und diese auf die angegebene Basis anwendet. Es ist sehr wichtig zu verstehen, dass der Zweig zwar gleich aussieht, aber aus völlig neuen Commits besteht.
+Aus inhaltlicher Sicht verändert Rebasing die Basis Ihres Zweiges von einem Commit zum anderen und lässt ihn so aussehen, als hätten duIhren Zweig aus einem anderen Commit erstellt. Intern erreicht Git dies, indem es neue Commits erstellt und diese auf die angegebene Basis anwendet. Es ist sehr wichtig zu verstehen, dass der Zweig zwar gleich aussieht, aber aus völlig neuen Commits besteht.
 Mehr dazu findest du hier [hier](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase).
 
 ## Merge vs Rebase
+Rebasing und Merging sind beide darauf ausgerichtet, Änderungen von einer Branch in eine andere Branch zu integrieren, allerdings auf unterschiedliche Weise.
 
+Nehmen wir an, wir haben Commits wie unten beschrieben, der Merge ergibt sich als eine Kombination von Commits, während Rebase alle Änderungen im Feature-Zweig ab dem letzten Commit des Master-Zweigs hinzufügt:
 
+![alt text](https://cdn-images-1.medium.com/max/800/1*pzT4KMiZDOFsMOKH-cJjfQ.png "Merge vs. Rebase")
+
+Wenn der Feature-Branch, von dem du Änderungen erhälst, mit anderen Entwicklern geteilt wird, wird ein Rebase nicht empfohlen, da der Rebaseprozess inkonsistente Repositories erzeugt. Das heißt, dass im Ende im dümmsten Fall jeder Entwickler eine andere Historie hat und somit das zusammenarbeit nahe zu unmöglich wird. Für den Einzelnen macht das Rebasieren viel Sinn, da diesem somit die Möglichkeit gegeben wird seine eigene Historie zu ordnen.
+
+Wenn du die Historie vollständig wie bisher sehen möchten, solltest du einen Merge verwenden. Merge bewahrt die Historie, während Rebase sie neu schreibt.
+
+Rebasing ist besser, um eine komplexe Historie zu rationalisieren, du kannst die Commit-Historie durch interaktive Rebase ändern. Damit kannst du unerwünschte Commits entfernen, zwei oder mehr Commits in einen zusammenfassen oder die Commit-Nachricht bearbeiten.
+
+Rebase präsentiert Konflikte, die einzeln übertragen werden, während Merge sie alle auf einmal präsentiert. Es ist besser und viel einfacher, die Konflikte zu handhaben, aber du solltest nicht vergessen, dass die Wiederherstellung einer Datenbank viel schwieriger ist als die Wiederherstellung einer Zusammenführung, wenn es viele Konflikte gibt.
 
 ## Mergen mit Powershell
 
