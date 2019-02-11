@@ -16,6 +16,7 @@ Desweiteren werde ich im Ordner Nett2Know, ein paar zusätzliche Dinge versuchen
 ## Dokus die ich benutz habe
 1. [Mircosoft Docs basic C#](https://docs.microsoft.com/de-de/dotnet/csharp/)
 2. [git Doku](https://git-scm.com/docs) 
+3. [Atlassian git Doku](https://www.atlassian.com/git)
 
 
 
