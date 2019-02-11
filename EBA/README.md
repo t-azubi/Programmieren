@@ -1,6 +1,6 @@
 # EBA 
 ## Inhaltsverzeichnis
-1. [Snackautomat](https://github.com/Zeroks77/Schule/tree/Aufgabe1/EBA/Snackautomat)
+1. [Snackautomat](https://github.com/Zeroks77/Schule/tree/master/EBA/Snackautomat)
 
 ## Was ist hier zu finden
 Im groben gesagt kann man hier alle Aufgaben mit Aufgabenstellung finden, die ich bis jetzt gelöst haben. <br>
