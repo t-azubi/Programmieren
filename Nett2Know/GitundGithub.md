@@ -2,14 +2,14 @@
 
 ## Git
 
-Git ist ein System zur Versionsverwaltung in Entwicklungsprojekten (wie beispielsweise CVS oder SVN). <br>
+Git ist ein System zur Versionsverwaltung in Entwicklungsprojekten (wie beispielsweise [TFVC](https://en.wikipedia.org/wiki/Team_Foundation_Server#Team_Foundation_Version_Control), [CVS](https://de.wikipedia.org/wiki/Concurrent_Versions_System) oder [SVN](https://de.wikipedia.org/wiki/Apache_Subversion)). <br>
 Git kann man entweder auf einem eigenen Server selbst installieren oder alternativ bei einem Hoster anmieten.
 GitHub ist ein solcher webbasierter Hosting-Dienst zum Hosting der Git-Repositories und hat mittlerweile einen hohen Bekanntheisgrad. 
 
 
 ## Github
 
-Das Open-Source-Projekt GitHub ist mit den meisten Funktionen kostenfrei, wenn man seine Repositories öffentlich lesbar erstellt.  
+Der Service GitHub ist mit den meisten Funktionen kostenfrei, wenn man seine Repositories öffentlich lesbar erstellt.  
 Deswegen wird es gerne von Leuten und Open Source Projekten genutzt, die Teile oder komplette Projekte öffentlich verwalten möchten. 
 Sobald man private Repositories erstellen will, muss man auf das kostenpflichtige Angebot von GitHub zurück greifen. 
 Das macht vor allem dann Sinn, wenn man plant Kundendaten oder andere, sensible eigene Daten zu verwalten. <br>
@@ -45,7 +45,7 @@ Die Implementierung hinter den Branchen von Git ist wesentlich leichter als bei 
 
 Wie du siehst, denk daran, dass Git-Zweige nicht wie SVN-Zweige sind. Während SVN-Zweige nur zur Erfassung des gelegentlichen großen Entwicklungsaufwands verwendet werden, sind Git-Zweige ein integraler Bestandteil Ihres täglichen Workflows.
 
-## Arbeiten mit Branches 
+## Arbeiten mit Branches
 
 Ein Branch stellt eine eigenständige Entwicklungslinie dar. Branches dienen als Abstraktion für den Bearbeitungs-, Stufen- und Commit-Prozess. Du kannst dir diese als eine Möglichkeit vorstellen, ein brandneues Arbeitsverzeichnis, einen Staging-Bereich und eine Projekthistorie anzufordern. Neue Commits werden in der Historie für den aktuellen Branch aufgezeichnet, was zu einem Fork in der Historie des Projekts führt.
 

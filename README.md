@@ -7,13 +7,13 @@ Jeder Ordner representiert ein Unterrichtsfach, in welchem die Aufgaben gelöst 
 In jedem dieser Ordner könnt ihr euch dann die Aufgaben suchen, die ihr braucht oder nicht versteht. <br>
 Desweiteren werde ich im Ordner Nett2Know, ein paar zusätzliche Dinge versuchen zu erklären. <br>
 
+## Quicklinks
 
-## Quicklinks 
-1. [EBA](https://github.com/Zeroks77/Schule/tree/Aufgabe1/EBA)
-2. [N2K](https://github.com/Zeroks77/Schule/tree/master/Nett2Know)
-
+1. [EBA](EBA/Readme.md)
+2. [N2K](Nett2Know/GitundGithub.md)
 
 ## Dokus die ich benutz habe
+
 1. [Mircosoft Docs basic C#](https://docs.microsoft.com/de-de/dotnet/csharp/)
 2. [git Doku](https://git-scm.com/docs) 
 3. [Atlassian git Doku](https://www.atlassian.com/git)
