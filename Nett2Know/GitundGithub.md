@@ -1,25 +1,26 @@
-# Was ist Git und Github
+# Git instrucion
 
-## Git
+## Was ist Git und Github
+
+### Git
 
 Git ist ein System zur Versionsverwaltung in Entwicklungsprojekten (wie beispielsweise [TFVC](https://en.wikipedia.org/wiki/Team_Foundation_Server#Team_Foundation_Version_Control), [CVS](https://de.wikipedia.org/wiki/Concurrent_Versions_System) oder [SVN](https://de.wikipedia.org/wiki/Apache_Subversion)). <br>
 Git kann man entweder auf einem eigenen Server selbst installieren oder alternativ bei einem Hoster anmieten.
 GitHub ist ein solcher webbasierter Hosting-Dienst zum Hosting der Git-Repositories und hat mittlerweile einen hohen Bekanntheisgrad. 
 
-## Github
+### Github
 
 Der Service GitHub ist mit den meisten Funktionen kostenfrei, wenn man seine Repositories öffentlich lesbar erstellt.  
 Deswegen wird es gerne von Leuten und Open Source Projekten genutzt, die Teile oder komplette Projekte öffentlich verwalten möchten. 
 Sobald man private Repositories erstellen will, muss man auf das kostenpflichtige Angebot von GitHub zurück greifen. 
 Das macht vor allem dann Sinn, wenn man plant Kundendaten oder andere, sensible eigene Daten zu verwalten. <br>
 
-# Wie benutze ich Git/Github
+## Wie benutze ich Git / Github
 
 Als aller erstes um Git benutzten zu können, musst du [hier](https://github.com/git-for-windows/git/releases/download/v2.20.1.windows.1/Git-2.20.1-64-bit.exe) dir GitBash installieren. <br>
-Ich empfehle Git aus der Powershell zu benutzen, da diese dir auch die möglichkeit gibt das [dotNet SDK](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.103-windows-x64-installer) zu benutzen. <br>
-Hast du nun GitBash installiert, hast du zwei Möglichkeiten dir ein Repo zu erstellen. <br>
+Ich empfehle Git aus der PowerShell zu benutzen, da PowerShell schnell zu lernen ist durch die einfachen und verständlichen Commands. <br>
 
-Nummer eins : Du navigierst deine Powershell zu dem Ordner, in welchem du das Projekt starten möchtest und verwendest folgenden Befehl ```git init```  vgl. [hier](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) <br>
+Nummer eins : Du navigierst deine PowerShell zu dem Ordner, in welchem du das Projekt starten möchtest und verwendest folgenden Befehl ```git init```  vgl. [hier](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) <br>
 
 Nummer zwei : Du erstellst in Github ein neues Repository, so fern du bereits ein Github Account hast. Nun Clonst du dir das Repository an den Ort, wo dein Projektordner sein soll. ```git clone <url>``` vgl. [hier](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) <br>
 
@@ -30,27 +31,27 @@ Hast du in Github etwas bearbeitet, wirds du schnell feststellen, das dein Push 
 ```git fetch``` läd sich alle(! Daten aus Deinem Repository herunter, jeden Branch und jeden Verweis. <br> 
 Habt ihr eine Idee, seid euch aber nicht sicher das dies Funktioniert, könnt ihr ein ```git checkout -b <newbranchname>``` machen und erzeugt eine exakte Kopie von dem Branch auf dem ihr euch gerade befunden habt. <br>
 Auf dieser Kopie könnt ihr nun eure Idee ausprobieren, ohne das der eigentliche Code "gefährdet" wird. <br>
-Wollt ihr nun die beiden Versionen zusammen bringen, könnt ihr das via Powershell oder Github machen. <br>
+Wollt ihr nun die beiden Versionen zusammen bringen, könnt ihr das via PowerShell oder Github machen. <br>
 
-# Branching
+## Branching
 
-Die Branching-Funktion ist eine Funktion, die in den meisten modernen Versionskontrollsystemen verfügbar ist. Die Verzweigung in andere VCS kann sowohl in zeitlicher als auch in räumlicher Hinsicht eine teure Angelegenheit sein. In Git sind Niederlassungen Teil Ihres täglichen Entwicklungsprozesses. Git-Zweige sind effektiv ein Zeiger auf eine Momentaufnahme Ihrer Änderungen. Wenn du eine neue Funktion hinzufügen oder einen Fehler beheben möchtest - egal wie groß oder klein -, erstellst du einen neuen Zweig, um deine Änderungen zu kapseln. Dies erschwert die Zusammenführung von instabilem Code in die Hauptcodebasis und gibt Ihnen die Möglichkeit, die Historie Ihrer Zukunft zu bereinigen, bevor der Code in den Hauptzweig zusammengeführt wird.
+Die Branching-Funktion ist eine Funktion, die in den meisten modernen Versionskontrollsystemen verfügbar ist. Die Verzweigung in andere VCS kann sowohl in zeitlicher als auch in räumlicher Hinsicht eine teure Angelegenheit sein. In Git sind Niederlassungen Teil Ihres täglichen Entwicklungsprozesses. Git-Branche sind effektiv ein Zeiger auf eine Momentaufnahme Ihrer Änderungen. Wenn du eine neue Funktion hinzufügen oder einen Fehler beheben möchtest - egal wie groß oder klein -, erstellst du einen neuen Branch, um deine Änderungen zu kapseln. Dies erschwert die Zusammenführung von instabilem Code in die Hauptcodebasis und gibt Ihnen die Möglichkeit, die Historie Ihrer Zukunft zu bereinigen, bevor der Code in den Hauptzweig zusammengeführt wird.
 
  Durch die Entwicklung in Branches ist es nicht nur möglich, an beiden parallel zu arbeiten, sondern auch den Haupt-master-branch frei von fragwürdigem Code zu halten.
 
-Die Implementierung hinter den Branchen von Git ist wesentlich leichter als bei anderen Modellen von Versionskontrollsystemen. Anstatt Dateien von Verzeichnis zu Verzeichnis zu kopieren, speichert Git einen Zweig als Referenz auf eine Übertragung. In diesem Sinne stellt ein Zweig die Spitze einer Reihe von Commits dar - er ist kein Container für Commits. Die Historie für einen Zweig wird über die Commit-Beziehungen hochgerechnet.
+Die Implementierung hinter den Branchen von Git ist wesentlich leichter als bei anderen Modellen von Versionskontrollsystemen. Anstatt Dateien von Verzeichnis zu Verzeichnis zu kopieren, speichert Git einen Branch als Referenz auf eine Übertragung. In diesem Sinne stellt ein Branch die Spitze einer Reihe von Commits dar - er ist kein Container für Commits. Die Historie für einen Branch wird über die Commit-Beziehungen hochgerechnet.
 
 ![Branching](https://i.imgur.com/YG8In8X.png "Branching")
 
-Wie du siehst, denk daran, dass Git-Zweige nicht wie SVN-Zweige sind. Während SVN-Zweige nur zur Erfassung des gelegentlichen großen Entwicklungsaufwands verwendet werden, sind Git-Zweige ein integraler Bestandteil Ihres täglichen Workflows.
+Wie du siehst, denk daran, dass Git-Branche nicht wie SVN-Branche sind. Während SVN-Branche nur zur Erfassung des gelegentlichen großen Entwicklungsaufwands verwendet werden, sind Git-Branche ein integraler Bestandteil Ihres täglichen Workflows.
 
-## Arbeiten mit Branches
+### Arbeiten mit Branches
 
 Ein Branch stellt eine eigenständige Entwicklungslinie dar. Branches dienen als Abstraktion für den Bearbeitungs-, Stufen- und Commit-Prozess. Du kannst dir diese als eine Möglichkeit vorstellen, ein brandneues Arbeitsverzeichnis, einen Staging-Bereich und eine Projekthistorie anzufordern. Neue Commits werden in der Historie für den aktuellen Branch aufgezeichnet, was zu einem Fork in der Historie des Projekts führt.
 
 Mit dem Befehl git branch kannst du Branches erstellen, auflisten, umbenennen und löschen. Du kannst nicht zwischen den Branches wechseln oder eine gespaltene Historie wieder zusammensetzen. Aus diesem Grund ist ```git branch``` eng mit den Befehlen ```git checkout``` und ```git merge``` verknüpft.
 
-## Workflows
+### Workflows
 
 Workflow bedeutet Arbeitsablauf. Er legt unter anderem fest, wer was bis wann erledigen muss, damit der Prozess abgeschlossen werden kann. Zudem wird festgelegt, wo wer was ablegen muss, damit alle am Workflow Beteiligten Zugriff auf die benötigten Dokumente haben. Wie zuvor schon beschrieben bedeutet Workflow auch festzulegen, welche Arbeitsschritte überhaupt durchgeführt werden müssen und in welcher Reihenfolge. Er definiert auch Abhängigkeiten, um Fehler und Engstellen zu erkennen und optimieren zu können.
 Ein solcher Arbeitsablauf beschreibt also, wann, wie und wer mit welchen technischen Hilfsmitteln den entsprechenden Geschäftsprozess ausführt.
@@ -82,11 +83,11 @@ Gitflow Workflow ist ein Git-Workflow-Design, das erstmals veröffentlicht und v
 
 Gitflow eignet sich ideal für Projekte, die einen geplanten Release-Zyklus haben. Dieser Workflow fügt keine neuen Konzepte oder Befehle hinzu, die über das hinausgehen, was für den Feature Branch Workflow erforderlich ist. Stattdessen weist es sehr spezifische Rollen verschiedenen Branchen zu und definiert, wie und wann sie interagieren sollen. Neben den Feature-Branchen verwendet es einzelne Branches zur Vorbereitung, Pflege und Aufzeichnung von Releases. Natürlich kannst du auch alle Vorteile des Feature Branch Workflow nutzen: Pull-Requests, isolierte Experimente und eine effizientere Zusammenarbeit.
 
-Anstelle eines einzigen Masterzweiges verwendet dieser Workflow zwei Zweige, um die Historie des Projekts aufzuzeichnen. Der Master-Branch speichert die offizielle Release-Historie, und der Development-Branch dient als Integrationsbranch für Features. Es ist auch bequem, alle Commits im Master-Zweig mit einer Versionsnummer zu versehen.
+Anstelle eines einzigen Masterzweiges verwendet dieser Workflow zwei Branche, um die Historie des Projekts aufzuzeichnen. Der Master-Branch speichert die offizielle Release-Historie, und der Development-Branch dient als Integrationsbranch für Features. Es ist auch bequem, alle Commits im Master-Branch mit einer Versionsnummer zu versehen.
 
 Der erste Schritt besteht darin, den Standard-Master durch einen Entwicklungszweig zu ergänzen. Eine einfache Möglichkeit, dies zu tun, besteht darin, dass ein Entwickler einen leeren Entwicklungszweig lokal erstellt und auf den Server verschiebt:
 
-Dieser Zweig enthält die komplette Historie des Projekts, während der Master eine gekürzte Version enthält. Andere Entwickler sollten nun das zentrale Repository klonen und einen Tracking-Zweig für die Entwicklung erstellen.
+Dieser Branch enthält die komplette Historie des Projekts, während der Master eine gekürzte Version enthält. Andere Entwickler sollten nun das zentrale Repository klonen und einen Tracking-Branch für die Entwicklung erstellen.
 
 Wenn du die [git-flow Erweiterungsbibliothek](https://git-scm.com/download/win) verwendest, wird durch die Ausführung von git flow init auf einem bestehenden Repo der Entwicklungszweig erstellt.
 
@@ -103,7 +104,7 @@ Wenn du an einem Projekt arbeitest, wirst du zu einem bestimmten Zeitpunkt eine 
 Wenn du einen Branch in deinem Projekt erstellst, schaffst du eine Umgebung, in der du neue Ideen ausprobieren kannst. Änderungen, die du an einem Branch vorgibst, wirken sich nicht auf den Master-Branch aus, so dass du frei experimentieren und Änderungen vornehmen kannst, mit der Gewissheit, dass dein Branch nicht zusammengeführt wird, bis er für die Überprüfung durch jemanden, mit dem du zusammenarbeitest, bereit ist.
 
 2. Schritt : Commits hinzufügen <br>
-Sobald dein Branch erstellt wurde, ist es an der Zeit, mti der Entwicklung zu beginnen. Wann immer du eine Datei hinzufügst, bearbeitest oder löschst, machst du eine Übertragung und fügst sie zu deinem Zweig hinzu. Dieser Prozess des Hinzufügens von Commits verfolgt Ihren Fortschritt, während du an einem Feature-Zweig arbeitest. <br> <br>
+Sobald dein Branch erstellt wurde, ist es an der Zeit, mti der Entwicklung zu beginnen. Wann immer du eine Datei hinzufügst, bearbeitest oder löschst, machst du eine Übertragung und fügst sie zu deinem Branch hinzu. Dieser Prozess des Hinzufügens von Commits verfolgt Ihren Fortschritt, während du an einem Feature-Branch arbeitest. <br> <br>
 Verpflichtungen schaffen auch eine transparente Historie Ihrer Arbeit, der andere folgen können, um zu verstehen, was du getan hast und warum. Jedem Commit ist eine Commit-Nachricht zugeordnet, die eine Beschreibung ist, die erklärt, warum eine bestimmte Änderung vorgenommen wurde. Darüber hinaus wird jeder Commit als eigenständige Änderungseinheit betrachtet. Auf diese Weise kannst du Änderungen zurücksetzen, wenn ein Fehler gefunden wird oder wenn du dich entscheidest, in eine andere Richtung zu gehen.
 
 3. Schritt : Pull-Requests und Codereview <br>
@@ -122,29 +123,29 @@ Nach dem Mergen bewahren Pull Requests eine Aufzeichnung der bisherigen Änderun
 
 </details>
 
-# Mergen vs. Rebasen
+## Mergen vs. Rebasen
 
-## Was ist Git Merge?
+### Was ist Git Merge?
 
-Git Merge kombiniert mehrere Sequenzen von Commits zu einer einheitlichen Historie. In den häufigsten Anwendungsfällen wird ```git merge``` verwendet, um zwei Zweige zu kombinieren. In diesen Szenarien nimmt ```git merge``` zwei Commit-Pointer, normalerweise die Branch-Tipps, und findet einen gemeinsamen Basis-Commit zwischen ihnen. Sobald Git einen Common Base Commit (der letzte Commit den beide branches gemeinsam haben) findet, erstellt es einen neuen "Merge Commit", der die Änderungen jeder in der Warteschlange stehenden Merge Commit-Sequenz kombiniert.
+Git Merge kombiniert mehrere Sequenzen von Commits zu einer einheitlichen Historie. In den häufigsten Anwendungsfällen wird ```git merge``` verwendet, um zwei Branche zu kombinieren. In diesen Szenarien nimmt ```git merge``` zwei Commit-Pointer, normalerweise die Branch-Tipps, und findet einen gemeinsamen Basis-Commit zwischen ihnen. Sobald Git einen Common Base Commit (der letzte Commit den beide branches gemeinsam haben) findet, erstellt es einen neuen "Merge Commit", der die Änderungen jeder in der Warteschlange stehenden Merge Commit-Sequenz kombiniert.
 
 Angenommen, wir haben eine neue Branch-Funktion, die auf dem Master-Branch basiert. Wir wollen nun diesen Feature-Branch in den Master einbinden.
 
-Der Aufruf dieses Befehls führt die angegebene Verzweigungsfunktion mit dem aktuellen Zweig zusammen, wir gehen davon aus, dass es sich um einen Master handelt. Git bestimmt den Zusammenführungsalgorithmus automatisch.
+Der Aufruf dieses Befehls führt die angegebene Verzweigungsfunktion mit dem aktuellen Branch zusammen, wir gehen davon aus, dass es sich um einen Master handelt. Git bestimmt den Zusammenführungsalgorithmus automatisch.
 
 Merge Commits sind einzigartig gegenüber anderen Commits, da sie zwei übergeordnete Commits haben. Beim Erstellen eines Merge-Commits versucht Git, die einzelnen Historien für duautomatisch magisch zusammenzuführen. Wenn Git auf ein Datenstück trifft, das in beiden Historien geändert wird, kann es diese nicht automatisch kombinieren. Dieses Szenario ist ein Versionskontrollkonflikt und Git benötigt Benutzereingriffe, um fortzufahren. Mehr dazu findest du hier [hier](https://www.atlassian.com/git/tutorials/using-branches/git-merge).
 
-## Was ist Rebasen?
+### Was ist Rebasen?
 
 Rebasing ist der Prozess des Verschiebens oder Kombinierens einer Sequenz von Commits auf einen neuen Basis-Commit. Das Rebasing ist am nützlichsten und lässt sich im Rahmen eines Feature Branching Workflows leicht visualisieren.
 
-Aus inhaltlicher Sicht verändert Rebasing die Basis Ihres Zweiges von einem Commit zum anderen und lässt ihn so aussehen, als hätten duIhren Zweig aus einem anderen Commit erstellt. Intern erreicht Git dies, indem es neue Commits erstellt und diese auf die angegebene Basis anwendet. Es ist sehr wichtig zu verstehen, dass der Zweig zwar gleich aussieht, aber aus völlig neuen Commits besteht.
+Aus inhaltlicher Sicht verändert Rebasing die Basis Ihres Branches von einem Commit zum anderen und lässt ihn so aussehen, als hätten duIhren Branch aus einem anderen Commit erstellt. Intern erreicht Git dies, indem es neue Commits erstellt und diese auf die angegebene Basis anwendet. Es ist sehr wichtig zu verstehen, dass der Branch zwar gleich aussieht, aber aus völlig neuen Commits besteht.
 Mehr dazu findest du hier [hier](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase).
 
-## Merge vs Rebase
+### Merge vs Rebase
 Rebasing und Merging sind beide darauf ausgerichtet, Änderungen von einer Branch in eine andere Branch zu integrieren, allerdings auf unterschiedliche Weise.
 
-Nehmen wir an, wir haben Commits wie unten beschrieben, der Merge ergibt sich als eine Kombination von Commits, während Rebase alle Änderungen im Feature-Zweig ab dem letzten Commit des Master-Zweigs hinzufügt:
+Nehmen wir an, wir haben Commits wie unten beschrieben, der Merge ergibt sich als eine Kombination von Commits, während Rebase alle Änderungen im Feature-Branch ab dem letzten Commit des Master-Branchs hinzufügt:
 
 ![alt text](https://cdn-images-1.medium.com/max/800/1*pzT4KMiZDOFsMOKH-cJjfQ.png "Merge vs. Rebase")
 
@@ -156,13 +157,13 @@ Rebasing ist besser, um eine komplexe Historie zu rationalisieren, du kannst die
 
 Rebase präsentiert Konflikte, die einzeln übertragen werden, während Merge sie alle auf einmal präsentiert. Es ist besser und viel einfacher, die Konflikte zu handhaben, aber du solltest nicht vergessen, dass die Wiederherstellung einer Datenbank viel schwieriger ist als die Wiederherstellung einer Zusammenführung, wenn es viele Konflikte gibt.
 
-## Mergen mit Powershell
+### Mergen mit PowerShell
 
 Dazu wechseltst du mit ```git checkout <branch>```zu dem Branch, in welchen ein anderer hinein gemerged werden soll. <br>
 Hast du das gemacht, kannst du  ```git merge <branch>``` deinen anderen Branch in den Branch auf welchem du dich befindest hinein mergen. <br>
 War der Merge erfolgreich kannst du nun den "Fixbranch" löschen. Das geht über ```git branch -d <Fixbranch>```   vgl. [hier](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) <br>
 
-## Rebasing
+### Rebasing
 
 Mit der rebase-Anweisung kannst Du alle Änderungen, die an einem Branch vorgenommen wurden, auf einen anderen Branch erneut anwenden. <br>
 
