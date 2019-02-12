@@ -6,7 +6,6 @@ Git ist ein System zur Versionsverwaltung in Entwicklungsprojekten (wie beispiel
 Git kann man entweder auf einem eigenen Server selbst installieren oder alternativ bei einem Hoster anmieten.
 GitHub ist ein solcher webbasierter Hosting-Dienst zum Hosting der Git-Repositories und hat mittlerweile einen hohen Bekanntheisgrad. 
 
-
 ## Github
 
 Der Service GitHub ist mit den meisten Funktionen kostenfrei, wenn man seine Repositories öffentlich lesbar erstellt.  
@@ -49,7 +48,7 @@ Wie du siehst, denk daran, dass Git-Zweige nicht wie SVN-Zweige sind. Während S
 
 Ein Branch stellt eine eigenständige Entwicklungslinie dar. Branches dienen als Abstraktion für den Bearbeitungs-, Stufen- und Commit-Prozess. Du kannst dir diese als eine Möglichkeit vorstellen, ein brandneues Arbeitsverzeichnis, einen Staging-Bereich und eine Projekthistorie anzufordern. Neue Commits werden in der Historie für den aktuellen Branch aufgezeichnet, was zu einem Fork in der Historie des Projekts führt.
 
-Mit dem Befehl git branch können Sie Zweige erstellen, auflisten, umbenennen und löschen. Sie können nicht zwischen den Zweigen wechseln oder eine gespaltene Historie wieder zusammensetzen. Aus diesem Grund ist ```git branch``` eng mit den Befehlen ```git checkout``` und ```git merge``` verknüpft.
+Mit dem Befehl git branch kannst du Branches erstellen, auflisten, umbenennen und löschen. Du kannst nicht zwischen den Branches wechseln oder eine gespaltene Historie wieder zusammensetzen. Aus diesem Grund ist ```git branch``` eng mit den Befehlen ```git checkout``` und ```git merge``` verknüpft.
 
 ## Workflows
 
@@ -81,7 +80,7 @@ Darüber hinaus können (und sollten) Feature-Branches in das zentrale Repositor
 
 Gitflow Workflow ist ein Git-Workflow-Design, das erstmals veröffentlicht und von Vincent Driessen auf der nvie bekannt gemacht wurde. Der Gitflow Workflow definiert ein strenges Verzweigungsmodell, das auf die Projektfreigabe ausgerichtet ist. Dies bietet einen robusten Rahmen für die Verwaltung größerer Projekte.  
 
-Gitflow eignet sich ideal für Projekte, die einen geplanten Release-Zyklus haben. Dieser Workflow fügt keine neuen Konzepte oder Befehle hinzu, die über das hinausgehen, was für den Feature Branch Workflow erforderlich ist. Stattdessen weist es sehr spezifische Rollen verschiedenen Branchen zu und definiert, wie und wann sie interagieren sollen. Neben den Feature-Branchen verwendet es einzelne Branches zur Vorbereitung, Pflege und Aufzeichnung von Releases. Natürlich können Sie auch alle Vorteile des Feature Branch Workflow nutzen: Pull-Requests, isolierte Experimente und eine effizientere Zusammenarbeit.
+Gitflow eignet sich ideal für Projekte, die einen geplanten Release-Zyklus haben. Dieser Workflow fügt keine neuen Konzepte oder Befehle hinzu, die über das hinausgehen, was für den Feature Branch Workflow erforderlich ist. Stattdessen weist es sehr spezifische Rollen verschiedenen Branchen zu und definiert, wie und wann sie interagieren sollen. Neben den Feature-Branchen verwendet es einzelne Branches zur Vorbereitung, Pflege und Aufzeichnung von Releases. Natürlich kannst du auch alle Vorteile des Feature Branch Workflow nutzen: Pull-Requests, isolierte Experimente und eine effizientere Zusammenarbeit.
 
 Anstelle eines einzigen Masterzweiges verwendet dieser Workflow zwei Zweige, um die Historie des Projekts aufzuzeichnen. Der Master-Branch speichert die offizielle Release-Historie, und der Development-Branch dient als Integrationsbranch für Features. Es ist auch bequem, alle Commits im Master-Zweig mit einer Versionsnummer zu versehen.
 
@@ -89,7 +88,38 @@ Der erste Schritt besteht darin, den Standard-Master durch einen Entwicklungszwe
 
 Dieser Zweig enthält die komplette Historie des Projekts, während der Master eine gekürzte Version enthält. Andere Entwickler sollten nun das zentrale Repository klonen und einen Tracking-Zweig für die Entwicklung erstellen.
 
-Wenn Sie die [git-flow Erweiterungsbibliothek](https://git-scm.com/download/win) verwenden, wird durch die Ausführung von git flow init auf einem bestehenden Repo der Entwicklungszweig erstellt.
+Wenn du die [git-flow Erweiterungsbibliothek](https://git-scm.com/download/win) verwendest, wird durch die Ausführung von git flow init auf einem bestehenden Repo der Entwicklungszweig erstellt.
+
+</details>
+<details>
+  <summary>Der Githubflow</summary>
+
+Der GitHub Flow ist ein schlanker, branchenbasierter Workflow, der Teams und Projekte unterstützt
+bei denen die Bereitstellung regelmäßig erfolgt.
+Man kann ihn in 5 Schritte untereilen.
+
+1. Schritt :  Einen Branch anlegen <br>
+Wenn du an einem Projekt arbeitest, wirst du zu einem bestimmten Zeitpunkt eine Reihe verschiedener Funktionen oder Ideen im Gange haben - einige davon sind einsatzbereit, andere nicht. Es gibt Verzweigungen, die Ihnen bei der Verwaltung dieses Workflows helfen. <br> <br>
+Wenn du einen Branch in deinem Projekt erstellst, schaffst du eine Umgebung, in der du neue Ideen ausprobieren kannst. Änderungen, die du an einem Branch vorgibst, wirken sich nicht auf den Master-Branch aus, so dass du frei experimentieren und Änderungen vornehmen kannst, mit der Gewissheit, dass dein Branch nicht zusammengeführt wird, bis er für die Überprüfung durch jemanden, mit dem du zusammenarbeitest, bereit ist.
+
+2. Schritt : Commits hinzufügen <br>
+Sobald dein Branch erstellt wurde, ist es an der Zeit, mti der Entwicklung zu beginnen. Wann immer du eine Datei hinzufügst, bearbeitest oder löschst, machst du eine Übertragung und fügst sie zu deinem Zweig hinzu. Dieser Prozess des Hinzufügens von Commits verfolgt Ihren Fortschritt, während du an einem Feature-Zweig arbeitest. <br> <br>
+Verpflichtungen schaffen auch eine transparente Historie Ihrer Arbeit, der andere folgen können, um zu verstehen, was du getan hast und warum. Jedem Commit ist eine Commit-Nachricht zugeordnet, die eine Beschreibung ist, die erklärt, warum eine bestimmte Änderung vorgenommen wurde. Darüber hinaus wird jeder Commit als eigenständige Änderungseinheit betrachtet. Auf diese Weise kannst du Änderungen zurücksetzen, wenn ein Fehler gefunden wird oder wenn du dich entscheidest, in eine andere Richtung zu gehen.
+
+3. Schritt : Pull-Requests und Codereview <br>
+Pull-Requests initiieren die Diskussion über Ihre Commits. Da sie eng mit dem zugrunde liegenden Git-Repository integriert sind, kann jeder genau sehen, welche Änderungen zusammengeführt werden, wenn er Ihre Anfrage akzeptiert. <br> <br>
+Du kannst einen Pull Request zu jedem Zeitpunkt des Entwicklungsprozesses öffnen: wenn du wenig oder gar keinen Code hast, aber einige Screenshots oder allgemeine Ideen teilen möchtest, wenn du festsitzt und Hilfe oder Rat brauchst, oder wenn du bereit bist, dass jemand deine Arbeit überprüft. Indem du das @mention-System von GitHub in deiner Pull-Request-Nachricht verwendest, kannst du nach Feedback von bestimmten Personen oder Teams fragen, egal ob sie den Flur entlang oder zehn Zeitzonen entfernt sind. <br> <br>
+Sobald ein Pull-Request eröffnet wurde, kann die Person oder das Team, die Ihre Änderungen überprüft, Fragen oder Kommentare einbringen. Vielleicht stimmt der Programmierstil nicht mit den Projektrichtlinien überein, die Änderung fehlt bei den Komponententests, oder vielleicht sieht alles gut aus und die Ergebnisse sind in Ordnung. Pull-Requests wurden entwickelt, um diese Art von Gespräch zu fördern und zu erfassen. <br> <br>
+Du kannst auch weiterhin in deinem Branch pushen, wenn du  für deine Commits Feedback bekommen willst. Wenn jemand kommentiert, dass du vergessen hast, etwas zu tun, oder wenn es einen Fehler im Code gibt, kannst du ihn in deinem Branch beheben und die Änderung hochziehen. GitHub zeigt deine neuen Commits und alle zusätzlichen Rückmeldungen, die du in der Ansicht Unified Pull Request erhältst.
+
+4. Schritt :  Deployment <br>
+Mit GitHub kannst du in einem Branch bevor du alles im Master-Branch zusammenführst, die letzten Tests in der Entwicklung vornehmen. <br> <br>
+Nachdem Ihr Pull-Antrag geprüft wurde und die Branches deine Tests bestanden haben, kannst du deine Änderungen implementieren, um sie in den Release /  Master zu übernehemn . Wenn dein Branch Probleme verursacht, kannst du ihn zurücksetzen, indem du den vorhandenen Master über den Fehlerbehafteten Branch spielst.
+
+5. Schritt : Mergen <br>
+Nachdem Ihre Änderungen in der Produktion verifiziert wurden, ist es an der Zeit, Ihren Code in den Master-Branch zu integrieren. <br> <br>
+Nach dem Mergen bewahren Pull Requests eine Aufzeichnung der bisherigen Änderungen an deinem Code auf. Da sie durchsuchbar sind, lassen sie jeden in der Zeit zurückgehen, um zu verstehen, warum und wie eine Entscheidung getroffen wurde.
+
 </details>
 
 # Mergen vs. Rebasen
