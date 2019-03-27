@@ -1,11 +1,13 @@
-# Schulrepo
+# ProgrammieRepo
+
 Dieses Repo möchte ich bauen, um für mich eine Rücklage zu haben und Schülern, welche Probleme mit dem Programmieren und Dokumentieren habe eine Stütze zu bieten. <br>
-Gerne nehme ich verbesserungsvorschläge auf und ich werde mein bestes versuchen, dieses Repo im laufe meiner Ausbildung immer aktuell zu halten.
+Gerne nehme ich Verbesserungsvorschläge auf und ich werde mein bestes versuchen, dieses Repo im Laufe meiner Ausbildung immer aktuell zu halten. <br>
 
 ## Ordneraufbau
-Jeder Ordner representiert ein Unterrichtsfach, in welchem die Aufgaben gelöst wurden. <br>
-In jedem dieser Ordner könnt ihr euch dann die Aufgaben suchen, die ihr braucht oder nicht versteht. <br>
-Desweiteren werde ich im Ordner Nett2Know, ein paar zusätzliche Dinge versuchen zu erklären. <br>
+
+Jeder Ordner repräsentiert ein Unterrichtsfach, in welchem die Aufgaben gelöst wurden oder ein Thema, das ich für essenziell für das Programmieren empfinde. <br>
+In jedem dieser Ordner könnt Ihr Euch dann die Aufgaben suchen, die Ihr braucht oder nicht versteht. <br>
+Des Weiteren werde ich im Ordner Nett2Know, ein paar zusätzliche Dinge versuchen zu erklären.  <br>
 
 ## Quicklinks
 

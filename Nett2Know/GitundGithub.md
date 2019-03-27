@@ -18,42 +18,51 @@ Das macht vor allem dann Sinn, wenn man plant Kundendaten oder andere, sensible 
 ## Wie benutze ich Git / Github
 
 Als aller erstes um Git benutzten zu können, musst du [hier](https://github.com/git-for-windows/git/releases/download/v2.20.1.windows.1/Git-2.20.1-64-bit.exe) dir GitBash installieren. <br>
-Ich empfehle Git aus der PowerShell zu benutzen, da PowerShell schnell zu lernen ist durch die einfachen und verständlichen Commands. <br>
+Ich empfehle Git aus der PowerShell zu benutzen, da PowerShell schnell durch die einfachen und verständlichen Commands zu lernen ist. So willst du nun starten, hast du zwei Möglichkeiten mit der Arbeit zu beginnen.<br>
 
-Nummer eins : Du navigierst deine PowerShell zu dem Ordner, in welchem du das Projekt starten möchtest und verwendest folgenden Befehl ```git init```  vgl. [hier](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) <br>
+ Nummer eins: <br>
+ Du navigierst deine PowerShell zu dem Ordner, in welchem du das Projekt starten möchtest und verwendest folgenden Befehl ```git init``` .
+ vgl. [hier](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) <br>
 
-Nummer zwei : Du erstellst in Github ein neues Repository, so fern du bereits ein Github Account hast. Nun Clonst du dir das Repository an den Ort, wo dein Projektordner sein soll. ```git clone <url>``` vgl. [hier](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) <br>
+Nummer zwei: <br>
+Du erstellst in Github ein neues Repository, so fern du bereits ein Github Account hast. Nun Clonst du dir das Repository an den Ort, wo dein Projektordner sein soll. ```git clone <url>``` und navigierst dann mti ```cd .\Ordnername``` zu deinem Projektordner. vgl. [hier](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) <br>
 
-Habt ihr nun etwas in eurem Projekt getan, solltet ihr ein ```git commit -am "<commitnachricht>"``` durchführen, gefolgt von einem ```git push``` damit eure Daten nicht verloren gehen können.
-<br>
-Hast du in Github etwas bearbeitet, wirds du schnell feststellen, das dein Push nicht funktioniert. Entweder du führst nun einen ```git pull``` oder einen ```git fetch``` aus. <br>
+Hast du nun etwas in deinem Projekt getan, solltest du ein ```git commit -am "<commitnachricht>"``` durchführen, gefolgt von einem ```git push```, damit deine Änderungen in deinem Github-Repositorie geladen werden und für dein Team verfügbar sind.
+Hast du in Github etwas bearbeitet, wirds du schnell feststellen, das dein Push nicht funktioniert. Entweder du führst nun einen ```git pull``` oder einen ```git fetch``` aus. Je nachdem was du erreichen und bezwecken willst.<br>
 ```git pull``` zieht sich, wie eben der Befehl auch heißt die aktuelle Version des Branches von Github. <br>
 ```git fetch``` läd sich alle(! Daten aus Deinem Repository herunter, jeden Branch und jeden Verweis. <br> 
+
 Habt ihr eine Idee, seid euch aber nicht sicher das dies Funktioniert, könnt ihr ein ```git checkout -b <newbranchname>``` machen und erzeugt eine exakte Kopie von dem Branch auf dem ihr euch gerade befunden habt. <br>
 Auf dieser Kopie könnt ihr nun eure Idee ausprobieren, ohne das der eigentliche Code "gefährdet" wird. <br>
-Wollt ihr nun die beiden Versionen zusammen bringen, könnt ihr das via PowerShell oder Github machen. <br>
+Wollt ihr nun die beiden Versionen zusammen bringen, könnt ihr das via PowerShell oder Github machen. Aber dazu später mehr.
 
 ## Branching
 
-Die Branching-Funktion ist eine Funktion, die in den meisten modernen Versionskontrollsystemen verfügbar ist. Die Verzweigung in andere VCS kann sowohl in zeitlicher als auch in räumlicher Hinsicht eine teure Angelegenheit sein. In Git sind Niederlassungen Teil Ihres täglichen Entwicklungsprozesses. Git-Branche sind effektiv ein Zeiger auf eine Momentaufnahme Ihrer Änderungen. Wenn du eine neue Funktion hinzufügen oder einen Fehler beheben möchtest - egal wie groß oder klein -, erstellst du einen neuen Branch, um deine Änderungen zu kapseln. Dies erschwert die Zusammenführung von instabilem Code in die Hauptcodebasis und gibt Ihnen die Möglichkeit, die Historie Ihrer Zukunft zu bereinigen, bevor der Code in den Hauptzweig zusammengeführt wird.
+Das Branchingsystem ist eine Funktion, die in den meisten modernen Versionskontrollsystemen verfügbar ist. Das Branching in andere VCS kann sowohl in zeitlicher als auch in räumlicher Hinsicht eine teure Angelegenheit sein. In Git sind Branches Teil deines täglichen Entwicklungsprozesses.
 
- Durch die Entwicklung in Branches ist es nicht nur möglich, an beiden parallel zu arbeiten, sondern auch den Haupt-master-branch frei von fragwürdigem Code zu halten.
+ Git-Branches sind effektiv ein Zeiger auf eine Momentaufnahme deiner Änderungen. Wenn du eine neue Funktion hinzufügst oder einen Fehler beheben möchtest - egal wie groß oder klein -, erstellst du einen neuen Branch, um deine Änderungen zu kapseln. Dies erschwert die Zusammenführung von instabilem Code in den Master \ Releasebranch und gibt dir die Möglichkeit, die Historie sauber zuhalten.
 
-Die Implementierung hinter den Branchen von Git ist wesentlich leichter als bei anderen Modellen von Versionskontrollsystemen. Anstatt Dateien von Verzeichnis zu Verzeichnis zu kopieren, speichert Git einen Branch als Referenz auf eine Übertragung. In diesem Sinne stellt ein Branch die Spitze einer Reihe von Commits dar - er ist kein Container für Commits. Die Historie für einen Branch wird über die Commit-Beziehungen hochgerechnet.
+ Durch die Entwicklung in Branches ist möglich, an mehreren Problemen, Fetures oder Fixes parallel zu arbeiten. So ergibt sich der große Vorteil, dass der Master / Releasebranch immer sauber und keinen fragwürdigen oder instabielen Code enthält.
+
+Die Benutzung der Branches von Git ist wesentlich leichter als bei anderen  Versionskontrollsystemen. Anstatt Dateien von Verzeichnis zu Verzeichnis zu kopieren, speichert Git einen Branch als Referenz auf eine Übertragung.
+In diesem Sinne stellt ein Branch die Spitze einer Reihe von Commits dar - er ist kein Container für Commits. Die Historie für einen Branch wird über die Commit-Beziehungen hochgerechnet.
 
 ![Branching](https://i.imgur.com/YG8In8X.png "Branching")
 
-Wie du siehst, denk daran, dass Git-Branche nicht wie SVN-Branche sind. Während SVN-Branche nur zur Erfassung des gelegentlichen großen Entwicklungsaufwands verwendet werden, sind Git-Branche ein integraler Bestandteil Ihres täglichen Workflows.
+Wie du siehst fungieren die Branches von Git nicht wie SVN-Branches. Während SVN-Branche nur zur Erfassung des gelegentlichen großen Entwicklungsaufwands verwendet werden, sollte das Arbeiten mit verschiedenen Branchen ein integraler Bestandteil deines täglichen Workflows sein.
 
 ### Arbeiten mit Branches
 
-Ein Branch stellt eine eigenständige Entwicklungslinie dar. Branches dienen als Abstraktion für den Bearbeitungs-, Stufen- und Commit-Prozess. Du kannst dir diese als eine Möglichkeit vorstellen, ein brandneues Arbeitsverzeichnis, einen Staging-Bereich und eine Projekthistorie anzufordern. Neue Commits werden in der Historie für den aktuellen Branch aufgezeichnet, was zu einem Fork in der Historie des Projekts führt.
+Ein Branch stellt ein eigenständiges Entwicklungsprojekt dar(Hotfix, neue Fetures oder Lösungen von großen Problemen). Branches dienen als Abstraktion für Edit-, Stage- und Commitprozesse. Du kannst dir diese als eine Möglichkeit vorstellen, ein brandneues Arbeitsverzeichnis, einen Zwischenspeicher und eine Historie des Projekts anzufordern. Neue Commits werden in der Historie für den aktuellen Branch aufgezeichnet, was zu einem Fork in der Historie des Projekts führt.
 
-Mit dem Befehl git branch kannst du Branches erstellen, auflisten, umbenennen und löschen. Du kannst nicht zwischen den Branches wechseln oder eine gespaltene Historie wieder zusammensetzen. Aus diesem Grund ist ```git branch``` eng mit den Befehlen ```git checkout``` und ```git merge``` verknüpft.
+Mit dem Befehl ```git branch``` kannst du Branches erstellen, auflisten, umbenennen und löschen. Du kannst nicht zwischen den Branches wechseln oder eine gespaltene Historie wieder zusammen führen. Aus diesem Grund ist ```git branch``` eng mit den Befehlen ```git checkout``` und ```git merge``` verknüpft.
 
 ### Workflows
 
-Workflow bedeutet Arbeitsablauf. Er legt unter anderem fest, wer was bis wann erledigen muss, damit der Prozess abgeschlossen werden kann. Zudem wird festgelegt, wo wer was ablegen muss, damit alle am Workflow Beteiligten Zugriff auf die benötigten Dokumente haben. Wie zuvor schon beschrieben bedeutet Workflow auch festzulegen, welche Arbeitsschritte überhaupt durchgeführt werden müssen und in welcher Reihenfolge. Er definiert auch Abhängigkeiten, um Fehler und Engstellen zu erkennen und optimieren zu können.
+Workflow bedeutet Arbeitsablauf. Er legt unter anderem fest, wer was bis wann erledigen muss, damit der Prozess abgeschlossen werden kann.
+
+Zudem wird festgelegt, wo wer was ablegen muss, damit alle am Workflow Beteiligten Zugriff auf die benötigten Dokumente haben. Wie zuvor schon beschrieben bedeutet Workflow auch festzulegen, welche Arbeitsschritte überhaupt durchgeführt werden müssen und in welcher Reihenfolge. Er definiert auch Abhängigkeiten, um Fehler und Engstellen zu erkennen und optimieren zu können.
+
 Ein solcher Arbeitsablauf beschreibt also, wann, wie und wer mit welchen technischen Hilfsmitteln den entsprechenden Geschäftsprozess ausführt.
 
 Was heißt Workflow auf Deutsch?
