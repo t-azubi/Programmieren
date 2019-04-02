@@ -1,13 +1,10 @@
-# ProgrammieRepo
+# Programmier Repo
 
-Dieses Repo möchte ich bauen, um für mich eine Rücklage zu haben und Schülern, welche Probleme mit dem Programmieren und Dokumentieren habe eine Stütze zu bieten. <br>
-Gerne nehme ich Verbesserungsvorschläge auf und ich werde mein bestes versuchen, dieses Repo im Laufe meiner Ausbildung immer aktuell zu halten. <br>
+Heyho, 
+schön das du dich hergefunden hast. Das ist mein Programmier Repository. Es bietet mir eine kleine Rücklage, da ich versuche mein Wissen, hier zu "verewigen" und ich hoffe, es bietet suchenden hin und wieder eine Antwort auf die eine oder andere Frage.
+Ich lege hier keinen Anspruch auf Vollständigkeit und Fehlerfreiheit, ich bin auch nur ein Mensch, würde mich aber über konstruktive Kritik sowie Anreize, weiter Themen aufzunehmen freuen. 
 
-## Ordneraufbau
-
-Jeder Ordner repräsentiert ein Unterrichtsfach, in welchem die Aufgaben gelöst wurden oder ein Thema, das ich für essenziell für das Programmieren empfinde. <br>
-In jedem dieser Ordner könnt Ihr Euch dann die Aufgaben suchen, die Ihr braucht oder nicht versteht. <br>
-Des Weiteren werde ich im Ordner Nett2Know, ein paar zusätzliche Dinge versuchen zu erklären.  <br>
+Wenn ich dich inspiriert habe, dich mehr mit dem Thema Programmieren und allem Drum und Dran zu beschäftigen, dann kann ich dir die Dokumentationen weiter unten nur empfehlen. Sie beinhalten wesentlich tiefer gehendes Wissen und greifen Themen auf, an die ich mich nicht rangetraut habe.
 
 ## Quicklinks
 
