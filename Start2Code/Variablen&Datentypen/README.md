@@ -77,7 +77,7 @@ Gleitkommazahlen
     Wertebereich: Verschiedene Definitionen (siehe unten)
     Operationen: +, -, *, /, <, >, =
 
-###Zusammengesetzte Datentypen
+### Zusammengesetzte Datentypen
 
 Zusammengesetzte Datentypen sind ein Datenkonstrukt, welches aus einfacheren Datentypen besteht. Da sie theoretisch beliebig komplex werden können, werden sie auch häufig schon zu den Datenstrukturen gezählt. Den meisten Programmiersprachen gemeinsam sind:
 
