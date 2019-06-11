@@ -13,6 +13,7 @@ Des Weiteren werde ich im Ordner Nett2Know, ein paar zusätzliche Dinge versuche
 
 1. [EBA](EBA/Readme.md)
 2. [N2K](Nett2Know/GitundGithub.md)
+3. [S2C](https://github.com/Zeroks77/Programmieren/tree/Taschenrechner/Start2Code)
 
 ## Dokus die ich benutz habe
 
