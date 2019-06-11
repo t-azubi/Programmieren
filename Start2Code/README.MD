@@ -11,6 +11,7 @@ Was dich erwarten wird, ist eine Menge komischer Fehler, lustige und unverständ
 ## Der Einstieg
 
 So nun wie fängt man denn nun an mit dem Programmieren? 
+
 Als erstes empfehle ich dir das [hier](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1) mal auszuprobieren, danach denke ich, ist der beste Weg um etwas zu lernen im Bereich Programmierung, einfach ausprobieren, scheitern, verbessern und Schritt für Schritt kleine Ziele zu erreichen.
 Fang ganz klein an. Ein Kleines Konsolen Programm, zb. Zahlenraten. Du denkst garnicht wie viel du mit einem kleinen Programm wie Zahlenraten lernen kannst.
 Du lernst den Umgang mit Variablen und bekommst ein Einblick in verschiedene Datentypen.
