@@ -7,11 +7,16 @@ hier möchte ich dir etwas über Namespaces Klassen, Objekte und die Methoden ei
 ## Namespace, damit der Compiler weiß wer gemeint ist
 
 Dir ist bestimmt schon in den vorangegangen Programmen aufgefallen das es immer einen Namespace gibt.
-Dieser ist essenziell und darf unter keinen Umständen fehlen.
+
+Namespaces werden benutzt, um Klassen zu gruppieren. Namespaceskennzeichnen sich durch das Schlüsselwort namespace und den Namen des Namensraums und bilden dabei immer einen Block.
+Normalerweise haben Programme immer nur einen Namensraum. Bei sehr großen Projekten, bei denen es viele Klassen gibt, macht es jedoch schon Sinn, mehrere Namespaceszu erstellen. Bei sehr großen Projekten ist es des Weiteren u. U. notwendig, Namespaceszu verschachteln. Eine solche Verschachtelung kann auf 2 Arten erzeugt werden: Die 1. Möglichkeit wäre die hierarchische Verschachtelung von namespace-Blöcken. Bei der 2. Möglichkeit werden die einzelnen Namen in einem namespace-Block durch einen Punkt getrennt. Im Beispiel haben wir die 2. Möglichkeit verwendet.
+Nachdem wir nun Namespaces erstellen können, müssen wir noch wissen, wie wir von einem anderen Namensraum darauf zugreifen können. Hierfür benötigen wir das Schlüsselwort using. Mit using können wir einen Namensraum einbinden. Bei dieser Einbindung müssen wir den Namen notieren, welcher in der Deklaration des Namespaces angegeben wurde.
 
 <details close>
 
-Namespaces werden verwendet, um einen " benannten Raum " bereitzustellen, in dem sich Ihre Anwendung befindet. Sie werden insbesondere verwendet, um dem C#-Compiler einen Kontext für alle benannten Informationen in Ihrem Programm bereitzustellen, wie z.B. Variablennamen. Ohne Namensräume wäre es beispielsweise nicht möglich, eine Klasse namens Console zu erstellen, da .NET bereits einen in seinem Systemnamensraum verwendet. Der Zweck von Namensräumen ist es, dieses Problem zu lösen und Tausende von im .NET- Framework definierten Namen für Ihre Anwendungen freizugeben, zusammen mit der Tatsache, dass Ihre Anwendung keine Namen für andere Anwendungen belegt, wenn Ihre Anwendung in Verbindung mit einer anderen verwendet werden soll. Es existieren also Namensräume, um Mehrdeutigkeiten aufzulösen, die ein Compiler sonst nicht bewältigen könnte.
+<summary>Namespaces im Detail </summary>
+
+Namespaces werden verwendet, um einen " benannten Raum " bereitzustellen, in dem sich Ihre Anwendung befindet. Sie werden insbesondere verwendet, um dem C#-Compiler einen Kontext für alle benannten Informationen in Ihrem Programm bereitzustellen, wie z.B. Variablennamen. Ohne Namespaceswäre es beispielsweise nicht möglich, eine Klasse namens Console zu erstellen, da .NET bereits einen in seinem Systemnamensraum verwendet. Der Zweck von Namespaces ist es, dieses Problem zu lösen und Tausende von im .NET- Framework definierten Namen für Ihre Anwendungen freizugeben, zusammen mit der Tatsache, dass Ihre Anwendung keine Namen für andere Anwendungen belegt, wenn Ihre Anwendung in Verbindung mit einer anderen verwendet werden soll. Es existieren also Namespaces, um Mehrdeutigkeiten aufzulösen, die ein Compiler sonst nicht bewältigen könnte.
 
 Auf diese Weise lassen sich Namespaces leicht definieren:
 
@@ -30,7 +35,7 @@ Es gibt eine ganze Hierarchie von Namespaces, die Ihnen vom .NET Framework zur V
 
 Dadurch wird die Methode WriteLine aufgerufen, die ein Mitglied der Klasse Console innerhalb des System-Namespace ist.
 
-Durch die Verwendung des Schlüsselwortes using teilen Sie dem Compiler explizit mit, dass Sie einen bestimmten Namensraum in Ihrem Programm verwenden werden. Da der Compiler das dann wissen würde, ist es nicht mehr erforderlich, dass Sie den/die Namensraumnamen für solche deklarierten Namensräume eingeben, da Sie ihm gesagt haben, in welchen Namensräumen er suchen soll, wenn er die Daten in Ihrer Anwendung nicht finden konnte.
+Durch die Verwendung des Schlüsselwortes using teilen Sie dem Compiler explizit mit, dass Sie einen bestimmten Namensraum in Ihrem Programm verwenden werden. Da der Compiler das dann wissen würde, ist es nicht mehr erforderlich, dass Sie den/die Namensraumnamen für solche deklarierten Namespaceseingeben, da Sie ihm gesagt haben, in welchen Namespacesn er suchen soll, wenn er die Daten in Ihrer Anwendung nicht finden konnte.
 
 Das sieht dann so aus:
 
@@ -55,7 +60,14 @@ Namespaces sind global, so dass ein Namespace in einer C#-Quelldatei und ein wei
 
 ## Was ist eine Klasse?
 
-<details open>
+Eine Klasse stellt einen Bauplan dar, welche Variablen, Eigenschaften (dazu später mehr) und Funktionen enthalten. Eine Klasse kann also als Ansammlung von Variablen, Eigenschaften und Funktionen bezeichnet werden. Klassen werden dazu eingesetzt, einen zusammenhängenden Programm-Teil zu kapseln. Die Klasse befindet sich innerhalb des namespace-Blocks. Auch die Klasse selbst bildet einen Block, welche sich durch das Schlüsselwort class kennzeichnet.
+
+In der „objektorientierten Programmierung“ (kurz OOP) gibt es einige stilistische Regeln. Hierzu zählt z. B. dass globale Variablen nicht von außen zugänglich gemacht werden sollten. Um Werte einer internen Variable auszulesen oder zu setzen, wird daher entweder eine Funktion geschrieben oder Eigenschaften verwendet. Der Vorteil von Funktionen und Eigenschaften ist, dass hier ein Programmcode hinterlegt werden kann, mit dem z. B. der Wertebereich (bei Zahlen) überprüft werden kann.
+Hierzu ein Beispiel: Wir haben einen Bauplan (Klasse) für ein Auto. Von diesem Auto können wir jetzt eine unbegrenzte Anzahl bauen, die jederzeit erweitert werden kann. Die einzelnen Autos stellen also die Objekte dar.
+
+<details close>
+
+<summary>Klassen im Detail </summary>
 
 Wie in anderen objektorientierten Programmiersprachen ist die Funktionalität eines C#-Programms in einer oder mehreren Klassen implementiert. Die Methoden und Eigenschaften einer Klasse enthalten den Code, der das Verhalten der Klasse definiert.
 
@@ -184,3 +196,17 @@ public class Employee
 ```
 
 </details>
+
+## Objekte
+
+Von Objekten spricht man, wenn eine Variable einer Klasse initialisiert wird. Um eine Variable einer Klasse zu initialisieren, benötigen wir das Schlüsselwort new, den Klassennamen und runde Klammern (direkt hinter dem Klassennamen, also wie bei einer Funktion). Die Anzahl der Objektinitialisierungen unserer Klasse ist unbegrenzt, somit können wir mehrere Objekt erzeugen, benötigen jedoch immer nur eine Klasse.
+
+### Objekteigenschaften
+
+Objekteigenschaften (oder auch nur Eigenschaften) sind „bessere“ Variablen, hinter welchen ein Programmcode hinterlegt werden kann (also wie bei Funktionen). Eigenschaften sehen von der Deklaration ähnlich wie Variablen aus, bilden jedoch immer einen Block.
+
+Bei einfachen Eigenschaften (ohne Werte-Prüfung oder anderen Programmcode) müssen innerhalb des Blocks die Schlüsselwörter get und set mit jeweils einem Semikolon am Ende notiert werden. Dadurch entspricht die Eigenschaft eigentlich einer Variablen. Trotzdem sollten Sie immer Eigenschaften anstatt Variablen verwenden, wenn der Wert von „außen“ (also von außerhalb der Klasse) zugänglich sein soll.
+
+Die komplexeren Eigenschaften besitzen einen Programmcode, welche zur Überprüfung des Wertes genutzt werden kann. Natürlich könnten auch andere Aktionen ausgeführt werden, wie z. B. der Aufruf einer internen Funktion o. Ä.. Bei den komplexeren Eigenschaften bilden die get- und set-Schlüsselwörter eigene Blöcke. Innerhalb des get-Blocks muss ein Wert durch return zurückgegeben werden. Im set-Block dagegen kann der Wert z. B. in einer internen Variablen gespeichert werden. Um auf den „übergebenen“ oder zu setzenden Wert zuzugreifen, nutzen wir das Schlüsselwort value. Wie wir also sehen können, ist bei den komplexeren Eigenschaften immer eine interne Variable von Nöten, wenn der Wert intern gespeichert werden soll. Der Variablenname besteht dabei oft aus einem Unterstrich und dem Eigenschaftsnamen.
+
+Stellen wir uns einmal vor, was wir mit solchen Eigenschaften alles machen können und wie wir diese adaptieren können. Es ist z. B. möglich, den set-Block wegzulassen: Dadurch können wir das Setzen eines Wertes unterbinden. Um das Setzen innerhalb der Klasse zuzulassen, jedoch von außen zu unterbinden.
