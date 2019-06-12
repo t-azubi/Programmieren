@@ -357,7 +357,7 @@ Strukturen werden mit dem Schlüsselwort
 
  ```csharp
 struct
-``` 
+```
 
 definiert, gefolgt von einem Bezeichner, um die Struktur zu benennen. Sie sind ähnlich wie Klassen, haben aber feine Unterschiede. Strukturen werden als leichte Versionen von Klassen verwendet, die helfen können, den Aufwand für die Speicherverwaltung bei der Arbeit mit kleinen Datenstrukturen zu reduzieren. In den meisten Situationen ist die Verwendung einer Standardklasse jedoch die bessere Wahl.
 
