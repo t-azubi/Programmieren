@@ -11,13 +11,8 @@ Des Weiteren werde ich im Ordner Nett2Know, ein paar zusätzliche Dinge versuche
 
 ## Quicklinks
 
-1. [EBA](EBA/Readme.md)
-<<<<<<< HEAD
-2. [Code]()
-=======
-2. [N2K](Nett2Know/GitundGithub.md)
-3. [S2C](https://github.com/Zeroks77/Programmieren/tree/Taschenrechner/Start2Code)
->>>>>>> 3f45008b89d15cd198658fedeea2e2b33f720b98
+1. [EBA](EBA)
+2. [Code](Coding)
 
 ## Dokus die ich benutz habe
 
