@@ -12,7 +12,7 @@ Des Weiteren werde ich im Ordner Nett2Know, ein paar zusätzliche Dinge versuche
 ## Quicklinks
 
 1. [EBA](EBA/Readme.md)
-2. [Code](Code/Readme.md)
+2. [Code](Coding/Readme.md)
 
 ## Dokus die ich benutz habe
 
