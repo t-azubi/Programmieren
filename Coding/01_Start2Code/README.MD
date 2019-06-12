@@ -3,7 +3,7 @@
 Hey ho, 
 da ich denke man sollte klein anfangen, möchte ich hier einen kurzen Anfängerguid zusammen bauen, wie man meiner Meinung nach am besten mit dem Programmieren anfangen kann.
 
-Erst einmal finde ich es Super, dass du dich bis in mein Repo gefunden hast, damit hast du schon den ersten Schritt richtung Programmieren getan :)
+Erst einmal finde ich es Super, dass du dich bis in mein Repo gefunden hast, damit hast du schon den ersten Schritt Richtung Programmierung getan :)
 Nur um dich kurz nochmal darauf Vorzubereiten, was dich erwarten wird. Programmieren ist nicht einfach ein paar Zeilen Code schreiben und dann hat man das super duper Programm was alles kann... 
 
 Was dich erwarten wird, ist eine Menge komischer Fehler, lustige und unverständlich Bugs und viele Dokumentationen und eine riesige Freude, wenn dein Programm das erste mal das macht, was es soll ^^
