@@ -10,7 +10,9 @@ Dir ist bestimmt schon in den vorangegangen Programmen aufgefallen das es immer 
 Dieser ist essenziell und darf unter keinen Umständen fehlen.
 
 <details close>
-
+ 
+<summary>Namespace? ist das Programm so dick</summary>
+ 
 Namespaces werden verwendet, um einen " benannten Raum " bereitzustellen, in dem sich Ihre Anwendung befindet. Sie werden insbesondere verwendet, um dem C#-Compiler einen Kontext für alle benannten Informationen in Ihrem Programm bereitzustellen, wie z.B. Variablennamen. Ohne Namensräume wäre es beispielsweise nicht möglich, eine Klasse namens Console zu erstellen, da .NET bereits einen in seinem Systemnamensraum verwendet. Der Zweck von Namensräumen ist es, dieses Problem zu lösen und Tausende von im .NET- Framework definierten Namen für Ihre Anwendungen freizugeben, zusammen mit der Tatsache, dass Ihre Anwendung keine Namen für andere Anwendungen belegt, wenn Ihre Anwendung in Verbindung mit einer anderen verwendet werden soll. Es existieren also Namensräume, um Mehrdeutigkeiten aufzulösen, die ein Compiler sonst nicht bewältigen könnte.
 
 Auf diese Weise lassen sich Namespaces leicht definieren:
@@ -55,7 +57,9 @@ Namespaces sind global, so dass ein Namespace in einer C#-Quelldatei und ein wei
 
 ## Was ist eine Klasse?
 
-<details open>
+<details close>
+ 
+<summary>Klassen? wasn das</summary>
 
 Wie in anderen objektorientierten Programmiersprachen ist die Funktionalität eines C#-Programms in einer oder mehreren Klassen implementiert. Die Methoden und Eigenschaften einer Klasse enthalten den Code, der das Verhalten der Klasse definiert.
 
