@@ -1,4 +1,4 @@
-# Namespace, Klassen, Objekte und Mehoden
+# Namespace, Klassen und Objekte
 
 Heyho,
 
@@ -13,15 +13,9 @@ Normalerweise haben Programme immer nur einen Namensraum. Bei sehr großen Proje
 Nachdem wir nun Namespaces erstellen können, müssen wir noch wissen, wie wir von einem anderen Namensraum darauf zugreifen können. Hierfür benötigen wir das Schlüsselwort using. Mit using können wir einen Namensraum einbinden. Bei dieser Einbindung müssen wir den Namen notieren, welcher in der Deklaration des Namespaces angegeben wurde.
 
 <details close>
-<<<<<<< HEAD
-
+ 
 <summary>Namespaces im Detail </summary>
 
-Namespaces werden verwendet, um einen " benannten Raum " bereitzustellen, in dem sich Ihre Anwendung befindet. Sie werden insbesondere verwendet, um dem C#-Compiler einen Kontext für alle benannten Informationen in Ihrem Programm bereitzustellen, wie z.B. Variablennamen. Ohne Namespaceswäre es beispielsweise nicht möglich, eine Klasse namens Console zu erstellen, da .NET bereits einen in seinem Systemnamensraum verwendet. Der Zweck von Namespaces ist es, dieses Problem zu lösen und Tausende von im .NET- Framework definierten Namen für Ihre Anwendungen freizugeben, zusammen mit der Tatsache, dass Ihre Anwendung keine Namen für andere Anwendungen belegt, wenn Ihre Anwendung in Verbindung mit einer anderen verwendet werden soll. Es existieren also Namespaces, um Mehrdeutigkeiten aufzulösen, die ein Compiler sonst nicht bewältigen könnte.
-=======
- 
-<summary>Namespace? ist das Programm so dick</summary>
- 
 Namespaces werden verwendet, um einen " benannten Raum " bereitzustellen, in dem sich Ihre Anwendung befindet. Sie werden insbesondere verwendet, um dem C#-Compiler einen Kontext für alle benannten Informationen in Ihrem Programm bereitzustellen, wie z.B. Variablennamen. Ohne Namensräume wäre es beispielsweise nicht möglich, eine Klasse namens Console zu erstellen, da .NET bereits einen in seinem Systemnamensraum verwendet. Der Zweck von Namensräumen ist es, dieses Problem zu lösen und Tausende von im .NET- Framework definierten Namen für Ihre Anwendungen freizugeben, zusammen mit der Tatsache, dass Ihre Anwendung keine Namen für andere Anwendungen belegt, wenn Ihre Anwendung in Verbindung mit einer anderen verwendet werden soll. Es existieren also Namensräume, um Mehrdeutigkeiten aufzulösen, die ein Compiler sonst nicht bewältigen könnte.
 >>>>>>> ed9d07c4af86e15e8f338aa441f5da6054d97a8d
 
@@ -67,7 +61,6 @@ Namespaces sind global, so dass ein Namespace in einer C#-Quelldatei und ein wei
 
 ## Was ist eine Klasse?
 
-<<<<<<< HEAD
 Eine Klasse stellt einen Bauplan dar, welche Variablen, Eigenschaften (dazu später mehr) und Funktionen enthalten. Eine Klasse kann also als Ansammlung von Variablen, Eigenschaften und Funktionen bezeichnet werden. Klassen werden dazu eingesetzt, einen zusammenhängenden Programm-Teil zu kapseln. Die Klasse befindet sich innerhalb des namespace-Blocks. Auch die Klasse selbst bildet einen Block, welche sich durch das Schlüsselwort class kennzeichnet.
 
 In der „objektorientierten Programmierung“ (kurz OOP) gibt es einige stilistische Regeln. Hierzu zählt z. B. dass globale Variablen nicht von außen zugänglich gemacht werden sollten. Um Werte einer internen Variable auszulesen oder zu setzen, wird daher entweder eine Funktion geschrieben oder Eigenschaften verwendet. Der Vorteil von Funktionen und Eigenschaften ist, dass hier ein Programmcode hinterlegt werden kann, mit dem z. B. der Wertebereich (bei Zahlen) überprüft werden kann.
@@ -76,11 +69,6 @@ Hierzu ein Beispiel: Wir haben einen Bauplan (Klasse) für ein Auto. Von diesem 
 <details close>
 
 <summary>Klassen im Detail </summary>
-=======
-<details close>
- 
-<summary>Klassen? wasn das</summary>
->>>>>>> ed9d07c4af86e15e8f338aa441f5da6054d97a8d
 
 Wie in anderen objektorientierten Programmiersprachen ist die Funktionalität eines C#-Programms in einer oder mehreren Klassen implementiert. Die Methoden und Eigenschaften einer Klasse enthalten den Code, der das Verhalten der Klasse definiert.
 
@@ -147,9 +135,26 @@ public class Sample
 
 ### Methoden
 
-C#-Methoden sind Klassenmitglieder, die Code enthalten. Sie können einen Rückgabewert und eine Liste von Parametern sowie eine generische Typdeklaration enthalten. Methoden können wie Felder statisch (zugeordnet und über die Klasse angesprochen) oder instanziiert (zugeordnet und angesprochen durch eine Objektinstanz der Klassenmethoden sowie eine generische Typdeklaration) sein.
+Eine Funktion oder auch Methode oder Routine ist ein Teil einer Klasse, um Programmcode auszulagern. Oft handelt es sich hierbei auch um Code, der öfters gebraucht wird. Dies ist jedoch nicht zwingend notwendig. Bisher haben wir den kompletten Programmcode in der Main-Methode notiert, welche den Haupteinstiegspunkt einer Applikation darstellt. Eine Funktion bildet immer einen Block mit geschweiften Klammern, jedoch können die Klammern hier nicht weggelassen werden. Die Zeile über den geschweiften Klammern wird auch als Funktions-Kopf bezeichnet:
 
-Ab C# 4.0 ist es möglich, dass eine Methode optionale Parameter mit Standardwerten hat, wie Benutzer von C++ bereits wissen. Zum Beispiel die Methode
+```csharp
+public void doSomething(int X, string Y, bool Z)
+{
+//do Something 
+}
+```
+
+Hier werden Zugriffsmodifizierer, Rückgabetyp, Name und Parameter angegeben.
+Der Zugriffsmodifizierer ist ein Schlüsselwort, welches angibt, von wo aus der Zugriff auf die Funktion erlaubt ist. Durch den Zugriffsmodifizierer private grenzen wir den Zugriff auf die eigene Klasse ein. Mit protected grenzen wir den Zugriff auf die eigene und die davon abgeleitete Klasse ein. public erlaubt einen Zugriff von außerhalb der Klasse. Zugriffsmodifizierer können auch für globale Variablen, also Membervariablen, verwendet werden. Wird der Zugriffsmodifizierer weggelassen, handelt es sich standardmäßig um private.
+
+Der Rückgabetyp kann jeder Datentyp sein. Jedoch kann eine Funktion immer nur einen Wert zurückgeben. Falls eine Funktion keinen Wert zurückgeben soll, müssen wir das Schlüsselwort void angeben. Die Rückgabe eines Wertes erfolgt mit dem Schlüsselwort return und dem Wert. Das Schlüsselwort return (ohne Wert) wird auch dazu eingesetzt, um eine Funktion ohne Rückgabetyp frühzeitig zu verlassen.
+
+Der Name einer Funktion darf nur einmal innerhalb einer Klasse existieren. Eine Ausnahme bildet die Methodenüberladung. Dazu im Nächsten Schritt mehr.
+
+Die Parameter einer Funktion können ebenfalls jeden Datentyp haben und werden nach dem Funktions-Namen in runden Klammern notiert. Die Anzahl der Parameter ist unbegrenzt, wobei die einzelnen Parameter mit Kommas getrennt werden. Es ist auch möglich, dass eine Funktion keine Parameter haben. In diesem Fall werden die runden Klammern leer gelassen. Als Parameter können ebenfalls auch Arrays übergeben werden. Ein Parameter wird im Funktions-Kopf mit dem Datentyp und dem Namen angegeben. Der Name des Parameters kann dann innerhalb der Funktion verwendet werden.
+
+
+Das Schlüsselwort static kann bei Funktionen oder Variablen eingesetzt werden, um eine Funktion oder Variable ohne Objekt-Bindung zu erstellen, d. h. die Funktion oder Variable existiert unabhängig von einem Objektverweis. Wir können also auf die Funktion oder Variable zugreifen, ohne ein Objekt der Klasse erstellt zu haben. Der Zugriff erfolgt dabei direkt über den Klassennamen. Wie Ihnen vielleicht schon aufgefallen ist, ist die Main-Routine mit diesem Schlüsselwort versehen. Da wir im Beispiel alle Routinen direkt über die Main-Funktion aufrufen und kein Objekt der Klasse Programm erstellt haben, benötigen wir auch bei allen Beispiel-Funktionen das Schlüsselwort static. Dies kommt daher, dass statische Funktionen keine nicht-statische Funktionen aufrufen können (da kein Objektverweis besteht). Eingeordnet wird das Schlüsselwort zwischen Zugriffsmodifizierer und Rückgabetyp.
 
 ```csharp
 void Inkrement(ref int x, int dx = 1)
