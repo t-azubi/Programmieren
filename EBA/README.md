@@ -2,8 +2,8 @@
 
 ## Inhaltsverzeichnis
 
-1. [Snackautomat](https://github.com/Zeroks77/Schule/tree/master/EBA/Snackautomat)
-2. [Taschenrechner](https://github.com/Zeroks77/Programmieren/tree/Taschenrechner/EBA/Taschenrechner)
+1. [Snackautomat](Snackautomat)
+2. [Taschenrechner](Taschenrechner)
 
 ## Was ist hier zu finden
 Im groben gesagt kann man hier alle Aufgaben mit Aufgabenstellung finden, die ich bis jetzt gelöst haben. <br>
