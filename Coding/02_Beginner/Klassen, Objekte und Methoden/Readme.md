@@ -17,7 +17,6 @@ Nachdem wir nun Namespaces erstellen können, müssen wir noch wissen, wie wir v
 <summary>Namespaces im Detail </summary>
 
 Namespaces werden verwendet, um einen " benannten Raum " bereitzustellen, in dem sich Ihre Anwendung befindet. Sie werden insbesondere verwendet, um dem C#-Compiler einen Kontext für alle benannten Informationen in Ihrem Programm bereitzustellen, wie z.B. Variablennamen. Ohne Namensräume wäre es beispielsweise nicht möglich, eine Klasse namens Console zu erstellen, da .NET bereits einen in seinem Systemnamensraum verwendet. Der Zweck von Namensräumen ist es, dieses Problem zu lösen und Tausende von im .NET- Framework definierten Namen für Ihre Anwendungen freizugeben, zusammen mit der Tatsache, dass Ihre Anwendung keine Namen für andere Anwendungen belegt, wenn Ihre Anwendung in Verbindung mit einer anderen verwendet werden soll. Es existieren also Namensräume, um Mehrdeutigkeiten aufzulösen, die ein Compiler sonst nicht bewältigen könnte.
->>>>>>> ed9d07c4af86e15e8f338aa441f5da6054d97a8d
 
 Auf diese Weise lassen sich Namespaces leicht definieren:
 
