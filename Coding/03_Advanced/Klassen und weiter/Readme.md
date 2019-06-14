@@ -351,6 +351,15 @@ public class StaticDemo
 }
 ```
 
+Eine Methode einer anderen Klasse kann dann das Ereignis "abonnieren", indem sie dem Ereignisdelegierten eine ihrer Methoden hinzufügt:
+
+```csharp
+Button b = new Button();
+b.ButtonClicked += ButtonClickHandler();
+```
+
+Obwohl das Ereignis öffentlich deklariert ist, kann es nirgendwo direkt ausgelöst werden, außer in der Klasse, die es enthält.
+
 ## Strukturen
 
 Strukturen werden mit dem Schlüsselwort
@@ -433,12 +442,3 @@ public class Sample
     }
 }
 ```
-
-Eine Methode einer anderen Klasse kann dann das Ereignis abonnieren, indem sie dem Ereignisdelegierten eine ihrer Methoden hinzufügt:
-
-```csharp
-Button b = new Button();
-b.ButtonClicked += ButtonClickHandler();
-```
-
-Obwohl das Ereignis öffentlich deklariert ist, kann es nirgendwo direkt ausgelöst werden, außer in der Klasse, die es enthält.
