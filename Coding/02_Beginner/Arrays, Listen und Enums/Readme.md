@@ -5,11 +5,17 @@ Enums sind zwar ähnlich, aber eigentlich was ganz anderes aber das wirst schon 
 
 ## Arrays
 
-Arrays
-
 Arrays sind eine Ansammlung von Werten des gleichen Datentyps. Dabei werden die Werte innerhalb einer Variablen gespeichert. Man könnte sagen, dass ein Array eine Liste ist. Wir werden jedoch später ein Objekt namens List kennenlernen, mit welchem wir ein „besseres“ Array erzeugen können. Wichtig zu wissen ist, dass ein Array nicht vergrößert werden kann. Ein Array hat immer die Anzahl x an Werten, weshalb es auch als statisches Array bezeichnet wird.
 
+```csharp
+type [ ] < Name_Array > = new < datatype > [size];
+```
+
 Bei den zumeist eingesetzten Arrays handelt es sich um sogenannte eindimensionale Arrays, d. h. sie besitzen nur eine Dimension (eine Spalte mit mehreren Zeilen). Um ein Array zu deklarieren, müssen wir bei der Variablendeklaration hinter dem Datentyp die eckigen Klammern ([]) notieren. Bei der Variableninitialisierung benötigen wir nun das Schlüsselwort new, welches vor dem Datentyp notiert wird. Die genaue Bedeutung von new werden wir im Thema Objektorientierung genauer kennenlernen. In den Klammern notieren wir nun die Anzahl der Elemente. Um auf die einzelnen Elemente zugreifen zu können, benötigen wir die Indexierung. Hierbei wird der Variablenname mit den eckigen Klammern notiert, in welcher der Index angeben wird. Der Index ist also ein Zähler. Die Zählweise beginnt bei 0 und entspricht dem 1. Element. Über die Eigenschaft Length können wir die Anzahl der Elemente abrufen.
+
+```csharp
+int [] intArray = new int[5]
+```
 
 Um ein Array zu verändern oder darin etwas zu suchen, gibt es die Klasse Array. Mit der Funktion Sort() können wir ein Array sortieren. Dabei wird es mit Hilfe des sogenannten Standard-Vergleichs aufsteigend sortiert (numerisch bei Zahlen, alphabetisch bei Zeichenketten). Die Funktion Reverse() kehrt die Reihenfolge aller Array-Elemente um. Mit der Funktion IndexOf() und LastIndexOf() können wir das erste bzw. letzte Vorkommen einer Zahl, eines Zeichens oder einer Zeichenkette im Array suchen. Die Funktionen geben den Index zurück und sind somit ebenfalls null-basierend.
 
