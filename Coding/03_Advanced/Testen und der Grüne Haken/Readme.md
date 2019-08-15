@@ -2,11 +2,11 @@
 
 ## Unit Test
 
-In der Programmierung ist Unit-Testing ein Software-Testverfahren, bei dem einzelne Quellcodeeinheiten auf ihre Einsatzfähigkeit getestet werden. Um es besser zu verstehen, ist ein Komponententest die kleinstmögliche testbare Softwarekomponente. Normalerweise erfüllt es eine einzige kohäsive Funktion. Da die Einheit klein ist, ist es einfacher, Testergebnisse zu entwerfen, auszuführen, aufzuzeichnen und zu analysieren als bei größeren Codeblöcken. Die bei einem Komponententest festgestellten Mängel sind leicht zu lokalisieren und relativ einfach zu beheben.
+In der Programmierung ist Unit-Testing ein Software-Testverfahren, bei dem einzelne Quellcodeeinheiten auf ihre Einsatzfähigkeit getestet werden. Um es besser zu verstehen, ist ein Unittest die kleinstmögliche testbare Softwarekomponente. Normalerweise erfüllt es eine einzige kohäsive Funktion. Da die Einheit klein ist, ist es einfacher, Testergebnisse zu entwerfen, auszuführen, aufzuzeichnen und zu analysieren als bei größeren Codeblöcken. Die bei einem Komponententest festgestellten Mängel sind leicht zu lokalisieren und relativ einfach zu beheben.
 
 Ziel des Unit-Tests ist es, jeden Teil des Programms zu trennen und zu testen, ob die einzelnen Teile korrekt funktionieren. Es isoliert das kleinste Stück prüfbarer Software vom Rest des Codes und bestimmt, ob es sich genau so verhält, wie du es erwarten. Die Unit-Tests haben sich bewährt, da ein großer Teil der Fehler während des Einsatzes identifiziert wird. Es ermöglicht die Automatisierung des Testprozesses, reduziert die Schwierigkeiten bei der Erkennung von Fehlern, die in komplexeren Teilen der Anwendung enthalten sind, und die Testabdeckung wird oft erhöht, da jeder Einheit Aufmerksamkeit geschenkt wird.
 
-Nur um Ihnen ein Beispiel zu geben: Wenn du zwei Einheiten haben und sich entscheiden, dass es kostengünstiger wäre, sie zusammenzukleben und sie zunächst als integrierte Einheit zu testen, kann ein Fehler an einer Vielzahl von Stellen auftreten:
+Nur um dir ein Beispiel zu geben: Wenn du zwei Einheiten haben und sich entscheiden, dass es kostengünstiger wäre, sie zusammenzukleben und sie zunächst als integrierte Einheit zu testen, kann ein Fehler an einer Vielzahl von Stellen auftreten:
 
 ```
     Fehler in Einheit 1?
@@ -28,7 +28,7 @@ Wie du richtig UnitTest schreibst findest du [hier](https://www.c-sharpcorner.co
 ## 1. DEN PROZESS AGIL MACHEN
 
 Einer der Hauptvorteile des Unit-Tests besteht darin, dass er den Codierungsprozess agiler macht. Wenn du einer Software immer mehr Funktionen hinzufügst, musst du manchmal das alte Design und den alten Code ändern. Aber das Ändern von bereits getestetem Code ist sowohl riskant als auch kostspielig. Wenn wir über Unit-Tests verfügen, können wir mit Zuversicht mit dem Refactoring fortfahren.
-Unit-Testing geht wirklich Hand in Hand mit agiler Programmierung aller Varianten, denn es baut Tests ein, die es Ihnen ermöglichen, Änderungen einfacher vorzunehmen. Mit anderen Worten, Unit-Tests ermöglichen ein sicheres Refactoring.
+Unit-Testing geht wirklich Hand in Hand mit agiler Programmierung aller Varianten, denn es baut Tests ein, die es dir ermöglichen, Änderungen einfacher vorzunehmen. Mit anderen Worten, Unit-Tests ermöglichen ein sicheres Refactoring.
 
 ## 2. CODEQUALITÄT
 
