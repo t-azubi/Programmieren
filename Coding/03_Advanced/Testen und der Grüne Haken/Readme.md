@@ -27,16 +27,16 @@ Wie du richtig UnitTest schreibst findest du [hier](https://www.c-sharpcorner.co
 
 ## 1. DEN PROZESS AGIL MACHEN
 
-Einer der Hauptvorteile des Unit-Tests besteht darin, dass er den Codierungsprozess agiler macht. Wenn du einer Software immer mehr Funktionen hinzufügst, musst du manchmal das alte Design und den alten Code ändern. Aber das Ändern von bereits getestetem Code ist sowohl riskant als auch kostspielig. Wenn wir über Unit-Tests verfügen, können wir mit Zuversicht mit dem Refactoring fortfahren.
+Einer der Hauptvorteile des Unit-Tests besteht darin, dass er den Programmierprozess agiler macht. Wenn du einer Software immer mehr Funktionen hinzufügst, musst du manchmal das alte Design und den alten Code ändern. Aber das Ändern von ungetestetem getestetem Code ist sowohl riskant als auch kostspielig. Wenn wir über Unit-Tests verfügen, können wir mit Zuversicht mit dem Refactoring fortfahren.
 Unit-Testing geht wirklich Hand in Hand mit agiler Programmierung aller Varianten, denn es baut Tests ein, die es dir ermöglichen, Änderungen einfacher vorzunehmen. Mit anderen Worten, Unit-Tests ermöglichen ein sicheres Refactoring.
 
 ## 2. CODEQUALITÄT
 
-Der Unit-Test verbessert die Qualität des Codes; er identifiziert jeden Fehler, der aufgetreten sein könnte, bevor der Code zum Integrationstest weitergeschickt wird. Das Schreiben von Tests vor der eigentlichen Codierung lässt du härter an das Problem denken. Es deckt die Randgehäuse auf und lässt du besseren Code schreiben.
+Der Unit-Test verbessert die Qualität des Codes; er identifiziert jeden Fehler, der aufgetreten sein könnte, bevor der Code zum Integrationstest weitergeschickt wird. Das Schreiben von Tests vor dem eigentlichen Programmieren lässt dich an alle möglichen Probleme denken. Es deckt die Edgecases auf und lässt dich besseren Code schreiben.
 
 ## 3. SOFTWAREFEHLER FRÜHZEITIG FINDEN
 
-Probleme werden frühzeitig erkannt. Da Unit-Tests von Entwicklern durchgeführt werden, bei denen sie ihren individuellen Code vor der Integration testen, können Probleme sehr früh erkannt und dann und dort gelöst werden, ohne die anderen Codes zu beeinträchtigen. Dazu gehören sowohl Fehler in der Implementierung des Programmierers als auch Fehler oder fehlende Teile der Spezifikation für das Gerät.
+Probleme werden frühzeitig erkannt. Da Unit-Tests von Entwicklern durchgeführt werden, bei denen sie ihren individuellen Code vor der Integration testen, können Probleme sehr früh erkannt und dann und dort gelöst werden, ohne den Code von anderen zu beeinträchtigen. Dazu gehören sowohl Fehler in der Implementierung des Programmierers als auch Fehler oder fehlende Teile der Spezifikation für das Gerät.
 
 ## 4. ERLEICHTERT ÄNDERUNGEN UND VEREINFACHT DIE INTEGRATION
 
@@ -55,8 +55,8 @@ Unit-Tests helfen, den Debugging-Prozess zu vereinfachen. Wenn ein Test fehlschl
 
 ## 7. DESIGN
 
-Das Schreiben des Tests zwingt dich zunächst dazu, über Ihr Design nachzudenken und was es leisten muss, bevor du den Code schreiben. Dadurch bleibst du nicht nur konzentriert, sondern kannst auch bessere Designs erstellen.
-Das Testen eines Teils des Codes zwingt dich, zu definieren, wofür dieser Code verantwortlich ist. Wenn du dies einfach tun könntest, bedeutet das, dass die Verantwortung des Kodex klar definiert ist und somit eine hohe Kohäsion aufweist.
+Das Schreiben des Tests zwingt dich zunächst dazu, über dein Design nachzudenken und was es leisten muss, bevor du den Code schreibst. Dadurch bleibst du nicht nur konzentriert, sondern kannst auch bessere Designs erstellen.
+Das Testen eines Teils des Codes zwingt dich, zu definieren, wofür dieser Code verantwortlich ist. 
 
 ## 8. DIE KOSTEN ZU REDUZIEREN
 
