@@ -23,4 +23,4 @@ Du findest immer einen Überbegriff zu, in diesem Ordner splitte ich dann die Th
 3. [Atlassian git Doku](https://www.atlassian.com/git)
 4. [CSharp Doku](https://en.wikibooks.org/wiki/C_Sharp_Programming)
 
-Danke das du dir die Zeit genommen hast, mich zu lesen. Hab einen schönen Tag und viel Spaß beim Programmieren.
+Danke, dass du dir die Zeit genommen hast, mich zu lesen. Hab einen schönen Tag und viel Spaß beim Programmieren ihr Penner.
