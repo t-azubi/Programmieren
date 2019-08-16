@@ -35,6 +35,13 @@ namespace Taschenrechner
             var fractionBottom = DoubleToFraction(bi).Item2;
             return Power(num, bf) * root(fractionBottom, Power(num, fractionTop));
         }
+        /// <summary>
+        /// Find all PrimeNumber between Bottom and Top Border.
+        /// Test if i is divisible between 2 and i -1 if yes then its not a primenumber
+        /// </summary>
+        /// <param name="bottom border"></param>
+        /// <param name="top border"></param>
+        /// <returns>List of int with all Primenumbers between botom and top</returns>
         public List<int> Primenumber(int bottom, int top)
         {
             var flag = 1;
@@ -60,6 +67,10 @@ namespace Taschenrechner
             }
             return output;
         }
+        /// <summary>
+        /// Do 500 itteration and try to get close to the root 
+        /// 
+        /// </summary>
         public double root(int exp, double x)
         {
             double guess = ((1) > (x / exp) ? (1) : (x / exp));
@@ -116,7 +127,7 @@ namespace Taschenrechner
         }
         /// <summary>
         ///  Converts a float point number into a fraction
-        ///  You only need du input num
+        ///  You only need to input num
         /// </summary>
         /// <returns> 2 Integers </returns>
         public (int, int) DoubleToFraction(double num, double epsilon = 0.0001, int maxIterations = 50)
@@ -140,6 +151,9 @@ namespace Taschenrechner
 
             return (Convert.ToInt32(n), Convert.ToInt32(d[t]));
         }
+        /// <summary>
+        /// Return the Absolute of X
+        /// </summary>
         public double ABS(double X)
         {
             if (X < 0)

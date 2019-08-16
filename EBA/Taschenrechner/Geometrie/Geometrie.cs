@@ -30,7 +30,7 @@ namespace Taschenrechner
         }
         public void SetFromForm2(string result)
         {
-            if (result.IndexOf('=') == -1)
+            if ((result.IndexOf('=') == -1))
             {
                 helper = Convert.ToInt32(result);
             }
@@ -93,13 +93,16 @@ namespace Taschenrechner
                 Umfang_Dreieck();
             }
         }
+        /// <summary>
+        /// Checks that 2 sides are allways longer than one 
+        /// </summary>
         private bool checkSites(double a, double b, double c)
         {
-            if (a+b >c)
+            if ((a +b >c))
             {
-                if (b+c > a)
+                if ((b +c > a))
                 {
-                    if (c+a > b)
+                    if ((c +a > b))
                     {
                         return true;
                     }
@@ -125,6 +128,7 @@ namespace Taschenrechner
                 + umfang + "/2 -" + meineZahl.ToString() + ")*(" + umfang + "/2-" + zweiteZahl.ToString() + 
                 ")*(" + umfang + "/2-" + dritteZahl.ToString() + "))");
             var area = new MathCalc().root(2,root);
+             
             SetResultInParent("Flächeninhalt Dreieck: √(" + umfang + "/2*("
                 + umfang + "/2 -" + meineZahl.ToString() + ")*(" + umfang + "/2-" + zweiteZahl.ToString() +
                 ")*(" + umfang + "/2-" + dritteZahl.ToString() + ")) = " + area.ToString());

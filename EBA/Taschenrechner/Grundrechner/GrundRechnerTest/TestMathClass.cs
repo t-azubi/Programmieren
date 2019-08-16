@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq.Expressions;
+using System.Net.WebSockets;
 using Taschenrechner;
 using Xunit;
 
@@ -19,7 +21,16 @@ namespace GrundRechnerTest
             Assert.True(new MathTest().power(2, -2) == 0.25);
             Assert.True(new MathTest().power(5, -2) == 0.04);
         }
-
+        [Theory]
+        [InlineData(0.75,3,4)]
+        [InlineData(0.22, 11, 50)]
+        [InlineData(0.66, 33, 50)]
+        public void doubleToFraction(double input, int top, int bottom)
+        {
+            var result = new MathCalc().DoubleToFraction(input);
+            Assert.True(top == result.Item1);
+            Assert.True(bottom == result.Item2);
+        }
         [Fact]
         public void Power10()
         {

@@ -46,17 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ErrorHandling.cs" />
-    <Compile Include="Geometrie.cs" />
     <Compile Include="GrundrechnerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GrundrechnerForm.Designer.cs">
       <DependentUpon>GrundrechnerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grundrechner.cs" />
-    <Compile Include="Informatikrechner.cs" />
-    <Compile Include="MathCalc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GrundrechnerForm.resx">
@@ -85,6 +80,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Calc\Calc.csproj">
+      <Project>{4ff0290b-8cc2-49df-9c54-482039399b57}</Project>
+      <Name>Calc</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

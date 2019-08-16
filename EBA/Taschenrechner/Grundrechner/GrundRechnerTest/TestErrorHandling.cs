@@ -39,7 +39,7 @@ namespace GrundRechnerTest
             public void TestWrongInputWithoutNumbersBracketsminusminus()
             {
                 var Equation = "(--";
-                Assert.True("(-" == new ErrorHandlingTest().TestCheck(Equation));
+                Assert.True("(+" == new ErrorHandlingTest().TestCheck(Equation));
             }
             [Fact]
             public void TestWrongInputWithoutNumbersminusminusBrackets()

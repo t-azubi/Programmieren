@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Calc\Calc.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Taschenrechner">
       <HintPath>..\Grundrechner\bin\Debug\Taschenrechner.exe</HintPath>
     </Reference>

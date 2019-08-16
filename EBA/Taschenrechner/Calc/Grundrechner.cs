@@ -20,7 +20,7 @@ namespace Taschenrechner
         public double CalcConst(string equation)
         {
             Operation operation = new Operation();
-            if (equation.Any(d => d == '('))
+            if ((equation.Any(d => d == '(')))
             {
                 equation = operation.calcBrackets(equation, out Rechenschritte);
                 equation = makeEquationSolvable(equation);
@@ -39,18 +39,18 @@ namespace Taschenrechner
             Rechenschritte = this.Rechenschritte;
             equation = makeEquationSolvable(equation);
             var othermultiplication = Regex.Match(equation, @"\d\(");
-            if (othermultiplication.Success)
+            if ((othermultiplication.Success))
             {
                 equation = equation.Substring(0, othermultiplication.Index + 1) + "*" + equation.Substring(othermultiplication.Index + 1);
             }
             othermultiplication = Regex.Match(equation, @"\)\d");
-            if (othermultiplication.Success)
+            if ((othermultiplication.Success))
             {
                 equation = equation.Substring(0, othermultiplication.Index + 1) + "*" + equation.Substring(othermultiplication.Index + 1);
             }
             Operation operation = new Operation();
             var result = 0.0;
-            if (equation.IndexOf('-') == 0)
+            if ((equation.IndexOf('-') == 0))
             {
                 equation = "0" + equation;
             }
@@ -82,24 +82,24 @@ namespace Taschenrechner
         private Regex dividedminus = new Regex(@"#", RegexOptions.RightToLeft);
         public void Parse(string equation)
         {
-            if (equation == String.Empty)
+            if ((equation == String.Empty))
             {
                 equation = "0";
             }
             var operatorLocation = timesminus.Match(equation);
-            if (!operatorLocation.Success)
+            if ((!operatorLocation.Success))
             {
                 operatorLocation = dividedminus.Match(equation);
             }
-            if (!operatorLocation.Success)
+            if ((!operatorLocation.Success))
             {
                 operatorLocation = additionSubtraction.Match(equation);
             }
-            if (!operatorLocation.Success)
+            if ((!operatorLocation.Success))
             {
                 operatorLocation = multiplicationDivision.Match(equation);
             }
-            if (operatorLocation.Success)
+            if ((operatorLocation.Success))
             {
                 Operator = operatorLocation.Value;
                 LeftNumber = new Operation();
@@ -150,11 +150,11 @@ namespace Taschenrechner
             Operation operation = new Operation();
             var indexOfOpening = -1;
             var indexOfClosing = calculation.IndexOf(')');
-            if (indexOfClosing != -1)
+            if ((indexOfClosing != -1))
             {
                 indexOfOpening = calculation.Substring(0, indexOfClosing).LastIndexOf('(');
             }
-            if (indexOfClosing == -1 && indexOfOpening == -1)
+            if ((indexOfClosing == -1 && indexOfOpening == -1))
             {
                 operation.Parse(calculation);
                 var result = operation.Solve();
@@ -164,7 +164,7 @@ namespace Taschenrechner
             {
                 Rechenschritte.Add(calculation);
                 calculation = calculation.Substring(0, indexOfOpening) + calcBrackets(calculation.Substring(indexOfOpening + 1, indexOfClosing - indexOfOpening - 1), out Rechenschritte) + calculation.Substring(indexOfClosing + 1);
-                if (calculation.Any(d => d == ')'))
+                if ((calculation.Any(d => d == ')')))
                 {
                     calculation = calcBrackets(calculation, out Rechenschritte);
                 }

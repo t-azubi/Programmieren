@@ -16,12 +16,12 @@ namespace GrundRechnerTest
         [Fact]
         public void Testsin()
         {
-            Assert.True(new TestGeo().testsin(12) == 0.20791169081775933710174228440513);
+            Assert.True(new TestGeo().testsin(99) == 0.98763760667517231);
         }
         [Fact]
         public void Testcos()
         { 
-            Assert.True(new TestGeo().testcos(12) == 0.97814760073380558);
+            Assert.True(new TestGeo().testcos(12) == 0.97798725636738892);
         }
         [Fact]
         public void radtest()
@@ -37,7 +37,7 @@ namespace GrundRechnerTest
         }
         public double testsin(double x)
         {
-            return sin(x);
+            return Sin(x);
         }
         public double CircleRadus(double u)
         {
@@ -45,7 +45,7 @@ namespace GrundRechnerTest
         }
         public double testcos(double x)
         {
-            return cos(x);
+            return Cos(x);
         }
     }
 }
