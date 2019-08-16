@@ -16,7 +16,7 @@ Wenn ich dich inspiriert habe, dich mehr mit dem Thema Programmieren und allem D
 
 Du findest immer einen Überbegriff zu, in diesem Ordner splitte ich dann die Themen in kleinere, einfachere Subthemen. Der Ordner EBA, ist dabei der Ordner wo ich alle Programmieraufgaben aus meiner Schulzeit reinwerfen werde ^^ also seid nicht erschreckt wenn der etwas unübersichtlich und komisch wird. Ich halte mich nur an Lehrervorgaben ^^
 
-## Dokus die ich benutz habe
+## Dokus die ich benutzt habe
 
 1. [Mircosoft Docs basic C#](https://docs.microsoft.com/de-de/dotnet/csharp/)
 2. [git Doku](https://git-scm.com/docs)
