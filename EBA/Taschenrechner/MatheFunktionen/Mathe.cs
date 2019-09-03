@@ -48,22 +48,22 @@ namespace Taschenrechner
         private void Fakultät_Click(object sender, EventArgs e)
         {
             ShowMessage("Geben Sie die Zahl an von der Sie die Fakultät berechnen wollen.");
-            if (helper%1 != 0 && helper <0)
+            if (helper % 1 != 0 && helper < 0)
             {
                 ShowMessage("Man kann nur von ganzahligen und positiven Zahlen die Fakultät berechnen!");
             }
 
-            int result =new MathCalc().factorial(Convert.ToInt32(helper));
+            int result = new MathCalc().factorial(Convert.ToInt32(helper));
 
             SetResultInParent($"{helper}! = {result}");
-            
-                }
+
+        }
 
         private void Wurzel_Click(object sender, EventArgs e)
         {
             ShowMessage("Geben Sie die Zahl ein von der Sie eine Wurzel berechnen wollen!");
             double Radikant = helper;
-            if (helper <0)
+            if (helper < 0)
             {
                 ShowMessage("Wurzeln von negativen Zalen sind leider nicht möglich.");
             }
@@ -71,7 +71,7 @@ namespace Taschenrechner
             int Exponent = Convert.ToInt32(helper);
             double result = new MathCalc().root(Exponent, Radikant);
             SetResultInParent($"{helper}! = {result}");
-        }      
+        }
 
         private void Primzahlen_Click(object sender, EventArgs e)
         {
@@ -91,7 +91,7 @@ namespace Taschenrechner
             ShowMessage("Geben Sie die Zahl ein, mit der Sie potenzieren wollen");
             double pow = helper;
 
-            double result = new MathCalc().Power(num,pow);
+            double result = new MathCalc().Power(num, pow);
 
             SetResultInParent($"{num} potenziert mit {pow} = {result}");
         }
@@ -99,7 +99,10 @@ namespace Taschenrechner
         private void Dezimalbruchkonvertierung_Click(object sender, EventArgs e)
         {
             ShowMessage("Geben Sie eine Zahl ein welche Sie als Bruch dargstellt haben wollen!");
+            var y = helper;
+            var x = new MathCalc().DoubleToFraction(y);
 
+            SetResultInParent($"{y} als ein gemeiner Bruch ist : {x.Item1} / {x.Item2} ");
         }
     }
 }

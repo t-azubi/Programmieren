@@ -99,20 +99,20 @@ namespace Taschenrechner
         /// </summary>
         public double LN(double X)
         {
-                var x = Convert.ToDouble(X);
-                double f = 0f, fOld = 0f;
-                int i = 0;
-                do
-                {
-                    fOld = f;
-                    f = f + Power((x - 1) / (x + 1), 2 * i + 1) / (2 * i + 1);
-                    i++;
-                } while ((fOld != f));
-                return f * 2;
+            var x = Convert.ToDouble(X);
+            double f = 0f, fOld = 0f;
+            int i = 0;
+            do
+            {
+                fOld = f;
+                f = f + Power((x - 1) / (x + 1), 2 * i + 1) / (2 * i + 1);
+                i++;
+            } while ((fOld != f));
+            return f * 2;
         }
         public double LOG(double Exponent, double Base)
         {
-            return LN(Exponent)  / LN(Base);
+            return LN(Exponent) / LN(Base);
         }
         /// <summary>
         /// Calculates the factorial from the Input
@@ -123,7 +123,7 @@ namespace Taschenrechner
             {
                 return 1;
             }
-            return X * factorial(X-1);
+            return X * factorial(X - 1);
         }
         /// <summary>
         ///  Converts a float point number into a fraction
@@ -148,7 +148,6 @@ namespace Taschenrechner
                 d[t] = d[t - 1] * (int)z + d[t - 2];
                 n = (int)(decimalNumberPart * d[t] + 0.5);
             }
-
             return (Convert.ToInt32(n), Convert.ToInt32(d[t]));
         }
         /// <summary>
