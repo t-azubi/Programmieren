@@ -71,12 +71,12 @@ namespace Taschenrechner
         /// Do 500 itteration and try to get close to the root 
         /// 
         /// </summary>
-        public double root(int exp, double x)
+        public double root(int exp, double rad)
         {
-            double guess = ((1) > (x / exp) ? (1) : (x / exp));
+            double guess = ((1) > (rad / exp) ? (1) : (rad / exp));
 
             for (int i = 0; i < 500; i++)
-                guess -= (Power(guess, exp) - x) / (exp * Power(guess, exp - 1));
+                guess -= (Power(guess, exp) - rad) / (exp * Power(guess, exp - 1));
 
             return guess;
         }
@@ -115,15 +115,15 @@ namespace Taschenrechner
             return LN(Exponent)  / LN(Base);
         }
         /// <summary>
-        /// Calculates the Fakultät from the Input
+        /// Calculates the factorial from the Input
         /// </summary>
-        public int Fakultät(int X)
+        public int factorial(int X)
         {
             if (X == 0)
             {
                 return 1;
             }
-            return X * Fakultät(X-1);
+            return X * factorial(X-1);
         }
         /// <summary>
         ///  Converts a float point number into a fraction

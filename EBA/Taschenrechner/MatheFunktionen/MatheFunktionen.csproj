@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CB7E372C-3008-4D62-986B-3864F8C2662F}</ProjectGuid>
+    <ProjectGuid>{5FD20AA1-9563-48AB-B3DB-3C3CC5CE9C08}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Prozent</RootNamespace>
-    <AssemblyName>Prozent</AssemblyName>
+    <RootNamespace>MatheFunktionen</RootNamespace>
+    <AssemblyName>MatheFunktionen</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,14 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ProzentForm.cs">
+    <Compile Include="Mathe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProzentForm.Designer.cs">
-      <DependentUpon>ProzentForm.cs</DependentUpon>
+    <Compile Include="Mathe.Designer.cs">
+      <DependentUpon>Mathe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Mathe.resx">
+      <DependentUpon>Mathe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,9 +66,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ProzentForm.resx">
-      <DependentUpon>ProzentForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,14 +87,6 @@
     <ProjectReference Include="..\Eingabemodul\Eingabemodul\Eingabemodul.csproj">
       <Project>{1a47dc8a-bc89-470d-86a4-3fc22589cf87}</Project>
       <Name>Eingabemodul</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Geometrie\Geometrie.csproj">
-      <Project>{e413a0c0-bc62-4eb0-b51b-b1fe8d9559a8}</Project>
-      <Name>Geometrie</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Grundrechner\Grundrechner\Grundrechner.csproj">
-      <Project>{030d321c-b61d-4df0-a9fe-d6a7ead41999}</Project>
-      <Name>Grundrechner</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -115,6 +115,10 @@
       <Project>{030d321c-b61d-4df0-a9fe-d6a7ead41999}</Project>
       <Name>Grundrechner</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MatheFunktionen\MatheFunktionen.csproj">
+      <Project>{5fd20aa1-9563-48ab-b3db-3c3cc5ce9c08}</Project>
+      <Name>MatheFunktionen</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Prozent\Prozent.csproj">
       <Project>{cb7e372c-3008-4d62-986b-3864f8c2662f}</Project>
       <Name>Prozent</Name>

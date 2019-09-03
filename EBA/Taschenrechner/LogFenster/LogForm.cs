@@ -11,10 +11,12 @@ namespace Taschenrechner
         private GeometrieForm GeometrieForm = new GeometrieForm();
         private ColorDialog color = new ColorDialog();
         private FontDialog FontDialog = new FontDialog();
+        private MatheForm MatheForm = new MatheForm();
         public LogForm()
         {
             InitializeComponent();
             ProzentForm.AdviseParent += new ProzentForm.AdviseParentEventHandler(SetFromForm2);
+            MatheForm.AdviseParent += new MatheForm.AdviseParentEventHandler(SetFromForm2);
             GeometrieForm.AdviseParent += new GeometrieForm.AdviseParentEventHandler(SetFromForm2);
             this.Font = new Font("Arial", 8);
             Menu.Font = this.Font;
@@ -77,6 +79,15 @@ namespace Taschenrechner
             Log.AppendText(LoadedForm + Environment.NewLine + Environment.NewLine);
             Log.Select(firstIndex, LoadedForm.Length);
             Log.SelectionAlignment = HorizontalAlignment.Center;
+        }
+
+        private void Mathe_Click(object sender, EventArgs e)
+        {
+            LogFormatierung("Mathematische Funktionen");
+            MatheForm.Font = this.Font;
+            MatheForm.ForeColor = this.ForeColor;
+            MatheForm.BackColor = this.BackColor;
+            MatheForm.ShowDialog();
         }
     }
 }

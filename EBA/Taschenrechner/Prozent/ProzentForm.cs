@@ -5,7 +5,7 @@ namespace Taschenrechner
 {
     public partial class ProzentForm : Form
     {
-        public int helper = 0;
+        public double helper = 0;
         private EingabeForm EingabeForm = new EingabeForm();
         public delegate void AdviseParentEventHandler(string text);
         public event AdviseParentEventHandler AdviseParent = delegate { };
@@ -26,7 +26,7 @@ namespace Taschenrechner
         {
             if (result.IndexOf('=') == -1)
             {
-                helper = Convert.ToInt32(result);
+                helper = Convert.ToDouble(result);
             }
             else
             {

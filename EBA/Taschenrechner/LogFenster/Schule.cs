@@ -29,10 +29,10 @@ namespace Taschenrechner
             EingabeForm.BackColor = backColor;
             EingabeForm.ForeColor = foreColor;
             EingabeForm.AdviseParent += new EingabeForm.AdviseParentEventHandler(SetFromForm2);
-            ShowMessage("Bitte geben sie alle Noten an!(mit , Trennen)");
-            var noten = helper.Split(',');
-            Notenberechnung(noten);
-            Notenanzahl(noten);
+            ShowMessage("Bitte geben sie alle Noten an!(mit , Trennen)"); 
+            var Noten = helper.Split(',');
+            Notenberechnung(Noten);
+            Notenanzahl(Noten);
             return output;
         }
         private  void Notenberechnung(string[] noten)

@@ -12,7 +12,7 @@ namespace Taschenrechner
 {
     public partial class GeometrieForm : Form
     {
-        public int helper = 0;
+        public double helper = 0;
         private EingabeForm EingabeForm = new EingabeForm();
         public delegate void AdviseParentEventHandler(string text);
         public event AdviseParentEventHandler AdviseParent;
@@ -32,7 +32,7 @@ namespace Taschenrechner
         {
             if ((result.IndexOf('=') == -1))
             {
-                helper = Convert.ToInt32(result);
+                helper = Convert.ToDouble(result);
             }
             else
             {
@@ -65,13 +65,13 @@ namespace Taschenrechner
             ShowMessage("Bitte geben sie die Seitenlänge!");
             var zweiteZahl = helper;
             var area =new Grundrechner().CalcConst( meineZahl.ToString() + " *"+  zweiteZahl.ToString());
-            SetResultInParent("Flächeninhalt Parallelogramm: "+meineZahl.ToString() + " * " + zweiteZahl.ToString() +" = " + area.ToString());
+            SetResultInParent("Flächeninhalt Parallelogramm: "+meineZahl.ToString() + " *" + zweiteZahl.ToString() +" = " + area.ToString());
             Umfang_gramm(meineZahl, zweiteZahl);
         }
         public void Umfang_gramm(double  meineZahl, double zweiteZahl)
         {
             var umfang = new Grundrechner().CalcConst(" 2 * (" + meineZahl.ToString()+" *" + zweiteZahl.ToString() + ")");
-            SetResultInParent("Umfang Parallelogramm: 2 * (" + meineZahl.ToString() + " *  " + zweiteZahl.ToString() + ") = "+ umfang.ToString());
+            SetResultInParent("Umfang Parallelogramm: 2 * (" + meineZahl.ToString() + " *" + zweiteZahl.ToString() + ") = "+ umfang.ToString());
         }
         public void Umfang_Dreieck()
         {
@@ -84,7 +84,7 @@ namespace Taschenrechner
             if (checkSites(meineZahl, zweiteZahl, dritteZahl))
             {
                 var Umfang = meineZahl + zweiteZahl + dritteZahl;
-                SetResultInParent("Umfang Dreieck: "+meineZahl.ToString() + " + " + zweiteZahl.ToString() + " + " + dritteZahl.ToString() + " = " + Umfang.ToString());
+                SetResultInParent("Umfang Dreieck: "+meineZahl.ToString() + "+" + zweiteZahl.ToString() + "+" + dritteZahl.ToString() + " = " + Umfang.ToString());
                 area_Dreieck(meineZahl, zweiteZahl, dritteZahl);
             }
             else
@@ -127,11 +127,11 @@ namespace Taschenrechner
             var root = new Grundrechner().CalcConst("(" + umfang + "/2*("
                 + umfang + "/2 -" + meineZahl.ToString() + ")*(" + umfang + "/2-" + zweiteZahl.ToString() + 
                 ")*(" + umfang + "/2-" + dritteZahl.ToString() + "))");
-            var area = new MathCalc().root(2,root); 
+            var area = new MathCalc().root(2,root);
              
             SetResultInParent("Flächeninhalt Dreieck: √(" + umfang + "/2*("
-                + umfang + " / 2 -" + meineZahl.ToString() + ") * (" + umfang + " / 2 -" + zweiteZahl.ToString() +
-                ") * (" + umfang + " / 2 -" + dritteZahl.ToString() + ")) = " + area.ToString());
+                + umfang + "/2 -" + meineZahl.ToString() + ")*(" + umfang + "/2-" + zweiteZahl.ToString() +
+                ")*(" + umfang + "/2-" + dritteZahl.ToString() + ")) = " + area.ToString());
         }
 
 

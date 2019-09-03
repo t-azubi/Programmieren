@@ -30,7 +30,7 @@ namespace Taschenrechner
             var calc = new MathCalc();
             for (int i = 3; i < 21; i+=4 )
             {
-                sin -= calc.Power(x, i)/calc.Fakultät(i) + calc.Power(x, i+2) / calc.Fakultät(i+2);
+                sin -= calc.Power(x, i)/calc.factorial(i) + calc.Power(x, i+2) / calc.factorial(i+2);
             }
             return sin;
         }
@@ -45,7 +45,7 @@ namespace Taschenrechner
             double cos = 1;
             for (int i = 2; i < 20; i += 4)
             {
-                cos -= calc.Power(x, i) / calc.Fakultät(i) + calc.Power(x, i + 2) / calc.Fakultät(i + 2);
+                cos -= calc.Power(x, i) / calc.factorial(i) + calc.Power(x, i + 2) / calc.factorial(i + 2);
             }
             return cos;
         }
