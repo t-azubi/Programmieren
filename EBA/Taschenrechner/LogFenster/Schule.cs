@@ -29,8 +29,9 @@ namespace Taschenrechner
             EingabeForm.BackColor = backColor;
             EingabeForm.ForeColor = foreColor;
             EingabeForm.AdviseParent += new EingabeForm.AdviseParentEventHandler(SetFromForm2);
-            ShowMessage("Bitte geben sie alle Noten an!(mit , Trennen)"); 
-            var Noten = helper.Split(',');
+            const char seperator = ',';
+            ShowMessage($"Bitte geben sie alle Noten an!(mit {seperator} Trennen)"); 
+            var Noten = helper.Split(seperator);
             Notenberechnung(Noten);
             Notenanzahl(Noten);
             return output;

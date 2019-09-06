@@ -12,7 +12,7 @@ namespace Taschenrechner
 {
     public partial class MatheForm : Form
     {
-        public double helper = 0;
+        public double helper = 0;  // handel the input 
         private EingabeForm EingabeForm = new EingabeForm();
         public delegate void AdviseParentEventHandler(string text);
         public event AdviseParentEventHandler AdviseParent;

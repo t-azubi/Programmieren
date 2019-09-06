@@ -12,7 +12,7 @@ namespace Taschenrechner
 {
     public partial class GeometrieForm : Form
     {
-        public double helper = 0;
+        public double helper = 0; // handel input
         private EingabeForm EingabeForm = new EingabeForm();
         public delegate void AdviseParentEventHandler(string text);
         public event AdviseParentEventHandler AdviseParent;
@@ -34,7 +34,7 @@ namespace Taschenrechner
             {
                 helper = Convert.ToDouble(result);
             }
-            else
+            else // if '=' is in string than retun it back to log it is a function
             {
                 SetResultInParent(result);
             }

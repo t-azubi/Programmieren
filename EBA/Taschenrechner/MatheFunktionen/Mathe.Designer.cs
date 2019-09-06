@@ -40,17 +40,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.Location = new System.Drawing.Point(342, 46);
+            this.label1.Location = new System.Drawing.Point(256, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 29);
+            this.label1.Size = new System.Drawing.Size(115, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Funktionen:";
             // 
             // fakultät
             // 
-            this.fakultät.Location = new System.Drawing.Point(167, 116);
+            this.fakultät.Location = new System.Drawing.Point(125, 94);
+            this.fakultät.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.fakultät.Name = "fakultät";
-            this.fakultät.Size = new System.Drawing.Size(204, 63);
+            this.fakultät.Size = new System.Drawing.Size(153, 51);
             this.fakultät.TabIndex = 1;
             this.fakultät.Text = "Fakultät";
             this.fakultät.UseVisualStyleBackColor = true;
@@ -58,9 +60,10 @@
             // 
             // Wurzel
             // 
-            this.Wurzel.Location = new System.Drawing.Point(467, 116);
+            this.Wurzel.Location = new System.Drawing.Point(350, 94);
+            this.Wurzel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Wurzel.Name = "Wurzel";
-            this.Wurzel.Size = new System.Drawing.Size(201, 63);
+            this.Wurzel.Size = new System.Drawing.Size(151, 51);
             this.Wurzel.TabIndex = 2;
             this.Wurzel.Text = "Wurzel";
             this.Wurzel.UseVisualStyleBackColor = true;
@@ -68,9 +71,10 @@
             // 
             // potenz
             // 
-            this.potenz.Location = new System.Drawing.Point(167, 195);
+            this.potenz.Location = new System.Drawing.Point(125, 158);
+            this.potenz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.potenz.Name = "potenz";
-            this.potenz.Size = new System.Drawing.Size(204, 65);
+            this.potenz.Size = new System.Drawing.Size(153, 53);
             this.potenz.TabIndex = 3;
             this.potenz.Text = "Potenzfunktion";
             this.potenz.UseVisualStyleBackColor = true;
@@ -78,9 +82,10 @@
             // 
             // primzahlen
             // 
-            this.primzahlen.Location = new System.Drawing.Point(467, 195);
+            this.primzahlen.Location = new System.Drawing.Point(350, 158);
+            this.primzahlen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.primzahlen.Name = "primzahlen";
-            this.primzahlen.Size = new System.Drawing.Size(201, 65);
+            this.primzahlen.Size = new System.Drawing.Size(151, 53);
             this.primzahlen.TabIndex = 4;
             this.primzahlen.Text = "Primzahlen";
             this.primzahlen.UseVisualStyleBackColor = true;
@@ -88,27 +93,29 @@
             // 
             // dezimalbruchkonvertierung
             // 
-            this.dezimalbruchkonvertierung.Location = new System.Drawing.Point(167, 277);
+            this.dezimalbruchkonvertierung.Location = new System.Drawing.Point(125, 225);
+            this.dezimalbruchkonvertierung.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dezimalbruchkonvertierung.Name = "dezimalbruchkonvertierung";
-            this.dezimalbruchkonvertierung.Size = new System.Drawing.Size(204, 67);
+            this.dezimalbruchkonvertierung.Size = new System.Drawing.Size(153, 54);
             this.dezimalbruchkonvertierung.TabIndex = 5;
             this.dezimalbruchkonvertierung.Text = "Dezimalbruch-Konvertierung";
             this.dezimalbruchkonvertierung.UseVisualStyleBackColor = true;
             this.dezimalbruchkonvertierung.Click += new System.EventHandler(this.Dezimalbruchkonvertierung_Click);
             // 
-            // MatheFunktionen
+            // MatheForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 450);
+            this.ClientSize = new System.Drawing.Size(659, 366);
             this.Controls.Add(this.dezimalbruchkonvertierung);
             this.Controls.Add(this.primzahlen);
             this.Controls.Add(this.potenz);
             this.Controls.Add(this.Wurzel);
             this.Controls.Add(this.fakultät);
             this.Controls.Add(this.label1);
-            this.Name = "MatheFunktionen";
-            this.Text = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "MatheForm";
+            this.Text = "Mathematische Funktionen";
             this.ResumeLayout(false);
             this.PerformLayout();
 
