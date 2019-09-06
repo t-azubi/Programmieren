@@ -102,7 +102,16 @@ namespace Taschenrechner
             var y = helper;
             var x = new MathCalc().DoubleToFraction(y);
 
-            SetResultInParent($"{y} als ein gemeiner Bruch ist : {x.Item1} / {x.Item2} ");
+            if (x.Item1 > 0)
+            {
+                SetResultInParent($"{y} als ein gemeiner Bruch ist : {x.Item1} {x.Item2} / {x.Item3} ");
+            }
+            else
+            {
+
+                SetResultInParent($"{y} als ein gemeiner Bruch ist : {x.Item2} / {x.Item3} ");
+            }
+           
         }
     }
 }

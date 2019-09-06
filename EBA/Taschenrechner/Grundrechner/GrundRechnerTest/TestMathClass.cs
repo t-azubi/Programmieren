@@ -82,7 +82,11 @@ namespace GrundRechnerTest
         }
         public int FakultätTest(int x)
         {
-            return Fakultät(x);
+            return factorial(x);
+        }
+        public double RootTest(int x, double y)
+        {
+            return root(x, y);
         }
     }
     public class TestKonst

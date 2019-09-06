@@ -125,30 +125,68 @@ namespace Taschenrechner
             }
             return X * factorial(X - 1);
         }
-        /// <summary>
-        ///  Converts a float point number into a fraction
-        ///  You only need to input num
-        /// </summary>
-        /// <returns> 2 Integers </returns>
-        public (int, int) DoubleToFraction(double num, double epsilon = 0.0001, int maxIterations = 50)
+
+  //      /// <summary>
+  //      ///  Converts a float point number into a fraction
+  //      ///  You only need to input num
+  //      /// </summary>
+  //      /// <returns> 2 Integers </returns>
+  //      public (int, int) asd(double num, double epsilon = 0.0001, int maxIterations = 50)
+  //      {
+  //          double[] d = new double[maxIterations + 2];
+  //          d[1] = 1;
+  //          double z = num;
+  //          double n = 1;
+  //          int t = 1;
+  //
+  //          int wholeNumberPart = (int)num;
+  //          double decimalNumberPart = num - Convert.ToDouble(wholeNumberPart);
+  //
+  //          var x = ABS(n / d[t] - num);
+  //          while (t < maxIterations &&  x > epsilon)
+  //          {
+  //              t++;
+  //              z = 1 / (z - (int)z);
+  //              d[t] = d[t - 1] * (int)z + d[t - 2];
+  //              n = (int)(decimalNumberPart * d[t] + 0.5);
+  //              x = ABS(n / d[t] - num);
+  //          }
+  //          return (Convert.ToInt32(n), Convert.ToInt32(d[t]));
+  //      }
+
+
+        public (int ,int, int) DoubleToFraction(double num)
         {
-            double[] d = new double[maxIterations + 2];
-            d[1] = 1;
-            double z = num;
-            double n = 1;
-            int t = 1;
-
-            int wholeNumberPart = (int)num;
-            double decimalNumberPart = num - Convert.ToDouble(wholeNumberPart);
-
-            while (t < maxIterations && ABS(n / d[t] - num) > epsilon)
+            int wholenum = (int)num;
+            double decimalnum = num - wholenum;
+            long denominator = 10;
+            do
             {
-                t++;
-                z = 1 / (z - (int)z);
-                d[t] = d[t - 1] * (int)z + d[t - 2];
-                n = (int)(decimalNumberPart * d[t] + 0.5);
+                denominator = (long)(decimalnum * Power(10,2));
+            } while (denominator % 1 > 0);
+            long numerator = (long)(decimalnum * (double)denominator);
+            long gcd;
+            GreatestCommonD(ref numerator, ref denominator, out gcd);
+            return (wholenum, (int)numerator, (int)denominator);
+        }
+        void GreatestCommonD(ref long Numerator, ref long Denominator, out long greatestCommonD)
+        {
+            greatestCommonD = 0;
+            for (int x = 1; x <= Denominator; x++)
+            {
+                if ((Numerator % x == 0) && (Denominator % x == 0))
+                    greatestCommonD = x;
             }
-            return (Convert.ToInt32(n), Convert.ToInt32(d[t]));
+            if (greatestCommonD == 0)
+            {
+                return;
+            }
+            else
+            {
+                Numerator = Numerator / greatestCommonD;
+                Denominator = Denominator / greatestCommonD;
+
+            }
         }
         /// <summary>
         /// Return the Absolute of X
