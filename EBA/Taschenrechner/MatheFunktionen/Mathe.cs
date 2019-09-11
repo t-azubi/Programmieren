@@ -41,7 +41,7 @@ namespace Taschenrechner
             ShowMessage("Geben Sie an die wievielte Wurzel sie von der Zahl berechnen wollen!");
             int Exponent = Convert.ToInt32(helper);
             double result = new MathCalc().root(Exponent, Radikant);
-            SetResultInParent($"{helper}! = {result}");
+            SetResultInParent($"{Exponent}√{Radikant} = {result}");
         }
 
         private void Primzahlen_Click(object sender, EventArgs e)
@@ -51,8 +51,13 @@ namespace Taschenrechner
             ShowMessage("Geben sie die untere Grenze an, in der sie Primzahlen suchen wollen!");
             int untereGrenze = Convert.ToInt32(helper);
             var result = new MathCalc().Primenumber(untereGrenze, obereGrenze);
-
-            SetResultInParent($"Alle Primzahlen zwischen {untereGrenze} und {obereGrenze} sind: {result}");
+            var prim = "";
+            foreach (var item in result)
+            {
+                prim += item.ToString() + ", ";
+            }
+            prim =  prim.Remove(prim.LastIndexOf(','));
+            SetResultInParent($"Alle Primzahlen zwischen {untereGrenze} und {obereGrenze} sind: {prim}");
         }
 
         private void Potenz_Click(object sender, EventArgs e)

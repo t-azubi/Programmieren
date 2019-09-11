@@ -22,14 +22,15 @@ namespace GrundRechnerTest
             Assert.True(new MathTest().power(5, -2) == 0.04);
         }
         [Theory]
-        [InlineData(0.75,3,4)]
-        [InlineData(0.22, 11, 50)]
-        [InlineData(0.66, 33, 50)]
-        public void doubleToFraction(double input, int top, int bottom)
+        [InlineData(0.75,0,3,4)]
+        [InlineData(0.22,0, 11, 50)]
+        [InlineData(1.66, 1, 33, 50)]
+        public void doubleToFraction(double input,int whole, int top, int bottom)
         {
             var result = new MathCalc().DoubleToFraction(input);
-            Assert.True(top == result.Item1);
-            Assert.True(bottom == result.Item2);
+            Assert.True(whole == result.Item1);
+            Assert.True(top == result.Item2);
+            Assert.True(bottom == result.Item3);
         }
         [Fact]
         public void Power10()
@@ -40,15 +41,14 @@ namespace GrundRechnerTest
         [Fact]
         public void Root2()
         {
-            Assert.True(new MathTest().power(9, 0.5) == 3);
-            Assert.True(new MathTest().power(36, 0.5) == 6);
+            Assert.True(new MathTest().RootTest(2, 9) == 3);
+            Assert.True(new MathTest().RootTest(2, 36) == 6);
         }
         [Fact]
         public void Root3()
         {
-           var x =  new Grundrechner().Solve("1/3", out var Rechenschritte);
-            Assert.True(new MathTest().power(27, x) == 3);
-            Assert.True(new MathTest().power(1000, x) == 10);
+            Assert.True(new MathTest().RootTest(3, 27) == 3);
+            Assert.True(new MathTest().RootTest(3, 1000) == 10);
         }
         [Fact]
         public void LN2()

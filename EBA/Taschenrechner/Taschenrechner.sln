@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eingabemodul", "Eingabemodu
 		{030D321C-B61D-4DF0-A9FE-D6A7EAD41999} = {030D321C-B61D-4DF0-A9FE-D6A7EAD41999}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrundRechnerTest", "Grundrechner\GrundRechnerTest\GrundRechnerTest.csproj", "{AA415A30-2133-4CD5-85F6-668994A4B661}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTests", "Grundrechner\GrundRechnerTest\XUnitTests.csproj", "{AA415A30-2133-4CD5-85F6-668994A4B661}"
 	ProjectSection(ProjectDependencies) = postProject
 		{030D321C-B61D-4DF0-A9FE-D6A7EAD41999} = {030D321C-B61D-4DF0-A9FE-D6A7EAD41999}
 	EndProjectSection
