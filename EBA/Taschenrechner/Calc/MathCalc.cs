@@ -157,19 +157,21 @@ namespace Taschenrechner
 
         public (int ,int, int) DoubleToFraction(double num)
         {
-            int wholenum = (int)num;
-            double decimalnum = num - wholenum;
+            var x = splitExp(num);
+            int wholenum = x.Item1;
+            double decimalnum = x.Item2;
             long denominator = 10;
-            do
+            var numerator = (decimalnum * (double)denominator);
+            while (numerator % 1 != 0)
             {
-                denominator = (long)(decimalnum * Power(10,2));
-            } while (denominator % 1 > 0);
-            long numerator = (long)(decimalnum * (double)denominator);
+                denominator *= 10;
+                numerator *= 10;
+            }
             long gcd;
             GreatestCommonD(ref numerator, ref denominator, out gcd);
             return (wholenum, (int)numerator, (int)denominator);
         }
-        void GreatestCommonD(ref long Numerator, ref long Denominator, out long greatestCommonD)
+        void GreatestCommonD(ref double Numerator, ref long Denominator, out long greatestCommonD)
         {
             greatestCommonD = 0;
             for (int x = 1; x <= Denominator; x++)

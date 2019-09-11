@@ -57,7 +57,7 @@ namespace Taschenrechner
         {
             return convertToRadiant(x, false);
         }
-        private double convertToRadiant(double x,bool a)
+        private double convertToRadiant(double x,bool checkIfSin)
         {
             while (x > 360)
             {
@@ -67,19 +67,19 @@ namespace Taschenrechner
             {
                 x -= 180;
             }
-            if (a && x > 45)
+            if (checkIfSin && x > 45)
             {
                 x = 90 - x;
                 x *= (new Konstanten().pi / 180);
                 return sin(x);
             }
-            else if (!a && x > 45)
+            else if (!checkIfSin && x > 45)
             {
                 x = 90 - x;
                 x *= (new Konstanten().pi / 180);
                 return cos(x);
             }
-            if (a)
+            if (checkIfSin)
             {
                 x *= (new Konstanten().pi / 180);
                 return cos(x);

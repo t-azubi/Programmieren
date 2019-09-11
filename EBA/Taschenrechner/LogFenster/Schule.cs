@@ -41,7 +41,16 @@ namespace Taschenrechner
             double helper = 0;
             foreach (var item in noten)
             {
-                helper += Convert.ToInt16(item);
+                if (Convert.ToInt16(item) < 7 && Convert.ToInt16(item) > 0)
+                {
+                    helper += Convert.ToInt16(item);
+                }
+                else
+                {
+                    var x = noten.ToList();
+                    x.RemoveAt(x.IndexOf(item));
+                    
+                }
             }
             var count = noten.Count().ToString();
             var helper2 = new Grundrechner().CalcConst(helper.ToString() + " / " + count);
