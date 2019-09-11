@@ -10,41 +10,12 @@ using System.Windows.Forms;
 
 namespace Taschenrechner
 {
-    public partial class MatheForm : Form
+    public partial class MatheForm : BaseForm
     {
-        public double helper = 0;  // handel the input 
-        private EingabeForm EingabeForm = new EingabeForm();
-        public delegate void AdviseParentEventHandler(string text);
-        public event AdviseParentEventHandler AdviseParent;
         public MatheForm()
         {
-            EingabeForm.AdviseParent += new EingabeForm.AdviseParentEventHandler(SetFromForm2);
-            EingabeForm.Font = this.Font;
-            EingabeForm.ForeColor = this.ForeColor;
-            EingabeForm.BackColor = this.BackColor;
             InitializeComponent();
         }
-        public void SetResultInParent(string label)
-        {
-            AdviseParent(label);
-        }
-        public void SetFromForm2(string result)
-        {
-            if ((result.IndexOf('=') == -1))
-            {
-                helper = Convert.ToDouble(result);
-            }
-            else
-            {
-                SetResultInParent(result);
-            }
-        }
-        private void ShowMessage(string Message)
-        {
-            MessageBox.Show(Message, "Zahleneingabe");
-            EingabeForm.ShowDialog();
-        }
-
         private void Fakultät_Click(object sender, EventArgs e)
         {
             ShowMessage("Geben Sie die Zahl an von der Sie die Fakultät berechnen wollen.");

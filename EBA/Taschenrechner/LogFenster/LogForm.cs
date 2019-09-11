@@ -12,12 +12,14 @@ namespace Taschenrechner
         private ColorDialog color = new ColorDialog();
         private FontDialog FontDialog = new FontDialog();
         private MatheForm MatheForm = new MatheForm();
+        private Kreditform KreditForm = new Kreditform();
         public LogForm()
         {
             InitializeComponent();
-            ProzentForm.AdviseParent += new ProzentForm.AdviseParentEventHandler(SetFromForm2);
-            MatheForm.AdviseParent += new MatheForm.AdviseParentEventHandler(SetFromForm2);
-            GeometrieForm.AdviseParent += new GeometrieForm.AdviseParentEventHandler(SetFromForm2);
+            ProzentForm.AdviseParent += new BaseForm.AdviseParentEventHandler(SetFromForm2);
+            MatheForm.AdviseParent += new BaseForm.AdviseParentEventHandler(SetFromForm2);
+            GeometrieForm.AdviseParent += new BaseForm.AdviseParentEventHandler(SetFromForm2);
+            KreditForm.AdviseParent += new BaseForm.AdviseParentEventHandler(SetFromForm2);
             this.Font = new Font("Arial", 8);
             Menu.Font = this.Font;
         }
@@ -88,6 +90,16 @@ namespace Taschenrechner
             MatheForm.ForeColor = this.ForeColor;
             MatheForm.BackColor = this.BackColor;
             MatheForm.ShowDialog();
+        }
+
+        private void Kredit_Click(object sender, EventArgs e)
+        {
+            LogFormatierung("Kreditberechnungen");
+            KreditForm.Font = this.Font;
+            KreditForm.ForeColor = this.ForeColor;
+            KreditForm.BackColor = this.BackColor;
+            KreditForm.ShowDialog();
+
         }
     }
 }
