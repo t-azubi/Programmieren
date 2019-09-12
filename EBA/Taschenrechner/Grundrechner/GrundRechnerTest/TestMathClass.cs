@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Linq.Expressions;
+using System.Linq;
 using System.Net.WebSockets;
 using Taschenrechner;
 using Xunit;
@@ -31,6 +31,12 @@ namespace GrundRechnerTest
             Assert.True(whole == result.Item1);
             Assert.True(top == result.Item2);
             Assert.True(bottom == result.Item3);
+        }
+        [Fact]
+        public void primenumberTest()
+        {
+            var result = new MathCalc().Primenumber(1, 10);
+            Assert.True(2 == result.First());
         }
         [Fact]
         public void Power10()
