@@ -49,15 +49,15 @@ namespace Taschenrechner
         }
         private void btn_Krediteinmalig_Click(object sender, EventArgs e)
         {
-            ShowMessage("Geben sie den Kreditbetrag an");
+            ShowMessage("Geben Sie den Kreditbetrag an");
 
             double Kreditbetrag = helper;
 
-            ShowMessage("Geben sie den Jahreszins an");
+            ShowMessage("Geben Sie den Jahreszins an");
 
             double Zinshöhe = helper;
 
-            ShowMessage("Geben sie die Laufzeit in Monaten an!");
+            ShowMessage("Geben Sie die Laufzeit in Monaten an!");
 
             double Laufzeit = helper;
 
@@ -72,15 +72,15 @@ namespace Taschenrechner
 
         private void btn_Laufzeitkredit_Click(object sender, EventArgs e)
         {
-            ShowMessage("Geben sie den Kreditbetrag an");
+            ShowMessage("Geben Sie den Kreditbetrag an");
 
             double Kreditbetrag = helper;
 
-            ShowMessage("Geben sie den Jahreszins an");
+            ShowMessage("Geben Sie den Jahreszins an");
 
             double Zinshöhe = helper;
 
-            ShowMessage("Geben sie die Laufzeit in Monaten an!");
+            ShowMessage("Geben Sie die Laufzeit in Monaten an!");
 
             double Laufzeit = helper;
 
@@ -95,30 +95,39 @@ namespace Taschenrechner
 
         private void Btn_Ratenhöhekredit_Click(object sender, EventArgs e)
         {
-            ShowMessage("Geben sie den Kreditbetrag an");
+            var calc = new MathCalc();
+            ShowMessage("Geben Sie den Kreditbetrag an");
 
             double Kreditbetrag = helper;
 
-            ShowMessage("Geben sie den Jahreszins an");
+            ShowMessage("Geben Sie den Jahreszins an");
 
             double Zinshöhe = helper;
 
-            ShowMessage("Geben sie die Ratenhöhe an!");
+            ShowMessage("Geben Sie die Ratenhöhe an!");
 
             double Ratenhoehe = helper;
 
             double Zinsen_gesamt = 0;
             double Laufzeit = 0;
 
+            double Schlussrate = 0;
+
             for(int i = 0; i < 50; i++)
             {
                 Laufzeit = ( Kreditbetrag + Zinsen_gesamt ) / Ratenhoehe;
                 Zinsen_gesamt = Kreditbetrag * Zinshöhe /100 * Laufzeit / 12;
             }
+
+            if(Laufzeit != calc.RoundDown(Laufzeit))
+            {
+                Schlussrate = (Kreditbetrag + Zinsen_gesamt) - (calc.RoundDown(Laufzeit) * Ratenhoehe);
+            }
+            
             
             //SetResultInParent($"({Kreditbetrag} * {Zinshöhe}/100 *{Laufzeit}/12 + {Kreditbetrag}) / {Laufzeit} = {result}");
             SetResultInParent($"Kreditbetrag: {Kreditbetrag}, Zinssatz: {Zinshöhe}, Ratenhöhe: (monatlich) {Ratenhoehe}");
-            SetResultInParent($"Laufzeit: {Laufzeit}, Zinsen (gesamt): {Zinsen_gesamt}");
+            SetResultInParent($"Laufzeit: {Laufzeit}, Zinsen (gesamt): {Zinsen_gesamt}€, Schlussrate: {Schlussrate}€");
         }
     }
 }
