@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KreditForm.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KreditForm.Designer.cs">
-      <DependentUpon>KreditForm.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="KreditForm.resx">
-      <DependentUpon>KreditForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,9 +80,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BaseForm\BaseForm.csproj">
-      <Project>{af16e7f7-e7b3-4135-b8ce-4bbcdfda797f}</Project>
-      <Name>BaseForm</Name>
+    <ProjectReference Include="..\Calc\Calc.csproj">
+      <Project>{4ff0290b-8cc2-49df-9c54-482039399b57}</Project>
+      <Name>Calc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eingabemodul\Eingabemodul\Eingabemodul.csproj">
+      <Project>{1a47dc8a-bc89-470d-86a4-3fc22589cf87}</Project>
+      <Name>Eingabemodul</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

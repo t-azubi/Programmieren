@@ -29,9 +29,14 @@ namespace Taschenrechner
             EingabeForm.BackColor = backColor;
             EingabeForm.ForeColor = foreColor;
             EingabeForm.AdviseParent += new EingabeForm.AdviseParentEventHandler(SetFromForm2);
-            const char seperator = ',';
-            ShowMessage($"Bitte geben sie alle Noten an!(mit {seperator} Trennen)"); 
-            var Noten = helper.Split(seperator);
+            ShowMessage("Bitte geben sie alle Noten an!(mit , Trennen)");
+
+            var Noten = helper.Split(',');
+
+            if (helper == "")
+            {
+                return null;
+            }
             Notenberechnung(Noten);
             Notenanzahl(Noten);
             return output;
@@ -41,16 +46,7 @@ namespace Taschenrechner
             double helper = 0;
             foreach (var item in noten)
             {
-                if (Convert.ToInt16(item) < 7 && Convert.ToInt16(item) > 0)
-                {
-                    helper += Convert.ToInt16(item);
-                }
-                else
-                {
-                    var x = noten.ToList();
-                    x.RemoveAt(x.IndexOf(item));
-                    
-                }
+                helper += Convert.ToInt16(item);
             }
             var count = noten.Count().ToString();
             var helper2 = new Grundrechner().CalcConst(helper.ToString() + " / " + count);

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Taschenrechner
+namespace JustForYou_Informatik
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Taschenrechner
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Kreditform());
+            Application.Run(new fm_Informatik());
         }
     }
 }

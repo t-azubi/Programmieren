@@ -37,8 +37,6 @@
             this.schriftfarbeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Geometrie = new System.Windows.Forms.Button();
             this.Schule = new System.Windows.Forms.Button();
-            this.Mathe = new System.Windows.Forms.Button();
-            this.kredit = new System.Windows.Forms.Button();
             this.Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,26 +123,6 @@
             this.Schule.UseVisualStyleBackColor = false;
             this.Schule.Click += new System.EventHandler(this.Schule_Click);
             // 
-            // Mathe
-            // 
-            this.Mathe.Location = new System.Drawing.Point(12, 359);
-            this.Mathe.Name = "Mathe";
-            this.Mathe.Size = new System.Drawing.Size(147, 32);
-            this.Mathe.TabIndex = 5;
-            this.Mathe.Text = "Mathematische Funktionen";
-            this.Mathe.UseVisualStyleBackColor = false;
-            this.Mathe.Click += new System.EventHandler(this.Mathe_Click);
-            // 
-            // kredit
-            // 
-            this.kredit.Location = new System.Drawing.Point(179, 359);
-            this.kredit.Name = "kredit";
-            this.kredit.Size = new System.Drawing.Size(147, 32);
-            this.kredit.TabIndex = 6;
-            this.kredit.Text = "Kreditberechnung";
-            this.kredit.UseVisualStyleBackColor = false;
-            this.kredit.Click += new System.EventHandler(this.Kredit_Click);
-            // 
             // LogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,8 +130,6 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(576, 443);
-            this.Controls.Add(this.kredit);
-            this.Controls.Add(this.Mathe);
             this.Controls.Add(this.Schule);
             this.Controls.Add(this.Geometrie);
             this.Controls.Add(this.Prozentrechnung);
@@ -182,8 +158,6 @@
         private System.Windows.Forms.ToolStripMenuItem schriftfarbeToolStripMenuItem;
         private System.Windows.Forms.Button Geometrie;
         private System.Windows.Forms.Button Schule;
-        private System.Windows.Forms.Button Mathe;
-        private System.Windows.Forms.Button kredit;
     }
 }
 
