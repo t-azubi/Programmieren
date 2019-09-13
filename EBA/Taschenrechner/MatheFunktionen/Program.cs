@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Taschenrechner
+namespace MatheFunktionen
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Taschenrechner
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MatheForm());
+            Application.Run(new MatheFunktionen());
         }
     }
 }
