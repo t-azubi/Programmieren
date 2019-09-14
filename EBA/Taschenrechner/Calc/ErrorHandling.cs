@@ -4,7 +4,7 @@ namespace Taschenrechner
 {
     public class ErrorHandling
     {
-        private string CorrectEquation(int index, int remove,string Equation)
+        private string CorrectEquation(int index, int remove, string Equation)
         {
             if (index == 0)
             {
@@ -20,23 +20,23 @@ namespace Taschenrechner
         {
             if (Regex.IsMatch(Equation, @"[^E+\d]") && Regex.IsMatch(Equation, @"[^\d,\-+\*/()\s]") && Regex.IsMatch(Equation, @"[^E\-\d]"))
             {
-                Equation = CorrectEquation(0, 1,Equation);
+                Equation = CorrectEquation(0, 1, Equation);
             }
             if (Regex.IsMatch(Regex.Replace(Equation, @"\s", ""), @"\(\*"))
             {
-                Equation = CorrectEquation(0, 1,Equation);
+                Equation = CorrectEquation(0, 1, Equation);
             }
             if (Regex.IsMatch(Regex.Replace(Equation, @"\s", ""), @"\(\/"))
             {
-                Equation = CorrectEquation(0, 1,Equation);
+                Equation = CorrectEquation(0, 1, Equation);
             }
             if (Regex.IsMatch(Regex.Replace(Equation, @"\s", ""), @"\(\+"))
             {
-                Equation = CorrectEquation(0, 1,Equation);
+                Equation = CorrectEquation(0, 1, Equation);
             }
             if (Regex.IsMatch(Regex.Replace(Equation, @"\s", ""), @"\(\)"))
             {
-                Equation = CorrectEquation(0, 1,Equation);
+                Equation = CorrectEquation(0, 1, Equation);
             }
             if (Regex.IsMatch(Regex.Replace(Equation, @"\s", ""), @"\(--"))
             {
@@ -45,15 +45,6 @@ namespace Taschenrechner
                 Equation += "+";
             }
             var match = Regex.Match(Regex.Replace(Equation, @"\s", ""), @"[^\d]{3}");
-           if (match.Success)
-           {
-               if  (Regex.IsMatch(Regex.Replace(match.ToString(), @"\s", ""), @"[^\(]") ||
-                   Regex.IsMatch(Regex.Replace(Equation, @"\s", ""), @"--\(") ||
-                   Regex.IsMatch(Regex.Replace(Equation, @"\s", ""), @"\)--"))
-               {
-                   Equation = CorrectEquation(match.Index, 1,Equation);
-               }
-           }
             match = Regex.Match(Regex.Replace(Equation, @"\s", ""), @"[\*+,/]{2}");
             if (match.Success)
             {
