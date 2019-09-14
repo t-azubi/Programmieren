@@ -123,7 +123,7 @@
       <Project>{72f17da4-13ea-4f4f-8c77-9e0a81d35f05}</Project>
       <Name>Informatikrechner</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Krediet\Kreditberechnung.csproj">
+    <ProjectReference Include="..\Kredit\Kreditberechnung.csproj">
       <Project>{0b698f67-e957-428c-b3f0-3366151f74c3}</Project>
       <Name>Kreditberechnung</Name>
     </ProjectReference>
