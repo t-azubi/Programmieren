@@ -193,6 +193,25 @@ namespace Taschenrechner
         /// <summary>
         /// Return the Absolute of X
         /// </summary>
+        /// 
+
+
+        public int RoundDown(double numberToRound)
+        {
+            int result = 0;
+            if(numberToRound < 0)
+            {
+                return -1;
+            }
+            else
+            {
+                while (result < numberToRound)
+                {
+                    result++;
+                }
+                return result;
+            }
+        }
         public double ABS(double X)
         {
             if (X < 0)
