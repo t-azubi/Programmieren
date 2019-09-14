@@ -1,4 +1,4 @@
-﻿namespace JustForYou_Informatik
+﻿namespace Taschenrechner
 {
     partial class fm_BitByte
     {

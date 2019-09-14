@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Taschenrechner
 {
-  public  class Geometrie
+    public class Geometrie
     {
         public static double Area_Circle(double radius)
         {
@@ -15,7 +15,7 @@ namespace Taschenrechner
         }
         public static double Radius_Circle(double area)
         {
-            double radius = new MathCalc().root(2,new Grundrechner().CalcConst(area.ToString() + "/" + new Konstanten().pi.ToString()) ) ;
+            double radius = new MathCalc().root(2, new Grundrechner().CalcConst(area.ToString() + "/" + new Konstanten().pi.ToString()));
             return radius;
         }
 
@@ -28,9 +28,9 @@ namespace Taschenrechner
         {
             double sin = x;
             var calc = new MathCalc();
-            for (int i = 3; i < 21; i+=4 )
+            for (int i = 3; i < 21; i += 4)
             {
-                sin -= calc.Power(x, i)/calc.factorial(i) + calc.Power(x, i+2) / calc.factorial(i+2);
+                sin -= calc.Power(x, i) / calc.factorial(i) + calc.Power(x, i + 2) / calc.factorial(i + 2);
             }
             return sin;
         }
@@ -57,7 +57,7 @@ namespace Taschenrechner
         {
             return convertToRadiant(x, false);
         }
-        private double convertToRadiant(double x,bool a)
+        private double convertToRadiant(double x, bool checkIfSin)
         {
             while (x > 360)
             {
@@ -67,24 +67,24 @@ namespace Taschenrechner
             {
                 x -= 180;
             }
-            if (a && x > 45)
+            if (checkIfSin && x > 45)
             {
                 x = 90 - x;
                 x *= (new Konstanten().pi / 180);
                 return sin(x);
             }
-            else if (!a && x > 45)
+            else if (!checkIfSin && x > 45)
             {
                 x = 90 - x;
                 x *= (new Konstanten().pi / 180);
                 return cos(x);
             }
-            if (a)
+            if (checkIfSin)
             {
                 x *= (new Konstanten().pi / 180);
                 return cos(x);
             }
-                return sin(x);
+            return sin(x);
         }
     }
 }

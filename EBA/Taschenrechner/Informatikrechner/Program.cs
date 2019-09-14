@@ -16,7 +16,7 @@ namespace Taschenrechner
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MatheForm());
+            Application.Run(new fm_Informatik());
         }
     }
 }

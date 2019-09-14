@@ -11,11 +11,17 @@ namespace Taschenrechner
         private GeometrieForm GeometrieForm = new GeometrieForm();
         private ColorDialog color = new ColorDialog();
         private FontDialog FontDialog = new FontDialog();
+        private MatheForm MatheForm = new MatheForm();
+        private KreditForm KreditForm = new KreditForm();
+        private fm_Informatik InfoForm = new fm_Informatik(); 
         public LogForm()
         {
             InitializeComponent();
-            ProzentForm.AdviseParent += new ProzentForm.AdviseParentEventHandler(SetFromForm2);
-            GeometrieForm.AdviseParent += new GeometrieForm.AdviseParentEventHandler(SetFromForm2);
+            ProzentForm.AdviseParent += new BaseForm.AdviseParentEventHandler(SetFromForm2);
+            MatheForm.AdviseParent += new BaseForm.AdviseParentEventHandler(SetFromForm2);
+            GeometrieForm.AdviseParent += new BaseForm.AdviseParentEventHandler(SetFromForm2);
+            KreditForm.AdviseParent += new BaseForm.AdviseParentEventHandler(SetFromForm2);
+            InfoForm.AdviseParent += new BaseForm.AdviseParentEventHandler(SetFromForm2);
             this.Font = new Font("Arial", 8);
             Menu.Font = this.Font;
         }
@@ -65,12 +71,9 @@ namespace Taschenrechner
         {
             LogFormatierung("Schule");
             var result = new Schule().StartModule(this.Font, this.ForeColor, this.BackColor);
-            if (result != null)
+            foreach (var item in result)
             {
-                foreach (var item in result)
-                {
-                    SetFromForm2(item);
-                }
+                SetFromForm2(item);
             }
         }
         private void LogFormatierung(string LoadedForm)
@@ -80,6 +83,34 @@ namespace Taschenrechner
             Log.AppendText(LoadedForm + Environment.NewLine + Environment.NewLine);
             Log.Select(firstIndex, LoadedForm.Length);
             Log.SelectionAlignment = HorizontalAlignment.Center;
+        }
+
+        private void Mathe_Click(object sender, EventArgs e)
+        {
+            LogFormatierung("Mathematische Funktionen");
+            MatheForm.Font = this.Font;
+            MatheForm.ForeColor = this.ForeColor;
+            MatheForm.BackColor = this.BackColor;
+            MatheForm.ShowDialog();
+        }
+
+        private void Kredit_Click(object sender, EventArgs e)
+        {
+            LogFormatierung("Kreditberechnungen");
+            KreditForm.Font = this.Font;
+            KreditForm.ForeColor = this.ForeColor;
+            KreditForm.BackColor = this.BackColor;
+            KreditForm.ShowDialog();
+
+        }
+
+        private void Inforechner_Click(object sender, EventArgs e)
+        {
+            LogFormatierung("Informatikrechner");
+            InfoForm.Font = this.Font;
+            InfoForm.ForeColor = this.ForeColor;
+            InfoForm.BackColor = this.BackColor;
+            InfoForm.ShowDialog();
         }
     }
 }

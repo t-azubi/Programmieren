@@ -1,6 +1,6 @@
-﻿namespace MatheFunktionen
+﻿namespace Taschenrechner
 {
-    partial class MatheFunktionen
+    partial class MatheForm
     {
         /// <summary>
         /// Erforderliche Designervariable.

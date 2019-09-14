@@ -1,6 +1,6 @@
 ﻿namespace Taschenrechner
 {
-    partial class Kredit
+    partial class KreditForm
 
     {
         /// <summary>

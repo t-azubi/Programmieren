@@ -8,21 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace JustForYou_Informatik
+namespace Taschenrechner
 {
-    public partial class fm_Zahlensystem : Form
+    public partial class fm_Zahlensystem : BaseForm
     {
+        string eingabe = string.Empty;
         public fm_Zahlensystem()
         {
             InitializeComponent();
-            var eingabe= Eingabe();
+            eingabe = Eingabe();
         }
 
         public  string Eingabe()
         {
-            //var eingabe = "3010"; //Dies später durch eingabe aus Eingabemodul ersetzen
-
-            int[] digits = eingabe.ToString().ToCharArray().Select(x => (int)Char.GetNumericValue(x)).ToArray();
+            ShowMessage("Bitte gib die zu konvertierende Zahl ein");
+            var eingabe = helper.ToString();
+            int[] digits = eingabe.ToCharArray().Select(x => (int)Char.GetNumericValue(x)).ToArray();
             var pos = digits.Length;
             pos--; //zur Vermeidung von Nullpointern
 
@@ -55,25 +56,26 @@ namespace JustForYou_Informatik
             {
                 basis = 2;
                 ergebnis=Binär(eingabe);
+                SetResultInParent(ergebnis);
             }
             if (rB_Dezimal.Checked)
             {
                 basis = 10;
                 ergebnis=Dezimal(eingabe);
+                SetResultInParent(ergebnis);
             }
             if (rB_Octal.Checked)
             {
                 basis = 8;
                 ergebnis=Octal(eingabe);
+                SetResultInParent(ergebnis);
             }
             if (rB_Ternär.Checked)
             {
                 basis = 3;
                 ergebnis=Ternär(eingabe);
+                SetResultInParent(ergebnis);
             }
-            //Startfenstr aufrufen und ergebnis übertragen
-            /*fm_Startfenster x= new fm_Startfenster();
-            x.Show(ergebnis);*/
             this.Close();
         }
 

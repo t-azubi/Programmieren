@@ -10,42 +10,12 @@ using System.Windows.Forms;
 using Taschenrechner;
 
 namespace Taschenrechner
-
-
 {
-    public partial class Kredit : Form
+    public partial class KreditForm : BaseForm
     {
-        public double helper = 0;
-        private EingabeForm EingabeForm = new EingabeForm();
-        public delegate void AdviseParentEventHandler(string text);
-        public event AdviseParentEventHandler AdviseParent;
-        public Kredit()
+        public KreditForm()
         {
-            EingabeForm.AdviseParent += new EingabeForm.AdviseParentEventHandler(SetFromForm2);
-            EingabeForm.Font = this.Font;
-            EingabeForm.ForeColor = this.ForeColor;
-            EingabeForm.BackColor = this.BackColor;
             InitializeComponent();
-        }
-        public void SetResultInParent(string label)
-        {
-            AdviseParent(label);
-        }
-        public void SetFromForm2(string result)
-        {
-            if ((result.IndexOf('=') == -1))
-            {
-                helper = Convert.ToDouble(result);
-            }
-            else
-            {
-                SetResultInParent(result);
-            }
-        }
-        private void ShowMessage(string Message)
-        {
-            MessageBox.Show(Message, "Zahleneingabe");
-            EingabeForm.ShowDialog();
         }
         private void btn_Krediteinmalig_Click(object sender, EventArgs e)
         {

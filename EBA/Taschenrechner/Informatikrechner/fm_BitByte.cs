@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace JustForYou_Informatik
+namespace Taschenrechner
 {
-    public partial class fm_BitByte : Form
+    public partial class fm_BitByte : BaseForm
     {
         public fm_BitByte()
         {
@@ -32,7 +32,7 @@ namespace JustForYou_Informatik
                 ergebnis = eingabe * 8;
                 var rückgabe = eingabe + " byte = " + ergebnis + "bit";
             }
-            //MessageBox.Show(Convert.ToString(ergebnis));
+            SetResultInParent(ergebnis.ToString());
         }
     }
 }
