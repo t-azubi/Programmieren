@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.WebSockets;
 using Taschenrechner;
@@ -47,7 +48,8 @@ namespace GrundRechnerTest
         [Fact]
         public void Root2()
         {
-            Assert.True(new MathTest().RootTest(2, 9) == 3);
+            var root = new MathTest().RootTest(2, 9);
+            Assert.True( root == 3);
             Assert.True(new MathTest().RootTest(2, 36) == 6);
         }
         [Fact]
@@ -71,6 +73,19 @@ namespace GrundRechnerTest
         {
             Assert.True(new MathTest().LOGTest(10, 10) == 1);
         }
+        [Fact]
+        public void Primenumber()
+        {
+            var top = 12;
+            var bot = 5;
+            var exp = new List<int> {5, 7, 11 };
+
+            var res = new MathTest().PrimeNumberTest(bot, top);
+
+            Assert.True(exp[2] == res[2]);
+            Assert.True(exp[1] == res[1]);
+            Assert.True(exp[0] == res[0]);
+        }
     }
     public class MathTest : MathCalc
     {
@@ -93,6 +108,10 @@ namespace GrundRechnerTest
         public double RootTest(double exponent , double radikant)
         {
             return root(exponent,radikant);
+        }
+        public List<int> PrimeNumberTest(int bottomBorder, int topBorder)
+        {
+            return Primenumber(bottomBorder, topBorder);
         }
     }
     public class TestKonst

@@ -44,6 +44,13 @@ namespace Taschenrechner
                 Equation = CorrectEquation(0, 1, Equation);
                 Equation += "+";
             }
+            if (Regex.IsMatch(Regex.Replace(Equation, @"\s", ""), @"--\("))
+            {
+                Equation = CorrectEquation(0, 1, Equation);
+                Equation = CorrectEquation(0, 1, Equation);
+                Equation = CorrectEquation(0, 1, Equation);
+                Equation += "+(";
+            }
             var match = Regex.Match(Regex.Replace(Equation, @"\s", ""), @"[^\d]{3}");
             match = Regex.Match(Regex.Replace(Equation, @"\s", ""), @"[\*+,/]{2}");
             if (match.Success)

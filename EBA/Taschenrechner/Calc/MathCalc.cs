@@ -29,10 +29,12 @@ namespace Taschenrechner
                 }
                 return result;
             }
-            var bf = splitExp(pow).Item1;
-            var bi = splitExp(pow).Item2;
-            var fractionTop = DoubleToFraction(bi).Item1;
-            var fractionBottom = DoubleToFraction(bi).Item2;
+            var split = splitExp(pow);
+            var bf = split.Item1;
+            var bi = split.Item2;
+            var d2f = DoubleToFraction(bi);
+            var fractionTop = d2f.Item1 * d2f.Item3 + d2f.Item2;
+            var fractionBottom = DoubleToFraction(bi).Item3;
             return Power(num, bf) * root(fractionBottom, Power(num, fractionTop));
         }
         /// <summary>
@@ -67,9 +69,18 @@ namespace Taschenrechner
             }
             return output;
         }
+        /// <summary>
+        /// Do 500 itteration and try to get close to the root 
+        /// 
+        /// </summary>
         public double root(double exp, double rad)
         {
-            return Power(rad, 1/exp);  
+            double guess = ((1) > (rad / exp) ? (1) : (rad / exp));
+
+            for (int i = 0; i < 500; i++)
+                guess -= (Power(guess, exp) - rad) / (exp * Power(guess, exp - 1));
+
+            return guess;
         }
         /// <summary>
         /// Splits the Inputted Number in natural number and remaining float 
