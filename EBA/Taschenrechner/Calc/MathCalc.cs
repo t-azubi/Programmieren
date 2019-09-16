@@ -67,18 +67,9 @@ namespace Taschenrechner
             }
             return output;
         }
-        /// <summary>
-        /// Do 500 itteration and try to get close to the root 
-        /// 
-        /// </summary>
-        public double root(int exp, double rad)
+        public double root(double exp, double rad)
         {
-            double guess = ((1) > (rad / exp) ? (1) : (rad / exp));
-
-            for (int i = 0; i < 500; i++)
-                guess -= (Power(guess, exp) - rad) / (exp * Power(guess, exp - 1));
-
-            return guess;
+            return Power(rad, 1/exp);  
         }
         /// <summary>
         /// Splits the Inputted Number in natural number and remaining float 
