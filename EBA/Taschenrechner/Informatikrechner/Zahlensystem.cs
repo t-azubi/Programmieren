@@ -16,33 +16,32 @@ namespace Taschenrechner
         public fm_Zahlensystem()
         {
             InitializeComponent();
-            eingabe = Eingabe();
         }
 
-        public  string Eingabe()
+        public string Eingabe()
         {
             ShowMessage("Bitte gib die zu konvertierende Zahl ein");
             var eingabe = helper.ToString();
             int[] digits = eingabe.ToCharArray().Select(x => (int)Char.GetNumericValue(x)).ToArray();
-            var pos = digits.Length;
-            pos--; //zur Vermeidung von Nullpointern
+            var pos = digits.Length -1 ; //zur Vermeidung von Nullpointern
 
             //hier wird überprüft welche Zahlen in der Eingabe vorhanden sind und daraus ermittelt welche Zahlensysteme möglich sind
             //deaktiviert RadioButtons für ungültige Zahlensysteme
-            while (pos > 0)
+            while (pos >= 0)
             {
-                if (digits[pos] > 1)
+                if (digits[pos] <= 2 && rB_Binär.Enabled)
                 {
                     rB_Binär.Enabled = false;
                 }
-                if (digits[pos] > 7)
-                {
-                    rB_Octal.Enabled = false;
-                }
-                if (digits[pos] > 2)
+                else if (digits[pos] <= 3 && rB_Ternär.Enabled)
                 {
                     rB_Ternär.Enabled = false;
                 }
+                else if (digits[pos] <= 8 && rB_Octal.Enabled)
+                {
+                    rB_Octal.Enabled = false;
+                }
+                
                 pos--;
             }
             return eingabe;

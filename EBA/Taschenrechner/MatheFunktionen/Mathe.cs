@@ -77,7 +77,15 @@ namespace Taschenrechner
             ShowMessage("Geben Sie eine Zahl ein welche Sie als Bruch dargstellt haben wollen!");
             var y = helper;
             var x = new MathCalc().DoubleToFraction(y);
-            SetResultInParent($"{y} als ein gemeiner Bruch ist : {x.Item1} / {x.Item2} ");
+            if (x.Item1 / x.Item2 > 1)
+            {
+                var whole = (int)(x.Item1 / x.Item2);
+                SetResultInParent($"{y} als ein gemeiner Bruch ist : {whole}    {(x.Item1 - whole* x.Item2)}/ {x.Item2} ");
+            }
+            else
+            {
+                SetResultInParent($"{y} als ein gemeiner Bruch ist : {x.Item1} / {x.Item2} ");
+            }
         }
     }
 }

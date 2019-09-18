@@ -26,6 +26,7 @@ namespace Taschenrechner
             Zahlensystem.Font = this.Font;
             Zahlensystem.BackColor = this.BackColor;
             Zahlensystem.ForeColor = this.ForeColor;
+            Zahlensystem.Eingabe();
             Zahlensystem.ShowDialog();
             SetResultInParent(helper.ToString());
         }

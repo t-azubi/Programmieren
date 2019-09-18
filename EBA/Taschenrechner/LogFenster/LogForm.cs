@@ -25,18 +25,6 @@ namespace Taschenrechner
             this.Font = new Font("Arial", 8);
             Menu.Font = this.Font;
         }
-        private void OpenProzentrechnung_Click(object sender, EventArgs e)
-        {
-            LogFormatierung("Prozentrechnung");
-            ProzentForm.Font = this.Font;
-            ProzentForm.ForeColor = this.ForeColor;
-            ProzentForm.BackColor = this.BackColor;
-            ProzentForm.ShowDialog();
-        }
-        public void SetFromForm2(string result)
-        {
-            Log.AppendText(result + Environment.NewLine);
-        }
         private void HintergrundfarbeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             color.ShowDialog();
@@ -57,7 +45,18 @@ namespace Taschenrechner
             Menu.ForeColor = color.Color;
             this.ForeColor = color.Color;
         }
-
+        public void SetFromForm2(string result)
+        {
+            Log.AppendText(result + Environment.NewLine);
+        }
+        private void OpenProzentrechnung_Click(object sender, EventArgs e)
+        {
+            LogFormatierung("Prozentrechnung");
+            ProzentForm.Font = this.Font;
+            ProzentForm.ForeColor = this.ForeColor;
+            ProzentForm.BackColor = this.BackColor;
+            ProzentForm.ShowDialog();
+        }
         private void Open_Geometrie_Click(object sender, EventArgs e)
         {
             LogFormatierung("Geometrie");
@@ -66,7 +65,6 @@ namespace Taschenrechner
             GeometrieForm.BackColor = this.BackColor;
             GeometrieForm.ShowDialog();
         }
-
         private void Schule_Click(object sender, EventArgs e)
         {
             LogFormatierung("Schule");
@@ -84,7 +82,6 @@ namespace Taschenrechner
             Log.Select(firstIndex, LoadedForm.Length);
             Log.SelectionAlignment = HorizontalAlignment.Center;
         }
-
         private void Mathe_Click(object sender, EventArgs e)
         {
             LogFormatierung("Mathematische Funktionen");
@@ -93,7 +90,6 @@ namespace Taschenrechner
             MatheForm.BackColor = this.BackColor;
             MatheForm.ShowDialog();
         }
-
         private void Kredit_Click(object sender, EventArgs e)
         {
             LogFormatierung("Kreditberechnungen");
@@ -103,7 +99,6 @@ namespace Taschenrechner
             KreditForm.ShowDialog();
 
         }
-
         private void Inforechner_Click(object sender, EventArgs e)
         {
             LogFormatierung("Informatikrechner");
