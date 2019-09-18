@@ -16,22 +16,32 @@ namespace GrundRechnerTest
             Assert.True(new MathTest().power(5, 2) == 25);
             Assert.True(new MathTest().power(12, 2) == 144);
         }
+
+        [Fact]
+        public void PowerFloat()
+        {
+            Assert.True(new MathTest().power(16, 0.5) == 4);
+            Assert.True(new MathTest().power(625, 0.5) == 25);
+            Assert.True(new MathTest().power(25, 0.5) == 5);
+        }
+        [Theory]
+        [InlineData(5.23, 523, 100)]
+        [InlineData(0.333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333, 1, 3)]
+        public void Double2FractionTest(double input, int upnumber, int downnumber)
+        {            
+            var sourceNumber = input;
+
+            var result = new MathTest().DoubleToFraction(sourceNumber);
+            
+            Assert.Equal(upnumber, result.Item1);
+            Assert.Equal(downnumber, result.Item2);
+
+        }
         [Fact]
         public void PowerNeg2()
         {
             Assert.True(new MathTest().power(2, -2) == 0.25);
             Assert.True(new MathTest().power(5, -2) == 0.04);
-        }
-        [Theory]
-        [InlineData(0.75,0,3,4)]
-        [InlineData(0.22,0, 11, 50)]
-        [InlineData(1.66, 1, 33, 50)]
-        public void doubleToFraction(double input,int whole, int top, int bottom)
-        {
-            var result = new MathCalc().DoubleToFraction(input);
-            Assert.True(whole == result.Item1);
-            Assert.True(top == result.Item2);
-            Assert.True(bottom == result.Item3);
         }
         [Fact]
         public void primenumberTest()
@@ -89,9 +99,9 @@ namespace GrundRechnerTest
     }
     public class MathTest : MathCalc
     {
-        public double power(double x, double y)
+        public double power(double num, double exp)
         {
-            return Power(x, y);
+            return Power(num, exp);
         }
         public double naturalLN(double x)
         {

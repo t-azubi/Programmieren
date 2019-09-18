@@ -33,8 +33,8 @@ namespace Taschenrechner
             var bf = split.Item1;
             var bi = split.Item2;
             var d2f = DoubleToFraction(bi);
-            var fractionTop = d2f.Item1 * d2f.Item3 + d2f.Item2;
-            var fractionBottom = DoubleToFraction(bi).Item3;
+            var fractionTop = d2f.Item1;
+            var fractionBottom = DoubleToFraction(bi).Item2;
             return Power(num, bf) * root(fractionBottom, Power(num, fractionTop));
         }
         /// <summary>
@@ -128,36 +128,52 @@ namespace Taschenrechner
             return X * factorial(X - 1);
         }
 
-        //      /// <summary>
-        //      ///  Converts a float point number into a fraction
-        //      ///  You only need to input num
-        //      /// </summary>
-        //      /// <returns> 2 Integers </returns>
-        //      public (int, int) asd(double num, double epsilon = 0.0001, int maxIterations = 50)
-        //      {
-        //          double[] d = new double[maxIterations + 2];
-        //          d[1] = 1;
-        //          double z = num;
-        //          double n = 1;
-        //          int t = 1;
-        //
-        //          int wholeNumberPart = (int)num;
-        //          double decimalNumberPart = num - Convert.ToDouble(wholeNumberPart);
-        //
-        //          var x = ABS(n / d[t] - num);
-        //          while (t < maxIterations &&  x > epsilon)
-        //          {
-        //              t++;
-        //              z = 1 / (z - (int)z);
-        //              d[t] = d[t - 1] * (int)z + d[t - 2];
-        //              n = (int)(decimalNumberPart * d[t] + 0.5);
-        //              x = ABS(n / d[t] - num);
-        //          }
-        //          return (Convert.ToInt32(n), Convert.ToInt32(d[t]));
-        //      }
+        /// <summary>
+        ///  Converts a float point number into a fraction
+        ///  You only need to input num
+        ///  
+        ///  See here https://en.wikipedia.org/wiki/Euclidean_algorithm
+        /// </summary>
+        /// <returns> 2 Integers </returns>
+        public (long, long) DoubleToFraction(double decimalSourceNumber, double precision = 0.0001, int maxIterations = 50)
+        {
+            double[] Denominators = new double[maxIterations + 2];
+            Denominators[0] = 0;
+            Denominators[1] = 1;
+            double decimalNumber = decimalSourceNumber;
+            double Numerator = 1;
+            long iterationCount = 1;
+
+            // that are the numbers befor the decimal point
+            long wholeNumberPart = (long)decimalSourceNumber;
+            // that are the numbers after the decimal point
+            double origninalDecimalNumberPart = decimalSourceNumber - Convert.ToDouble(wholeNumberPart);
+
+            // with each iteration this value comes closer to 0 but is never 0.
+            // rule: approximateValue > 0 
+            var approximateValue = ABS((Numerator / Denominators[iterationCount] + (long)decimalSourceNumber) - decimalSourceNumber);
+            while (iterationCount < maxIterations && approximateValue > precision)
+            {
+                iterationCount++;
+                wholeNumberPart = (long)decimalNumber;
+                var decimalNumberPart = decimalNumber - wholeNumberPart;
+                // the decimal number is now between 1 and lower 10
+                // because an excat match is 1 and a 0.9xxx is near 10 but never 10
+                decimalNumber = 1 / decimalNumberPart;
+                // a = q0 * b + r0
+                // b = q1 * r0 + r1
+                Denominators[iterationCount] = Denominators[iterationCount - 1] * (long)decimalNumber + Denominators[iterationCount - 2];
+
+                var blub = origninalDecimalNumberPart * Denominators[iterationCount];
+               // mathematicly round it up to the next number if greater or even than .5
+                Numerator = (long)(blub + 0.5);
+                approximateValue = ABS((Numerator / Denominators[iterationCount] + (long)decimalSourceNumber) - decimalSourceNumber);
+            }
+            return (Convert.ToInt64(Numerator + ((long)decimalSourceNumber * Denominators[iterationCount])), Convert.ToInt64(Denominators[iterationCount]));
+        }
 
 
-        public (int, int, int) DoubleToFraction(double num)
+        public (int, int, int) asd(double num)
         {
             var x = splitExp(num);
             int wholenum = x.Item1;
