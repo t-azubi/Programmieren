@@ -20,7 +20,8 @@ namespace Taschenrechner
 
         private void btn_Weiter_Click(object sender, EventArgs e)
         {
-            var eingabe = 800; //Testvariable,später durch Wert aus Eingabemosul ersetzen
+            ShowMessage("Bitte Eingabe machen");
+            var eingabe = Convert.ToInt32(helper);
             var ergebnis = 0;
             if (rB_Bit.Checked)
             {

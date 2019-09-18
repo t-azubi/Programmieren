@@ -30,8 +30,6 @@ namespace Taschenrechner
             Zahlensystem.ShowDialog();
             SetResultInParent(helper.ToString());
         }
-
-
         //für das Bild
         private void btn_Bild_Click(object sender, EventArgs e)
         {
