@@ -12,7 +12,7 @@ namespace Taschenrechner
 {
     public partial class fm_Informatik : BaseForm
     {
-        private readonly fm_Zahlensystem Zahlensystem = new fm_Zahlensystem();
+        private readonly Zahlensystemkonvertierung Zahlensystem = new Zahlensystemkonvertierung();
         private readonly fm_BitByte BitByte = new fm_BitByte();
         public fm_Informatik()
         {
@@ -26,7 +26,6 @@ namespace Taschenrechner
             Zahlensystem.Font = this.Font;
             Zahlensystem.BackColor = this.BackColor;
             Zahlensystem.ForeColor = this.ForeColor;
-            Zahlensystem.Eingabe();
             Zahlensystem.ShowDialog();
             SetResultInParent(helper.ToString());
         }

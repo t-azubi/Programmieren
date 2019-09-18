@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Taschenrechner
 {
@@ -14,6 +15,10 @@ namespace Taschenrechner
             return DecimalToArbitrarySystem(DecValue, 2);
         }
         private string DecToOctal(int DecValue)
+        {
+            return DecimalToArbitrarySystem(DecValue, 8);
+        }
+        private string DecToTer(int DecValue)
         {
             return DecimalToArbitrarySystem(DecValue, 8);
         }
@@ -60,11 +65,21 @@ namespace Taschenrechner
         }
         private int HexaToDec(string HexaValue)
         {
-            return Convert.ToInt32(HexaValue, 2);
+            return Convert.ToInt32(HexaValue, 16);
         }
         private int OctalToDec(string OctalValue)
         {
-            return Convert.ToInt32(OctalValue, 2);
+            return Convert.ToInt32(OctalValue, 8);
+        }
+        private int TerToDec(string TerValue)
+        {
+            var digits = TerValue.ToCharArray().ToList();
+            double dec = 0;
+            for (int i = 0; i < digits.Count; i++)
+            {
+                dec += Convert.ToInt16(digits[i].ToString()) * new MathCalc().Power(3, digits.Count- 1 -i);
+            }
+            return (int)dec;
         }
         /// <summary>
         /// Gives Back a List where item 0 is the Bin
@@ -74,13 +89,14 @@ namespace Taschenrechner
         /// <param name="DecValue"></param>
         /// <param name="HexaValue"></param>
         /// <returns></returns>
-        public List<string> MyConverter(string BinValue, string OctalValue, string DecValue, string HexaValue)
+        public List<string> MyConverter(string BinValue, string OctalValue, string DecValue, string HexaValue, string TerValue)
         {
             List<string> result = new List<string>();
             if (BinValue != string.Empty)
             {
                var DecInt = BinToDec(BinValue);
                 result.Add(BinValue);
+                result.Add(DecToTer(DecInt));
                 result.Add(DecToOctal(DecInt));
                 result.Add(DecInt.ToString());
                 result.Add(DecToHexa(DecInt));
@@ -90,6 +106,7 @@ namespace Taschenrechner
             {
                 var DecInt = OctalToDec(OctalValue);
                 result.Add(DecToBin(DecInt));
+                result.Add(DecToTer(DecInt));
                 result.Add(OctalValue);
                 result.Add(DecInt.ToString());
                 result.Add(DecToHexa(DecInt));
@@ -99,6 +116,7 @@ namespace Taschenrechner
             {
                 var DecInt = Convert.ToInt32(DecValue);
                 result.Add(DecToBin(DecInt));
+                result.Add(DecToTer(DecInt));
                 result.Add(DecToOctal(DecInt));
                 result.Add(DecValue);
                 result.Add(DecToHexa(DecInt));
@@ -108,9 +126,20 @@ namespace Taschenrechner
             {
                 var DecInt = HexaToDec(HexaValue);
                 result.Add(DecToBin(DecInt));
+                result.Add(DecToTer(DecInt));
                 result.Add(DecToOctal(DecInt));
                 result.Add(DecInt.ToString());
                 result.Add(HexaValue);
+                return result;
+            }
+            if (TerValue != string.Empty)
+            {
+                var DecInt = TerToDec(TerValue);
+                result.Add(DecToBin(DecInt));
+                result.Add(TerValue);
+                result.Add(DecToOctal(DecInt));
+                result.Add(DecInt.ToString());
+                result.Add(DecToHexa(DecInt));
                 return result;
             }
             return result;

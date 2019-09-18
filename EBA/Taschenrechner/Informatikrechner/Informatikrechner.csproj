@@ -60,11 +60,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Zahlensystem.cs">
+    <Compile Include="Zahlensystemkonvertierung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Zahlensystem.Designer.cs">
-      <DependentUpon>Zahlensystem.cs</DependentUpon>
+    <Compile Include="Zahlensystemkonvertierung.Designer.cs">
+      <DependentUpon>Zahlensystemkonvertierung.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="fm_BitByte.resx">
       <DependentUpon>fm_BitByte.cs</DependentUpon>
@@ -81,8 +81,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Zahlensystem.resx">
-      <DependentUpon>Zahlensystem.cs</DependentUpon>
+    <EmbeddedResource Include="Zahlensystemkonvertierung.resx">
+      <DependentUpon>Zahlensystemkonvertierung.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -101,6 +101,10 @@
     <ProjectReference Include="..\BaseForm\BaseForm.csproj">
       <Project>{388804ec-e599-4ac7-b19e-42aaeacaf650}</Project>
       <Name>BaseForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Calc\Calc.csproj">
+      <Project>{4ff0290b-8cc2-49df-9c54-482039399b57}</Project>
+      <Name>Calc</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

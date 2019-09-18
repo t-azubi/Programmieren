@@ -22,18 +22,19 @@ namespace Taschenrechner
         {
             ShowMessage("Bitte Eingabe machen");
             var eingabe = Convert.ToInt32(helper);
-            var ergebnis = 0;
+            double ergebnis = 0;
+            var rückgabe = string.Empty;
             if (rB_Bit.Checked)
             {
-                ergebnis = eingabe / 8;
-                var rückgabe = eingabe + " bit = " + ergebnis + "byte";
+                ergebnis = (int)(eingabe / 8);
+                rückgabe = eingabe + " bit = " + ergebnis + "byte";
             }
             if (rB_Byte.Checked)
             {
                 ergebnis = eingabe * 8;
-                var rückgabe = eingabe + " byte = " + ergebnis + "bit";
+                rückgabe = eingabe + " byte = " + ergebnis + "bit";
             }
-            SetResultInParent(ergebnis.ToString());
+            SetResultInParent(rückgabe);
         }
     }
 }

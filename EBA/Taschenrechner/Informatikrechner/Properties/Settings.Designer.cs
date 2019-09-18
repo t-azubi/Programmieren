@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Informatikrechner.Properties
+namespace Taschenrechner.Properties
 {
 
 

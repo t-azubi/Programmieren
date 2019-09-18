@@ -164,50 +164,50 @@ namespace Taschenrechner
                 // b = q1 * r0 + r1
                 Denominators[iterationCount] = Denominators[iterationCount - 1] * (long)decimalNumber + Denominators[iterationCount - 2];
 
-                var blub = origninalDecimalNumberPart * Denominators[iterationCount];
+                var WEDONTKNOW = origninalDecimalNumberPart * Denominators[iterationCount];
                // mathematicly round it up to the next number if greater or even than .5
-                Numerator = (long)(blub + 0.5);
+                Numerator = (long)(WEDONTKNOW + 0.5);
                 approximateValue = ABS((Numerator / Denominators[iterationCount] + (long)decimalSourceNumber) - decimalSourceNumber);
             }
             return (Convert.ToInt64(Numerator + ((long)decimalSourceNumber * Denominators[iterationCount])), Convert.ToInt64(Denominators[iterationCount]));
         }
 
 
-        public (int, int, int) asd(double num)
-        {
-            var x = splitExp(num);
-            int wholenum = x.Item1;
-            double decimalnum = x.Item2;
-            long denominator = 10;
-            var numerator = (decimalnum * (double)denominator);
-            while (numerator % 1 != 0)
-            {
-                denominator *= 10;
-                numerator *= 10;
-            }
-            long gcd;
-            GreatestCommonD(ref numerator, ref denominator, out gcd);
-            return (wholenum, (int)numerator, (int)denominator);
-        }
-        void GreatestCommonD(ref double Numerator, ref long Denominator, out long greatestCommonD)
-        {
-            greatestCommonD = 0;
-            for (int x = 1; x <= Denominator; x++)
-            {
-                if ((Numerator % x == 0) && (Denominator % x == 0))
-                    greatestCommonD = x;
-            }
-            if (greatestCommonD == 0)
-            {
-                return;
-            }
-            else
-            {
-                Numerator = Numerator / greatestCommonD;
-                Denominator = Denominator / greatestCommonD;
+        //public (int, int, int) asd(double num)
+        //{
+        //    var x = splitExp(num);
+        //    int wholenum = x.Item1;
+        //    double decimalnum = x.Item2;
+        //    long denominator = 10;
+        //    var numerator = (decimalnum * (double)denominator);
+        //    while (numerator % 1 != 0)
+        //    {
+        //        denominator *= 10;
+        //        numerator *= 10;
+        //    }
+        //    long gcd;
+        //    GreatestCommonD(ref numerator, ref denominator, out gcd);
+        //    return (wholenum, (int)numerator, (int)denominator);
+        //}
+        //void GreatestCommonD(ref double Numerator, ref long Denominator, out long greatestCommonD)
+        //{
+        //    greatestCommonD = 0;
+        //    for (int x = 1; x <= Denominator; x++)
+        //    {
+        //        if ((Numerator % x == 0) && (Denominator % x == 0))
+        //            greatestCommonD = x;
+        //    }
+        //    if (greatestCommonD == 0)
+        //    {
+        //        return;
+        //    }
+        //    else
+        //    {
+        //        Numerator = Numerator / greatestCommonD;
+        //        Denominator = Denominator / greatestCommonD;
 
-            }
-        }
+        //    }
+        //}
         /// <summary>
         /// Return the Absolute of X
         /// </summary>
