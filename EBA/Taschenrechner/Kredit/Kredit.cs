@@ -21,15 +21,15 @@ namespace Taschenrechner
         {
             ShowMessage("Geben sie den Kreditbetrag an");
 
-            double Kreditbetrag = helper;
+            double Kreditbetrag = returnUserImputValue;
 
             ShowMessage("Geben sie den Jahreszins in % an");
 
-            double Zinshöhe = helper;
+            double Zinshöhe = returnUserImputValue;
 
             ShowMessage("Geben sie die Laufzeit in Jahren an!");
 
-            double Laufzeit = helper;
+            double Laufzeit = returnUserImputValue;
 
             double zins =(1 + Zinshöhe / 100);
             double tempresult = new MathCalc().Power(zins, Laufzeit);
@@ -47,15 +47,15 @@ namespace Taschenrechner
         {
             ShowMessage("Geben sie den Kreditbetrag an");
 
-            double Kreditbetrag = helper;
+            double Kreditbetrag = returnUserImputValue;
 
             ShowMessage("Geben sie den Jahreszins in % an");
 
-            double Zinshöhe = helper;
+            double Zinshöhe = returnUserImputValue;
 
             ShowMessage("Geben sie die Laufzeit in Jahren an!");
 
-            double Laufzeit = helper;
+            double Laufzeit = returnUserImputValue;
 
             double zins =(1+ Zinshöhe / 100);
             double tempresult = new MathCalc().Power(zins, Laufzeit);
@@ -71,15 +71,15 @@ namespace Taschenrechner
         {
             ShowMessage("Geben sie den Kreditbetrag an");
 
-            double Kreditbetrag = helper;
+            double Kreditbetrag = returnUserImputValue;
 
             ShowMessage("Geben sie den Jahreszins in % an");
 
-            double Zinshoehe = helper;
+            double Zinshoehe = returnUserImputValue;
 
             ShowMessage("Geben sie die Ratenhöhe pro Monat an!");
 
-            double Ratenhoehe = helper;
+            double Ratenhoehe = returnUserImputValue;
             double counter = 0;
             double zins = (1 + Zinshoehe / 100);
             double Kreditbetrag1 = Kreditbetrag;
