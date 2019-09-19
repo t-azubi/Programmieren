@@ -188,6 +188,9 @@ namespace Taschenrechner
                 return result;
             }
         }
+        /// <summary>
+        /// returns the absolute value from imput
+        /// </summary>
         public double ABS(double X)
         {
             if (X < 0)
