@@ -13,7 +13,7 @@ namespace Taschenrechner
 {
     public partial class Zahlensystemkonvertierung : BaseForm
     {
-        private readonly Informatikrechner Icalc = new Informatikrechner();
+        private readonly Informatikrechner ICalc = new Informatikrechner();
         public Zahlensystemkonvertierung()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace Taschenrechner
         private void Ter_Click(object sender, EventArgs e)
         {
             ShowMessage("Bitte deine ternäre Zahl eingeben");
-            var digits = helper.ToString().ToCharArray();
+            var digits = returnUserImputValue.ToString().ToCharArray();
             if (string.Empty == digits[0].ToString())
             {
                 Close();
@@ -37,15 +37,15 @@ namespace Taschenrechner
                         Ter_Click(sender, e);
                     }
                 }
-                var result = Icalc.MyConverter("", "", "", "", helper.ToString());
-                SetResultInParent($"Deine ternäre Zahl {helper} ist konvertiert zu Bin: {result[0]}, zu Oct: {result[2]}, zu Dez: {result[3]}, zu Hex: {result[4]}");
+                var result = ICalc.NumberSystemConverter("", "", "", "", returnUserImputValue.ToString());
+                SetResultInParent($"Deine ternäre Zahl {returnUserImputValue} ist konvertiert zu Bin: {result[0]}, zu Oct: {result[2]}, zu Dez: {result[3]}, zu Hex: {result[4]}");
             }
         }
 
         private void Bin_Click(object sender, EventArgs e)
         {
             ShowMessage("Bitte deine binäre Zahl eingeben");
-            var digits = helper.ToString().ToCharArray();
+            var digits = returnUserImputValue.ToString().ToCharArray();
             if (string.Empty == digits[0].ToString())
             {
                 Close();
@@ -60,15 +60,15 @@ namespace Taschenrechner
                         Bin_Click(sender, e);
                     }
                 }
-                var result = Icalc.MyConverter(helper.ToString(), "", "", "", "");
-                SetResultInParent($"Deine binäre Zahl {helper} ist konvertiert zu Ternär: {result[1]}, zu Oct: {result[2]}, zu Dez: {result[3]}, zu Hex: {result[4]}");
+                var result = ICalc.NumberSystemConverter(returnUserImputValue.ToString(), "", "", "", "");
+                SetResultInParent($"Deine binäre Zahl {returnUserImputValue} ist konvertiert zu Ternär: {result[1]}, zu Oct: {result[2]}, zu Dez: {result[3]}, zu Hex: {result[4]}");
             }
         }
 
         private void oct_Click(object sender, EventArgs e)
         {
             ShowMessage("Bitte deine octale Zahl eingeben");
-            var digits = helper.ToString().ToCharArray();
+            var digits = returnUserImputValue.ToString().ToCharArray();
             if (string.Empty == digits[0].ToString())
             {
                 Close();
@@ -83,15 +83,15 @@ namespace Taschenrechner
                         oct_Click(sender, e);
                     }
                 }
-                var result = Icalc.MyConverter("", helper.ToString(), "", "", "");
-                SetResultInParent($"Deine octale Zahl {helper} ist konvertiert zu Binär: {result[0]}, zu Ternär: {result[1]}, zu Dez: {result[3]}, zu Hex: {result[4]}");
+                var result = ICalc.NumberSystemConverter("", returnUserImputValue.ToString(), "", "", "");
+                SetResultInParent($"Deine octale Zahl {returnUserImputValue} ist konvertiert zu Binär: {result[0]}, zu Ternär: {result[1]}, zu Dez: {result[3]}, zu Hex: {result[4]}");
             }
         }
 
         private void dec_Click(object sender, EventArgs e)
         {
             ShowMessage("Bitte deine dezimale Zahl eingeben");
-            var digits = helper.ToString().ToCharArray();
+            var digits = returnUserImputValue.ToString().ToCharArray();
             if (string.Empty == digits[0].ToString())
             {
                 Close();
@@ -101,8 +101,8 @@ namespace Taschenrechner
                 foreach (var item in digits)
                 {
                 }
-                var result = Icalc.MyConverter("", "", helper.ToString(), "", "");
-                SetResultInParent($"Deine dezimale Zahl {helper} ist konvertiert zu Binär: {result[0]}, zu Ternär: {result[1]}, zu Oct: {result[2]}, zu Hex: {result[4]}");
+                var result = ICalc.NumberSystemConverter("", "", returnUserImputValue.ToString(), "", "");
+                SetResultInParent($"Deine dezimale Zahl {returnUserImputValue} ist konvertiert zu Binär: {result[0]}, zu Ternär: {result[1]}, zu Oct: {result[2]}, zu Hex: {result[4]}");
             }
         }
     }

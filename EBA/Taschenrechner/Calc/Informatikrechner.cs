@@ -89,7 +89,7 @@ namespace Taschenrechner
         /// <param name="decimalValue"></param>
         /// <param name="HexaValue"></param>
         /// <returns></returns>
-        public List<string> MyConverter(string BinValue, string OctalValue, string decimalValue, string HexaValue, string TerValue)
+        public List<string> NumberSystemConverter(string BinValue, string OctalValue, string decimalValue, string HexaValue, string TerValue)
         {
             List<string> result = new List<string>();
             if (BinValue != string.Empty)

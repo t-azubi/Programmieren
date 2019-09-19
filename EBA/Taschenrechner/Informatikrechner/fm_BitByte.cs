@@ -21,7 +21,7 @@ namespace Taschenrechner
         private void btn_Weiter_Click(object sender, EventArgs e)
         {
             ShowMessage("Bitte Eingabe machen");
-            var eingabe = Convert.ToInt32(helper);
+            var eingabe = Convert.ToInt32(returnUserImputValue);
             double ergebnis = 0;
             var rückgabe = string.Empty;
             if (rB_Bit.Checked)

@@ -30,12 +30,12 @@ namespace Taschenrechner
                 return result;
             }
             var split = splitExp(pow);
-            var bf = split.Item1;
-            var bi = split.Item2;
-            var d2f = DoubleToFraction(bi);
+            var wholeNumber = split.Item1;
+            var decimalNumber = split.Item2;
+            var d2f = DoubleToFraction(decimalNumber);
             var fractionTop = d2f.Item1;
-            var fractionBottom = DoubleToFraction(bi).Item2;
-            return Power(num, bf) * root(fractionBottom, Power(num, fractionTop));
+            var fractionBottom = DoubleToFraction(decimalNumber).Item2;
+            return Power(num, wholeNumber) * root(fractionBottom, Power(num, fractionTop));
         }
         /// <summary>
         /// Find all PrimeNumber between Bottom and Top Border.
