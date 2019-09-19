@@ -97,20 +97,20 @@ namespace Taschenrechner
 
         }
         /// <summary>
-        /// Calculates the natural Logarythm of the Input
+        /// Following the sigmanotation https://en.wikipedia.org/wiki/Logarithm#Power_series
         /// </summary>
         public double LN(double X)
         {
             var x = Convert.ToDouble(X);
-            double f = 0f, fOld = 0f;
-            int i = 0;
+            double guess = 0f, oldGuess = 0f;
+            int itterationCounter = 0;
             do
             {
-                fOld = f;
-                f = f + Power((x - 1) / (x + 1), 2 * i + 1) / (2 * i + 1);
-                i++;
-            } while ((fOld != f));
-            return f * 2;
+                oldGuess = guess;
+                guess = guess + Power((x - 1) / (x + 1), 2 * itterationCounter + 1) / (2 * itterationCounter + 1);
+                itterationCounter++;
+            } while ((oldGuess != guess));
+            return guess * 2;
         }
         public double LOG(double Exponent, double Base)
         {
@@ -171,48 +171,6 @@ namespace Taschenrechner
             }
             return (Convert.ToInt64(Numerator + ((long)decimalSourceNumber * Denominators[iterationCount])), Convert.ToInt64(Denominators[iterationCount]));
         }
-
-
-        //public (int, int, int) asd(double num)
-        //{
-        //    var x = splitExp(num);
-        //    int wholenum = x.Item1;
-        //    double decimalnum = x.Item2;
-        //    long denominator = 10;
-        //    var numerator = (decimalnum * (double)denominator);
-        //    while (numerator % 1 != 0)
-        //    {
-        //        denominator *= 10;
-        //        numerator *= 10;
-        //    }
-        //    long gcd;
-        //    GreatestCommonD(ref numerator, ref denominator, out gcd);
-        //    return (wholenum, (int)numerator, (int)denominator);
-        //}
-        //void GreatestCommonD(ref double Numerator, ref long Denominator, out long greatestCommonD)
-        //{
-        //    greatestCommonD = 0;
-        //    for (int x = 1; x <= Denominator; x++)
-        //    {
-        //        if ((Numerator % x == 0) && (Denominator % x == 0))
-        //            greatestCommonD = x;
-        //    }
-        //    if (greatestCommonD == 0)
-        //    {
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        Numerator = Numerator / greatestCommonD;
-        //        Denominator = Denominator / greatestCommonD;
-
-        //    }
-        //}
-        /// <summary>
-        /// Return the Absolute of X
-        /// </summary>
-        /// 
-
 
         public int RoundDown(double numberToRound)
         {

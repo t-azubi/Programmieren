@@ -18,6 +18,7 @@ namespace Taschenrechner
         /// </summary>
         public string checkForErrors(string Equation)
         {
+            //Removes all Letters and false equations
             if (Regex.IsMatch(Equation, @"[^E+\d]") && Regex.IsMatch(Equation, @"[^\d,\-+\*/()\s]") && Regex.IsMatch(Equation, @"[^E\-\d]"))
             {
                 Equation = CorrectEquation(0, 1, Equation);
