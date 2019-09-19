@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Linq.Expressions;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.WebSockets;
 using Taschenrechner;
 using Xunit;
@@ -15,21 +16,38 @@ namespace GrundRechnerTest
             Assert.True(new MathTest().power(5, 2) == 25);
             Assert.True(new MathTest().power(12, 2) == 144);
         }
+
+        [Fact]
+        public void PowerFloat()
+        {
+            Assert.True(new MathTest().power(16, 0.5) == 4);
+            Assert.True(new MathTest().power(625, 0.5) == 25);
+            Assert.True(new MathTest().power(25, 0.5) == 5);
+        }
+        [Theory]
+        [InlineData(5.23, 523, 100)]
+        [InlineData(0.333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333, 1, 3)]
+        public void Double2FractionTest(double input, int upnumber, int downnumber)
+        {            
+            var sourceNumber = input;
+
+            var result = new MathTest().DoubleToFraction(sourceNumber);
+            
+            Assert.Equal(upnumber, result.Item1);
+            Assert.Equal(downnumber, result.Item2);
+
+        }
         [Fact]
         public void PowerNeg2()
         {
             Assert.True(new MathTest().power(2, -2) == 0.25);
             Assert.True(new MathTest().power(5, -2) == 0.04);
         }
-        [Theory]
-        [InlineData(0.75,3,4)]
-        [InlineData(0.22, 11, 50)]
-        [InlineData(0.66, 33, 50)]
-        public void doubleToFraction(double input, int top, int bottom)
+        [Fact]
+        public void primenumberTest()
         {
-            var result = new MathCalc().DoubleToFraction(input);
-            Assert.True(top == result.Item1);
-            Assert.True(bottom == result.Item2);
+            var result = new MathCalc().Primenumber(1, 10);
+            Assert.True(2 == result.First());
         }
         [Fact]
         public void Power10()
@@ -40,15 +58,15 @@ namespace GrundRechnerTest
         [Fact]
         public void Root2()
         {
-            Assert.True(new MathTest().power(9, 0.5) == 3);
-            Assert.True(new MathTest().power(36, 0.5) == 6);
+            var root = new MathTest().RootTest(2, 9);
+            Assert.True( root == 3);
+            Assert.True(new MathTest().RootTest(2, 36) == 6);
         }
         [Fact]
         public void Root3()
         {
-           var x =  new Grundrechner().Solve("1/3", out var Rechenschritte);
-            Assert.True(new MathTest().power(27, x) == 3);
-            Assert.True(new MathTest().power(1000, x) == 10);
+            Assert.True(new MathTest().RootTest(3, 27) == 3);
+            Assert.True(new MathTest().RootTest(3, 1000) == 10);
         }
         [Fact]
         public void LN2()
@@ -65,12 +83,25 @@ namespace GrundRechnerTest
         {
             Assert.True(new MathTest().LOGTest(10, 10) == 1);
         }
+        [Fact]
+        public void Primenumber()
+        {
+            var top = 12;
+            var bot = 5;
+            var exp = new List<int> {5, 7, 11 };
+
+            var res = new MathTest().PrimeNumberTest(bot, top);
+
+            Assert.True(exp[2] == res[2]);
+            Assert.True(exp[1] == res[1]);
+            Assert.True(exp[0] == res[0]);
+        }
     }
     public class MathTest : MathCalc
     {
-        public double power(double x, double y)
+        public double power(double num, double exp)
         {
-            return Power(x, y);
+            return Power(num, exp);
         }
         public double naturalLN(double x)
         {
@@ -82,7 +113,15 @@ namespace GrundRechnerTest
         }
         public int FakultätTest(int x)
         {
-            return Fakultät(x);
+            return factorial(x);
+        }
+        public double RootTest(double exponent , double radikant)
+        {
+            return root(exponent,radikant);
+        }
+        public List<int> PrimeNumberTest(int bottomBorder, int topBorder)
+        {
+            return Primenumber(bottomBorder, topBorder);
         }
     }
     public class TestKonst

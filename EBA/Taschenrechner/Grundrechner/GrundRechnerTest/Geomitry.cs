@@ -26,7 +26,7 @@ namespace GrundRechnerTest
         [Fact]
         public void radtest()
         {
-            Assert.True(new TestGeo().CircleRadus(120) == 6.1803872323710367);
+            Assert.True(new TestGeo().CircleRadus(120) == 6.180387232371034);
         }
     }
     class TestGeo : Geometrie

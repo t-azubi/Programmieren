@@ -80,9 +80,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BaseForm\BaseForm.csproj">
+      <Project>{388804ec-e599-4ac7-b19e-42aaeacaf650}</Project>
+      <Name>BaseForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Calc\Calc.csproj">
+      <Project>{4ff0290b-8cc2-49df-9c54-482039399b57}</Project>
+      <Name>Calc</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Eingabemodul\Eingabemodul\Eingabemodul.csproj">
       <Project>{1a47dc8a-bc89-470d-86a4-3fc22589cf87}</Project>
       <Name>Eingabemodul</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geometrie\Geometrie.csproj">
+      <Project>{e413a0c0-bc62-4eb0-b51b-b1fe8d9559a8}</Project>
+      <Name>Geometrie</Name>
     </ProjectReference>
     <ProjectReference Include="..\Grundrechner\Grundrechner\Grundrechner.csproj">
       <Project>{030d321c-b61d-4df0-a9fe-d6a7ead41999}</Project>

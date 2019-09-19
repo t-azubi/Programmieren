@@ -10,39 +10,11 @@ using System.Windows.Forms;
 
 namespace Taschenrechner
 {
-    public partial class GeometrieForm : Form
+    public partial class GeometrieForm : BaseForm
     {
-        public int helper = 0;
-        private EingabeForm EingabeForm = new EingabeForm();
-        public delegate void AdviseParentEventHandler(string text);
-        public event AdviseParentEventHandler AdviseParent;
         public GeometrieForm()
         {
-            EingabeForm.AdviseParent += new EingabeForm.AdviseParentEventHandler(SetFromForm2);
-            EingabeForm.Font = this.Font;
-            EingabeForm.ForeColor = this.ForeColor;
-            EingabeForm.BackColor = this.BackColor;
             InitializeComponent();
-        }
-        public void SetResultInParent(string label)
-        {
-            AdviseParent(label);
-        }
-        public void SetFromForm2(string result)
-        {
-            if ((result.IndexOf('=') == -1))
-            {
-                helper = Convert.ToInt32(result);
-            }
-            else
-            {
-                SetResultInParent(result);
-            }
-        }
-        private void ShowMessage(string Message)
-        {
-            MessageBox.Show(Message, "Zahleneingabe");
-            EingabeForm.ShowDialog();
         }
         public void Area_Circle()
         {

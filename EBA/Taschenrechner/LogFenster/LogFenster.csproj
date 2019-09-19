@@ -99,6 +99,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BaseForm\BaseForm.csproj">
+      <Project>{388804ec-e599-4ac7-b19e-42aaeacaf650}</Project>
+      <Name>BaseForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Calc\Calc.csproj">
+      <Project>{4ff0290b-8cc2-49df-9c54-482039399b57}</Project>
+      <Name>Calc</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Eingabemodul\Eingabemodul\Eingabemodul.csproj">
       <Project>{1a47dc8a-bc89-470d-86a4-3fc22589cf87}</Project>
       <Name>Eingabemodul</Name>
@@ -110,6 +118,18 @@
     <ProjectReference Include="..\Grundrechner\Grundrechner\Grundrechner.csproj">
       <Project>{030d321c-b61d-4df0-a9fe-d6a7ead41999}</Project>
       <Name>Grundrechner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Informatikrechner\Informatikrechner.csproj">
+      <Project>{72f17da4-13ea-4f4f-8c77-9e0a81d35f05}</Project>
+      <Name>Informatikrechner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kredit\Kreditberechnung.csproj">
+      <Project>{0b698f67-e957-428c-b3f0-3366151f74c3}</Project>
+      <Name>Kreditberechnung</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MatheFunktionen\MatheFunktionen.csproj">
+      <Project>{5fd20aa1-9563-48ab-b3db-3c3cc5ce9c08}</Project>
+      <Name>MatheFunktionen</Name>
     </ProjectReference>
     <ProjectReference Include="..\Prozent\Prozent.csproj">
       <Project>{cb7e372c-3008-4d62-986b-3864f8c2662f}</Project>
