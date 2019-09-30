@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace JustForYou_Informatik
+{
+    public partial class fm_BitByte : Form
+    {
+        public fm_BitByte()
+        {
+            InitializeComponent();
+
+        }
+
+        private void btn_Weiter_Click(object sender, EventArgs e)
+        {
+            var eingabe = 800; //Testvariable,später durch Wert aus Eingabemosul ersetzen
+            var ergebnis = 0;
+            if (rB_Bit.Checked)
+            {
+                ergebnis = eingabe / 8;
+                var rückgabe = eingabe + " bit = " + ergebnis + "byte";
+            }
+            if (rB_Byte.Checked)
+            {
+                ergebnis = eingabe * 8;
+                var rückgabe = eingabe + " byte = " + ergebnis + "bit";
+            }
+            //MessageBox.Show(Convert.ToString(ergebnis));
+        }
+    }
+}
