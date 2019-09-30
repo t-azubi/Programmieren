@@ -164,9 +164,9 @@ namespace Taschenrechner
                 // b = q1 * r0 + r1
                 Denominators[iterationCount] = Denominators[iterationCount - 1] * (long)decimalNumber + Denominators[iterationCount - 2];
 
-                var WEDONTKNOW = origninalDecimalNumberPart * Denominators[iterationCount];
+                var X = origninalDecimalNumberPart * Denominators[iterationCount];
                // mathematicly round it up to the next number if greater or even than .5
-                Numerator = (long)(WEDONTKNOW + 0.5);
+                Numerator = (long)(X + 0.5);
                 approximateValue = ABS((Numerator / Denominators[iterationCount] + (long)decimalSourceNumber) - decimalSourceNumber);
             }
             return (Convert.ToInt64(Numerator + ((long)decimalSourceNumber * Denominators[iterationCount])), Convert.ToInt64(Denominators[iterationCount]));
