@@ -112,6 +112,9 @@ namespace Taschenrechner
             } while ((oldGuess != guess));
             return guess * 2;
         }
+        /// <summary>
+        ///  Clac the LOG of any base to any exponent
+        /// </summary>
         public double LOG(double Exponent, double Base)
         {
             return LN(Exponent) / LN(Base);
@@ -170,23 +173,6 @@ namespace Taschenrechner
                 approximateValue = ABS((Numerator / Denominators[iterationCount] + (long)decimalSourceNumber) - decimalSourceNumber);
             }
             return (Convert.ToInt64(Numerator + ((long)decimalSourceNumber * Denominators[iterationCount])), Convert.ToInt64(Denominators[iterationCount]));
-        }
-
-        public int RoundDown(double numberToRound)
-        {
-            int result = 0;
-            if(numberToRound < 0)
-            {
-                return -1;
-            }
-            else
-            {
-                while (result < numberToRound)
-                {
-                    result++;
-                }
-                return result;
-            }
         }
         /// <summary>
         /// returns the absolute value from imput
