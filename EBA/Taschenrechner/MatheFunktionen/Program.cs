@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Taschenrechner
-{ 
+{
     static class Program
     {
         /// <summary>
@@ -16,7 +16,7 @@ namespace Taschenrechner
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProzentForm());
+            Application.Run(new MatheForm());
         }
     }
 }

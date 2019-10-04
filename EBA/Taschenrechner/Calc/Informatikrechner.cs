@@ -1,21 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Taschenrechner
 {
     public class Informatikrechner
     {
-        private string DecToHexa(int DecValue)
+        private string DecimalToHexadezimal(int decimalValue)
         {
-            return DecimalToArbitrarySystem(DecValue, 16);
+            return DecimalToArbitrarySystem(decimalValue, 16);
         }
-        private string DecToBin(int DecValue)
+        private string DecimalToBinary(int decimalValue)
         {
-            return DecimalToArbitrarySystem(DecValue, 2);
+            return DecimalToArbitrarySystem(decimalValue, 2);
         }
-        private string DecToOctal(int DecValue)
+        private string DecimalToOctal(int decimalValue)
         {
-            return DecimalToArbitrarySystem(DecValue, 8);
+            return DecimalToArbitrarySystem(decimalValue, 8);
+        }
+        private string DecimalToTernär(int decimalValue)
+        {
+            return DecimalToArbitrarySystem(decimalValue, 8);
         }
         /// <summary>
         /// Converts the given decimal number to the numeral system with the
@@ -54,63 +59,87 @@ namespace Taschenrechner
 
             return result;
         }
-        private int BinToDec(string BinValue)
+        private int BinaryToDecimal(string binaryValue)
         {
-            return Convert.ToInt32(BinValue, 2);
+            return Convert.ToInt32(binaryValue, 2);
         }
-        private int HexaToDec(string HexaValue)
+        private int HexadecimalToDecimal(string hexadecimalValue)
         {
-            return Convert.ToInt32(HexaValue, 2);
+            return Convert.ToInt32(hexadecimalValue, 16);
         }
-        private int OctalToDec(string OctalValue)
+        private int OctalToDecimal(string octalValue)
         {
-            return Convert.ToInt32(OctalValue, 2);
+            return Convert.ToInt32(octalValue, 8);
+        }
+        private int TernaryToDecimal(string ternaryValue)
+        {
+            var digits = ternaryValue.ToCharArray().ToList();
+            double dec = 0;
+            for (int i = 0; i < digits.Count; i++)
+            {
+                dec += Convert.ToInt16(digits[i].ToString()) * new MathCalc().Power(3, digits.Count- 1 -i);
+            }
+            return (int)dec;
         }
         /// <summary>
         /// Gives Back a List where item 0 is the Bin
         /// </summary>
         /// <param name="BinValue"></param>
         /// <param name="OctalValue"></param>
-        /// <param name="DecValue"></param>
+        /// <param name="decimalValue"></param>
         /// <param name="HexaValue"></param>
         /// <returns></returns>
-        public List<string> MyConverter(string BinValue, string OctalValue, string DecValue, string HexaValue)
+        public List<string> NumberSystemConverter(string BinValue, string OctalValue, string decimalValue, string HexaValue, string TerValue)
         {
             List<string> result = new List<string>();
             if (BinValue != string.Empty)
             {
-               var DecInt = BinToDec(BinValue);
+               var DecInt = BinaryToDecimal(BinValue);
                 result.Add(BinValue);
-                result.Add(DecToOctal(DecInt));
+                result.Add(DecimalToTernär(DecInt));
+                result.Add(DecimalToOctal(DecInt));
                 result.Add(DecInt.ToString());
-                result.Add(DecToHexa(DecInt));
+                result.Add(DecimalToHexadezimal(DecInt));
                 return result;
             }
             if (OctalValue != string.Empty)
             {
-                var DecInt = OctalToDec(OctalValue);
-                result.Add(DecToBin(DecInt));
+                var DecInt = OctalToDecimal(OctalValue);
+                result.Add(DecimalToBinary(DecInt));
+                result.Add(DecimalToTernär(DecInt));
                 result.Add(OctalValue);
                 result.Add(DecInt.ToString());
-                result.Add(DecToHexa(DecInt));
+                result.Add(DecimalToHexadezimal(DecInt));
                 return result;
             }
-            if (DecValue != string.Empty)
+            if (decimalValue != string.Empty)
             {
-                var DecInt = Convert.ToInt32(DecValue);
-                result.Add(DecToBin(DecInt));
-                result.Add(DecToOctal(DecInt));
-                result.Add(DecValue);
-                result.Add(DecToHexa(DecInt));
+                var DecInt = Convert.ToInt32(decimalValue);
+                result.Add(DecimalToBinary(DecInt));
+                result.Add(DecimalToTernär(DecInt));
+                result.Add(DecimalToOctal(DecInt));
+                result.Add(decimalValue);
+                result.Add(DecimalToHexadezimal(DecInt));
                 return result;
             }
             if (HexaValue != string.Empty)
             {
-                var DecInt = HexaToDec(HexaValue);
-                result.Add(DecToBin(DecInt));
-                result.Add(DecToOctal(DecInt));
+                var DecInt = HexadecimalToDecimal(HexaValue);
+                result.Add(DecimalToBinary(DecInt));
+                result.Add(DecimalToTernär(DecInt));
+                result.Add(DecimalToOctal(DecInt));
                 result.Add(DecInt.ToString());
                 result.Add(HexaValue);
+                return result;
+            }
+            if (TerValue != string.Empty)
+            {
+                var DecInt = TernaryToDecimal(TerValue);
+                result.Add(DecimalToBinary(DecInt));
+                result.Add(TerValue);
+                result.Add(DecimalToOctal(DecInt));
+                result.Add(DecInt.ToString());
+                result.Add(DecimalToHexadezimal(DecInt));
                 return result;
             }
             return result;

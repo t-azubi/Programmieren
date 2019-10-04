@@ -11,25 +11,19 @@ namespace Taschenrechner
         private GeometrieForm GeometrieForm = new GeometrieForm();
         private ColorDialog color = new ColorDialog();
         private FontDialog FontDialog = new FontDialog();
+        private MatheForm MatheForm = new MatheForm();
+        private KreditForm KreditForm = new KreditForm();
+        private fm_Informatik InfoForm = new fm_Informatik(); 
         public LogForm()
         {
             InitializeComponent();
-            ProzentForm.AdviseParent += new ProzentForm.AdviseParentEventHandler(SetFromForm2);
-            GeometrieForm.AdviseParent += new GeometrieForm.AdviseParentEventHandler(SetFromForm2);
+            ProzentForm.AdviseParent += new BaseForm.AdviseParentEventHandler(SetFromForm2);
+            MatheForm.AdviseParent += new BaseForm.AdviseParentEventHandler(SetFromForm2);
+            GeometrieForm.AdviseParent += new BaseForm.AdviseParentEventHandler(SetFromForm2);
+            KreditForm.AdviseParent += new BaseForm.AdviseParentEventHandler(SetFromForm2);
+            InfoForm.AdviseParent += new BaseForm.AdviseParentEventHandler(SetFromForm2);
             this.Font = new Font("Arial", 8);
             Menu.Font = this.Font;
-        }
-        private void OpenProzentrechnung_Click(object sender, EventArgs e)
-        {
-            LogFormatierung("Prozentrechnung");
-            ProzentForm.Font = this.Font;
-            ProzentForm.ForeColor = this.ForeColor;
-            ProzentForm.BackColor = this.BackColor;
-            ProzentForm.ShowDialog();
-        }
-        public void SetFromForm2(string result)
-        {
-            Log.AppendText(result + Environment.NewLine);
         }
         private void HintergrundfarbeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -51,7 +45,18 @@ namespace Taschenrechner
             Menu.ForeColor = color.Color;
             this.ForeColor = color.Color;
         }
-
+        public void SetFromForm2(string result)
+        {
+            Log.AppendText(result + Environment.NewLine);
+        }
+        private void OpenProzentrechnung_Click(object sender, EventArgs e)
+        {
+            LogFormatierung("Prozentrechnung");
+            ProzentForm.Font = this.Font;
+            ProzentForm.ForeColor = this.ForeColor;
+            ProzentForm.BackColor = this.BackColor;
+            ProzentForm.ShowDialog();
+        }
         private void Open_Geometrie_Click(object sender, EventArgs e)
         {
             LogFormatierung("Geometrie");
@@ -60,7 +65,6 @@ namespace Taschenrechner
             GeometrieForm.BackColor = this.BackColor;
             GeometrieForm.ShowDialog();
         }
-
         private void Schule_Click(object sender, EventArgs e)
         {
             LogFormatierung("Schule");
@@ -77,6 +81,31 @@ namespace Taschenrechner
             Log.AppendText(LoadedForm + Environment.NewLine + Environment.NewLine);
             Log.Select(firstIndex, LoadedForm.Length);
             Log.SelectionAlignment = HorizontalAlignment.Center;
+        }
+        private void Mathe_Click(object sender, EventArgs e)
+        {
+            LogFormatierung("Mathematische Funktionen");
+            MatheForm.Font = this.Font;
+            MatheForm.ForeColor = this.ForeColor;
+            MatheForm.BackColor = this.BackColor;
+            MatheForm.ShowDialog();
+        }
+        private void Kredit_Click(object sender, EventArgs e)
+        {
+            LogFormatierung("Kreditberechnungen");
+            KreditForm.Font = this.Font;
+            KreditForm.ForeColor = this.ForeColor;
+            KreditForm.BackColor = this.BackColor;
+            KreditForm.ShowDialog();
+
+        }
+        private void Inforechner_Click(object sender, EventArgs e)
+        {
+            LogFormatierung("Informatikrechner");
+            InfoForm.Font = this.Font;
+            InfoForm.ForeColor = this.ForeColor;
+            InfoForm.BackColor = this.BackColor;
+            InfoForm.ShowDialog();
         }
     }
 }

@@ -13,11 +13,11 @@ namespace GrundRechnerTest
             Octal = "62";
             Dec = "50";
             Hexa = "32";
-           var result = new Informatikrechner().MyConverter(Bin, string.Empty, string.Empty, string.Empty);
+           var result = new Informatikrechner().NumberSystemConverter(Bin, string.Empty, string.Empty, string.Empty, string.Empty);
            Assert.True(Bin == result[0]);
-           Assert.True(Octal == result[1]);
-           Assert.True(Dec == result[2]);
-           Assert.True(Hexa == result[3]);
+           Assert.True(Octal == result[2]);
+           Assert.True(Dec == result[3]);
+           Assert.True(Hexa == result[4]);
         }
     }
 }

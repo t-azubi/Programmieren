@@ -10,44 +10,16 @@ using System.Windows.Forms;
 
 namespace Taschenrechner
 {
-    public partial class GeometrieForm : Form
+    public partial class GeometrieForm : BaseForm
     {
-        public int helper = 0;
-        private EingabeForm EingabeForm = new EingabeForm();
-        public delegate void AdviseParentEventHandler(string text);
-        public event AdviseParentEventHandler AdviseParent;
         public GeometrieForm()
         {
-            EingabeForm.AdviseParent += new EingabeForm.AdviseParentEventHandler(SetFromForm2);
-            EingabeForm.Font = this.Font;
-            EingabeForm.ForeColor = this.ForeColor;
-            EingabeForm.BackColor = this.BackColor;
             InitializeComponent();
-        }
-        public void SetResultInParent(string label)
-        {
-            AdviseParent(label);
-        }
-        public void SetFromForm2(string result)
-        {
-            if ((result.IndexOf('=') == -1))
-            {
-                helper = Convert.ToInt32(result);
-            }
-            else
-            {
-                SetResultInParent(result);
-            }
-        }
-        private void ShowMessage(string Message)
-        {
-            MessageBox.Show(Message, "Zahleneingabe");
-            EingabeForm.ShowDialog();
         }
         public void Area_Circle()
         {
             ShowMessage("Bitte geben sie den Radius an!");
-            var meineZahl = helper;
+            var meineZahl = returnUserImputValue;
             var area = new Grundrechner().CalcConst("2 *"+new Konstanten().pi.ToString()+" *"+meineZahl.ToString() +" *"+ meineZahl.ToString());
             SetResultInParent("Flächeninhalt Kreis: 2 * (" + new Konstanten().pi.ToString() + " * (" + meineZahl.ToString() + " *" + meineZahl.ToString() + ")) = " + area.ToString());
             Umfang_Circle(meineZahl);
@@ -61,9 +33,9 @@ namespace Taschenrechner
         public void area_gramm()
         {
             ShowMessage("Bitte geben sie die Höhe an!");
-            var meineZahl = helper;
+            var meineZahl = returnUserImputValue;
             ShowMessage("Bitte geben sie die Seitenlänge!");
-            var zweiteZahl = helper;
+            var zweiteZahl = returnUserImputValue;
             var area =new Grundrechner().CalcConst( meineZahl.ToString() + " *"+  zweiteZahl.ToString());
             SetResultInParent("Flächeninhalt Parallelogramm: "+meineZahl.ToString() + " *" + zweiteZahl.ToString() +" = " + area.ToString());
             Umfang_gramm(meineZahl, zweiteZahl);
@@ -76,11 +48,11 @@ namespace Taschenrechner
         public void Umfang_Dreieck()
         {
             ShowMessage("Bitte geben sie die Seite a an!");
-            var meineZahl = helper;
+            var meineZahl = returnUserImputValue;
             ShowMessage("Bitte geben sie die Seite b an!");
-            var zweiteZahl = helper;
+            var zweiteZahl = returnUserImputValue;
             ShowMessage("Bitte geben sie die Seite c an!");
-            var dritteZahl = helper;
+            var dritteZahl = returnUserImputValue;
             if (checkSites(meineZahl, zweiteZahl, dritteZahl))
             {
                 var Umfang = meineZahl + zweiteZahl + dritteZahl;
