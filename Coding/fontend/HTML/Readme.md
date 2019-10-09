@@ -17,17 +17,16 @@ HTML ist ein MUSS für Studenten und Berufstätige, um ein großartiger Software
 
 ## Hallo Welt mit HTML.
 
-Nur um Ihnen ein wenig Aufregung über HTML zu geben, werde ich Ihnen ein kleines konventionelles HTML Hello World Programm geben, Sie können es mit dem Demo-Link ausprobieren.
-Live-Demo
+Hier ist ein Beispiel wie eine kleine Hallo Welt Seite aussehen kann. Du kannst dir den Code einfach kopieren und in eine .html Datei speichern.
 
 ```html
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Dies ist der Dokumententitel</title>.
+      <title>Dies ist der Dokumententitel</title>
    </head>	
    <body>
-      <h1>Dies ist eine Überschrift</h1>.
+      <h1>Dies ist eine Überschrift</h1>
       <p>Hallo Welt!</p>
    </body>	
 </html>
