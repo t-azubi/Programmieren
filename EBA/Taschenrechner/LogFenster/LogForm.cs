@@ -35,7 +35,7 @@ namespace Taschenrechner
         private void SchriftToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FontDialog.ShowDialog();
-            menüToolStripMenuItem.Font = FontDialog.Font;
+            navi_Navi.Font = FontDialog.Font;
             this.Font = FontDialog.Font;
         }
 
@@ -47,7 +47,7 @@ namespace Taschenrechner
         }
         public void SetFromForm2(string result)
         {
-            Log.AppendText(result + Environment.NewLine);
+            rib_Log.AppendText(result + Environment.NewLine);
         }
         private void OpenProzentrechnung_Click(object sender, EventArgs e)
         {
@@ -76,11 +76,11 @@ namespace Taschenrechner
         }
         private void LogFormatierung(string LoadedForm)
         {
-            Log.AppendText(Environment.NewLine);
-            var firstIndex = Log.Text.Length;
-            Log.AppendText(LoadedForm + Environment.NewLine + Environment.NewLine);
-            Log.Select(firstIndex, LoadedForm.Length);
-            Log.SelectionAlignment = HorizontalAlignment.Center;
+            rib_Log.AppendText(Environment.NewLine);
+            var firstIndex = rib_Log.Text.Length;
+            rib_Log.AppendText(LoadedForm + Environment.NewLine + Environment.NewLine);
+            rib_Log.Select(firstIndex, LoadedForm.Length);
+            rib_Log.SelectionAlignment = HorizontalAlignment.Center;
         }
         private void Mathe_Click(object sender, EventArgs e)
         {

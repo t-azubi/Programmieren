@@ -28,87 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.fakultät = new System.Windows.Forms.Button();
-            this.Wurzel = new System.Windows.Forms.Button();
-            this.potenz = new System.Windows.Forms.Button();
-            this.primzahlen = new System.Windows.Forms.Button();
-            this.dezimalbruchkonvertierung = new System.Windows.Forms.Button();
+            this.lbl_Funktionen = new System.Windows.Forms.Label();
+            this.btn_Fakultaet = new System.Windows.Forms.Button();
+            this.btn_Wurzel = new System.Windows.Forms.Button();
+            this.btn_Potenz = new System.Windows.Forms.Button();
+            this.btn_Primzahlen = new System.Windows.Forms.Button();
+            this.btn_Dezimalbruch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lbl_Funktionen
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.Location = new System.Drawing.Point(342, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Funktionen:";
+            this.lbl_Funktionen.AutoSize = true;
+            this.lbl_Funktionen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lbl_Funktionen.Location = new System.Drawing.Point(256, 37);
+            this.lbl_Funktionen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Funktionen.Name = "lbl_Funktionen";
+            this.lbl_Funktionen.Size = new System.Drawing.Size(115, 25);
+            this.lbl_Funktionen.TabIndex = 0;
+            this.lbl_Funktionen.Text = "Funktionen:";
             // 
-            // fakultät
+            // btn_Fakultaet
             // 
-            this.fakultät.Location = new System.Drawing.Point(167, 116);
-            this.fakultät.Name = "fakultät";
-            this.fakultät.Size = new System.Drawing.Size(204, 63);
-            this.fakultät.TabIndex = 1;
-            this.fakultät.Text = "Fakultät";
-            this.fakultät.UseVisualStyleBackColor = true;
-            this.fakultät.Click += new System.EventHandler(this.Fakultät_Click);
+            this.btn_Fakultaet.Location = new System.Drawing.Point(125, 94);
+            this.btn_Fakultaet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Fakultaet.Name = "btn_Fakultaet";
+            this.btn_Fakultaet.Size = new System.Drawing.Size(153, 51);
+            this.btn_Fakultaet.TabIndex = 1;
+            this.btn_Fakultaet.Text = "Fakultät";
+            this.btn_Fakultaet.UseVisualStyleBackColor = true;
+            this.btn_Fakultaet.Click += new System.EventHandler(this.Fakultät_Click);
             // 
-            // Wurzel
+            // btn_Wurzel
             // 
-            this.Wurzel.Location = new System.Drawing.Point(467, 116);
-            this.Wurzel.Name = "Wurzel";
-            this.Wurzel.Size = new System.Drawing.Size(201, 63);
-            this.Wurzel.TabIndex = 2;
-            this.Wurzel.Text = "Wurzel";
-            this.Wurzel.UseVisualStyleBackColor = true;
-            this.Wurzel.Click += new System.EventHandler(this.Wurzel_Click);
+            this.btn_Wurzel.Location = new System.Drawing.Point(350, 94);
+            this.btn_Wurzel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Wurzel.Name = "btn_Wurzel";
+            this.btn_Wurzel.Size = new System.Drawing.Size(151, 51);
+            this.btn_Wurzel.TabIndex = 2;
+            this.btn_Wurzel.Text = "Wurzel";
+            this.btn_Wurzel.UseVisualStyleBackColor = true;
+            this.btn_Wurzel.Click += new System.EventHandler(this.Wurzel_Click);
             // 
-            // potenz
+            // btn_Potenz
             // 
-            this.potenz.Location = new System.Drawing.Point(167, 195);
-            this.potenz.Name = "potenz";
-            this.potenz.Size = new System.Drawing.Size(204, 65);
-            this.potenz.TabIndex = 3;
-            this.potenz.Text = "Potenzfunktion";
-            this.potenz.UseVisualStyleBackColor = true;
-            this.potenz.Click += new System.EventHandler(this.Potenz_Click);
+            this.btn_Potenz.Location = new System.Drawing.Point(125, 158);
+            this.btn_Potenz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Potenz.Name = "btn_Potenz";
+            this.btn_Potenz.Size = new System.Drawing.Size(153, 53);
+            this.btn_Potenz.TabIndex = 3;
+            this.btn_Potenz.Text = "Potenzfunktion";
+            this.btn_Potenz.UseVisualStyleBackColor = true;
+            this.btn_Potenz.Click += new System.EventHandler(this.Potenz_Click);
             // 
-            // primzahlen
+            // btn_Primzahlen
             // 
-            this.primzahlen.Location = new System.Drawing.Point(467, 195);
-            this.primzahlen.Name = "primzahlen";
-            this.primzahlen.Size = new System.Drawing.Size(201, 65);
-            this.primzahlen.TabIndex = 4;
-            this.primzahlen.Text = "Primzahlen";
-            this.primzahlen.UseVisualStyleBackColor = true;
-            this.primzahlen.Click += new System.EventHandler(this.Primzahlen_Click);
+            this.btn_Primzahlen.Location = new System.Drawing.Point(350, 158);
+            this.btn_Primzahlen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Primzahlen.Name = "btn_Primzahlen";
+            this.btn_Primzahlen.Size = new System.Drawing.Size(151, 53);
+            this.btn_Primzahlen.TabIndex = 4;
+            this.btn_Primzahlen.Text = "Primzahlen";
+            this.btn_Primzahlen.UseVisualStyleBackColor = true;
+            this.btn_Primzahlen.Click += new System.EventHandler(this.Primzahlen_Click);
             // 
-            // dezimalbruchkonvertierung
+            // btn_Dezimalbruch
             // 
-            this.dezimalbruchkonvertierung.Location = new System.Drawing.Point(167, 277);
-            this.dezimalbruchkonvertierung.Name = "dezimalbruchkonvertierung";
-            this.dezimalbruchkonvertierung.Size = new System.Drawing.Size(204, 67);
-            this.dezimalbruchkonvertierung.TabIndex = 5;
-            this.dezimalbruchkonvertierung.Text = "Dezimalbruch-Konvertierung";
-            this.dezimalbruchkonvertierung.UseVisualStyleBackColor = true;
-            this.dezimalbruchkonvertierung.Click += new System.EventHandler(this.Dezimalbruchkonvertierung_Click);
+            this.btn_Dezimalbruch.Location = new System.Drawing.Point(125, 225);
+            this.btn_Dezimalbruch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Dezimalbruch.Name = "btn_Dezimalbruch";
+            this.btn_Dezimalbruch.Size = new System.Drawing.Size(153, 54);
+            this.btn_Dezimalbruch.TabIndex = 5;
+            this.btn_Dezimalbruch.Text = "Dezimalbruch-Konvertierung";
+            this.btn_Dezimalbruch.UseVisualStyleBackColor = true;
+            this.btn_Dezimalbruch.Click += new System.EventHandler(this.Dezimalbruchkonvertierung_Click);
             // 
-            // MatheFunktionen
+            // MatheForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 450);
-            this.Controls.Add(this.dezimalbruchkonvertierung);
-            this.Controls.Add(this.primzahlen);
-            this.Controls.Add(this.potenz);
-            this.Controls.Add(this.Wurzel);
-            this.Controls.Add(this.fakultät);
-            this.Controls.Add(this.label1);
-            this.Name = "MatheFunktionen";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(659, 366);
+            this.Controls.Add(this.btn_Dezimalbruch);
+            this.Controls.Add(this.btn_Primzahlen);
+            this.Controls.Add(this.btn_Potenz);
+            this.Controls.Add(this.btn_Wurzel);
+            this.Controls.Add(this.btn_Fakultaet);
+            this.Controls.Add(this.lbl_Funktionen);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "MatheForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,12 +122,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button fakultät;
-        private System.Windows.Forms.Button Wurzel;
-        private System.Windows.Forms.Button potenz;
-        private System.Windows.Forms.Button primzahlen;
-        private System.Windows.Forms.Button dezimalbruchkonvertierung;
+        private System.Windows.Forms.Label lbl_Funktionen;
+        private System.Windows.Forms.Button btn_Fakultaet;
+        private System.Windows.Forms.Button btn_Wurzel;
+        private System.Windows.Forms.Button btn_Potenz;
+        private System.Windows.Forms.Button btn_Primzahlen;
+        private System.Windows.Forms.Button btn_Dezimalbruch;
     }
 }
 

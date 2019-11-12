@@ -14,12 +14,12 @@ namespace Taschenrechner
     public partial class BaseForm : Form
     {
         public double returnUserImputValue = 0;
-        private EingabeForm EingabeForm = new EingabeForm();
+        private btn_EingabeForm EingabeForm = new btn_EingabeForm();
         public delegate void AdviseParentEventHandler(string text);
         public event AdviseParentEventHandler AdviseParent;
         public BaseForm()
         {
-            EingabeForm.AdviseParent += new EingabeForm.AdviseParentEventHandler(SetFromForm2);
+            EingabeForm.AdviseParent += new btn_EingabeForm.AdviseParentEventHandler(SetFromForm2);
             EingabeForm.Font = this.Font;
             EingabeForm.ForeColor = this.ForeColor;
             EingabeForm.BackColor = this.BackColor;

@@ -12,7 +12,7 @@ namespace Taschenrechner
     {
         public string helper = string.Empty;
         public List<string> output = new List<string>();
-        private EingabeForm EingabeForm = new EingabeForm();
+        private btn_EingabeForm EingabeForm = new btn_EingabeForm();
         public delegate void AdviseParentEventHandler(string text);
         private void ShowMessage(string Message)
         {
@@ -28,7 +28,7 @@ namespace Taschenrechner
             EingabeForm.Font = font;
             EingabeForm.BackColor = backColor;
             EingabeForm.ForeColor = foreColor;
-            EingabeForm.AdviseParent += new EingabeForm.AdviseParentEventHandler(SetFromForm2);
+            EingabeForm.AdviseParent += new btn_EingabeForm.AdviseParentEventHandler(SetFromForm2);
             const char seperator = ',';
             ShowMessage($"Bitte geben sie alle Noten an!(mit {seperator} Trennen)");
             var Noten = helper.Split(seperator);

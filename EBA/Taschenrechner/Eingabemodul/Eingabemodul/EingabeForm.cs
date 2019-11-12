@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace Taschenrechner
 {
-    public partial class EingabeForm : Form
+    public partial class btn_EingabeForm : Form
     {
         public string Equation;
         private GrundrechnerForm GrundrechnerForm = new GrundrechnerForm();
         public delegate void AdviseParentEventHandler(string text);
         public event AdviseParentEventHandler AdviseParent = delegate { };
-        public EingabeForm()
+        public btn_EingabeForm()
         {
             InitializeComponent();
             GrundrechnerForm.AdviseParent += new GrundrechnerForm.AdviseParentEventHandler(SetFromForm2);
@@ -27,20 +27,20 @@ namespace Taschenrechner
         private void Add_Click(object sender, EventArgs e)
         {
             Equation += ((Button)(sender)).Text;
-            VariableValue.Text = Equation;
+            tb_VarValue.Text = Equation;
         }
         private void Delete_Click(object sender, EventArgs e)
         {
             if (Equation.Count() > 0)
             {
                 Equation = Equation.Remove(Equation.Count() -1 );
-                VariableValue.Text = Equation;
+                tb_VarValue.Text = Equation;
             }
         }
 
         private void Clear_Click(object sender, EventArgs e)
         {
-            VariableValue.Text = String.Empty; 
+            tb_VarValue.Text = String.Empty; 
             Equation = String.Empty;
         }
 
@@ -58,15 +58,15 @@ namespace Taschenrechner
                 SetResultInParent(result);
             }else
             { 
-            VariableValue.Text = result;
+            tb_VarValue.Text = result;
             Equation = result;
             }
         }
         private void Uebernehmen_Click(object sender, EventArgs e)
         {
-            Equation = VariableValue.Text;
+            Equation = tb_VarValue.Text;
             SetResultInParent(Equation);
-            VariableValue.Text = string.Empty;
+            tb_VarValue.Text = string.Empty;
             Equation = string.Empty;
             this.Close();
         }
@@ -76,25 +76,25 @@ namespace Taschenrechner
         }
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(this.VariableValue.Text, @"[^\d-,]"))
+            if (Regex.IsMatch(this.tb_VarValue.Text, @"[^\d-,]"))
             {
                 MessageBox.Show("Please Enter Only Numbers");
-                VariableValue.Text = VariableValue.Text.Remove(VariableValue.Text.Length - 1);
-                Equation = VariableValue.Text;
+                tb_VarValue.Text = tb_VarValue.Text.Remove(tb_VarValue.Text.Length - 1);
+                Equation = tb_VarValue.Text;
             }
-            var match = Regex.Match(Regex.Replace(VariableValue.Text, @"\s", ""), @"[^\d]{2}");
+            var match = Regex.Match(Regex.Replace(tb_VarValue.Text, @"\s", ""), @"[^\d]{2}");
             if (match.Success)
             {
-                VariableValue.Text = VariableValue.Text.Remove(match.Index, match.Length - 1);
-                Equation = VariableValue.Text;
+                tb_VarValue.Text = tb_VarValue.Text.Remove(match.Index, match.Length - 1);
+                Equation = tb_VarValue.Text;
             }
-            Equation = VariableValue.Text;
+            Equation = tb_VarValue.Text;
         }
 
         private void Two_Click(object sender, EventArgs e)
         {
             Equation += ((Button)(sender)).Text;
-            VariableValue.Text = Equation;
+            tb_VarValue.Text = Equation;
         }
     }
 }

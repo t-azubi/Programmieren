@@ -28,100 +28,100 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Übersicht = new System.Windows.Forms.Label();
-            this.dazu = new System.Windows.Forms.Button();
-            this.weg = new System.Windows.Forms.Button();
-            this.davon = new System.Windows.Forms.Button();
-            this.Satz = new System.Windows.Forms.Button();
-            this.B2N = new System.Windows.Forms.Button();
-            this.N2B = new System.Windows.Forms.Button();
+            this.lbl_Uebersicht = new System.Windows.Forms.Label();
+            this.btn_ProzentDazu = new System.Windows.Forms.Button();
+            this.btn_ProzentWeg = new System.Windows.Forms.Button();
+            this.btn_ProzentVon = new System.Windows.Forms.Button();
+            this.btn_Satz = new System.Windows.Forms.Button();
+            this.btn_BruttoVonNetto = new System.Windows.Forms.Button();
+            this.btn_NettoVonBrutto = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Übersicht
+            // lbl_Uebersicht
             // 
-            this.Übersicht.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lbl_Uebersicht.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Übersicht.AutoSize = true;
-            this.Übersicht.Location = new System.Drawing.Point(233, 36);
-            this.Übersicht.Name = "Übersicht";
-            this.Übersicht.Size = new System.Drawing.Size(63, 13);
-            this.Übersicht.TabIndex = 0;
-            this.Übersicht.Text = "Funktionen:";
-            this.Übersicht.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl_Uebersicht.AutoSize = true;
+            this.lbl_Uebersicht.Location = new System.Drawing.Point(233, 36);
+            this.lbl_Uebersicht.Name = "lbl_Uebersicht";
+            this.lbl_Uebersicht.Size = new System.Drawing.Size(63, 13);
+            this.lbl_Uebersicht.TabIndex = 0;
+            this.lbl_Uebersicht.Text = "Funktionen:";
+            this.lbl_Uebersicht.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // dazu
+            // btn_ProzentDazu
             // 
-            this.dazu.Location = new System.Drawing.Point(92, 87);
-            this.dazu.Name = "dazu";
-            this.dazu.Size = new System.Drawing.Size(103, 48);
-            this.dazu.TabIndex = 1;
-            this.dazu.Text = "%dazu";
-            this.dazu.UseVisualStyleBackColor = true;
-            this.dazu.Click += new System.EventHandler(this.button1_Click);
+            this.btn_ProzentDazu.Location = new System.Drawing.Point(92, 87);
+            this.btn_ProzentDazu.Name = "btn_ProzentDazu";
+            this.btn_ProzentDazu.Size = new System.Drawing.Size(103, 48);
+            this.btn_ProzentDazu.TabIndex = 1;
+            this.btn_ProzentDazu.Text = "%dazu";
+            this.btn_ProzentDazu.UseVisualStyleBackColor = true;
+            this.btn_ProzentDazu.Click += new System.EventHandler(this.button1_Click);
             // 
-            // weg
+            // btn_ProzentWeg
             // 
-            this.weg.Location = new System.Drawing.Point(92, 153);
-            this.weg.Name = "weg";
-            this.weg.Size = new System.Drawing.Size(103, 48);
-            this.weg.TabIndex = 2;
-            this.weg.Text = "%weg";
-            this.weg.UseVisualStyleBackColor = true;
-            this.weg.Click += new System.EventHandler(this.button2_Click);
+            this.btn_ProzentWeg.Location = new System.Drawing.Point(92, 153);
+            this.btn_ProzentWeg.Name = "btn_ProzentWeg";
+            this.btn_ProzentWeg.Size = new System.Drawing.Size(103, 48);
+            this.btn_ProzentWeg.TabIndex = 2;
+            this.btn_ProzentWeg.Text = "%weg";
+            this.btn_ProzentWeg.UseVisualStyleBackColor = true;
+            this.btn_ProzentWeg.Click += new System.EventHandler(this.button2_Click);
             // 
-            // davon
+            // btn_ProzentVon
             // 
-            this.davon.Location = new System.Drawing.Point(92, 220);
-            this.davon.Name = "davon";
-            this.davon.Size = new System.Drawing.Size(103, 48);
-            this.davon.TabIndex = 3;
-            this.davon.Text = "% davon";
-            this.davon.UseVisualStyleBackColor = true;
-            this.davon.Click += new System.EventHandler(this.button3_Click);
+            this.btn_ProzentVon.Location = new System.Drawing.Point(92, 220);
+            this.btn_ProzentVon.Name = "btn_ProzentVon";
+            this.btn_ProzentVon.Size = new System.Drawing.Size(103, 48);
+            this.btn_ProzentVon.TabIndex = 3;
+            this.btn_ProzentVon.Text = "% davon";
+            this.btn_ProzentVon.UseVisualStyleBackColor = true;
+            this.btn_ProzentVon.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Satz
+            // btn_Satz
             // 
-            this.Satz.Location = new System.Drawing.Point(318, 87);
-            this.Satz.Name = "Satz";
-            this.Satz.Size = new System.Drawing.Size(103, 48);
-            this.Satz.TabIndex = 4;
-            this.Satz.Text = "% Satz";
-            this.Satz.UseVisualStyleBackColor = true;
-            this.Satz.Click += new System.EventHandler(this.button4_Click);
+            this.btn_Satz.Location = new System.Drawing.Point(318, 87);
+            this.btn_Satz.Name = "btn_Satz";
+            this.btn_Satz.Size = new System.Drawing.Size(103, 48);
+            this.btn_Satz.TabIndex = 4;
+            this.btn_Satz.Text = "% Satz";
+            this.btn_Satz.UseVisualStyleBackColor = true;
+            this.btn_Satz.Click += new System.EventHandler(this.button4_Click);
             // 
-            // B2N
+            // btn_BruttoVonNetto
             // 
-            this.B2N.Location = new System.Drawing.Point(318, 153);
-            this.B2N.Name = "B2N";
-            this.B2N.Size = new System.Drawing.Size(103, 48);
-            this.B2N.TabIndex = 5;
-            this.B2N.Text = "Brutto von Netto";
-            this.B2N.UseVisualStyleBackColor = true;
-            this.B2N.Click += new System.EventHandler(this.button5_Click);
+            this.btn_BruttoVonNetto.Location = new System.Drawing.Point(318, 153);
+            this.btn_BruttoVonNetto.Name = "btn_BruttoVonNetto";
+            this.btn_BruttoVonNetto.Size = new System.Drawing.Size(103, 48);
+            this.btn_BruttoVonNetto.TabIndex = 5;
+            this.btn_BruttoVonNetto.Text = "Brutto von Netto";
+            this.btn_BruttoVonNetto.UseVisualStyleBackColor = true;
+            this.btn_BruttoVonNetto.Click += new System.EventHandler(this.button5_Click);
             // 
-            // N2B
+            // btn_NettoVonBrutto
             // 
-            this.N2B.Location = new System.Drawing.Point(318, 220);
-            this.N2B.Name = "N2B";
-            this.N2B.Size = new System.Drawing.Size(103, 48);
-            this.N2B.TabIndex = 6;
-            this.N2B.Text = "Netto von Brutto";
-            this.N2B.UseVisualStyleBackColor = true;
-            this.N2B.Click += new System.EventHandler(this.button6_Click);
+            this.btn_NettoVonBrutto.Location = new System.Drawing.Point(318, 220);
+            this.btn_NettoVonBrutto.Name = "btn_NettoVonBrutto";
+            this.btn_NettoVonBrutto.Size = new System.Drawing.Size(103, 48);
+            this.btn_NettoVonBrutto.TabIndex = 6;
+            this.btn_NettoVonBrutto.Text = "Netto von Brutto";
+            this.btn_NettoVonBrutto.UseVisualStyleBackColor = true;
+            this.btn_NettoVonBrutto.Click += new System.EventHandler(this.button6_Click);
             // 
             // ProzentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(508, 343);
-            this.Controls.Add(this.N2B);
-            this.Controls.Add(this.B2N);
-            this.Controls.Add(this.Satz);
-            this.Controls.Add(this.davon);
-            this.Controls.Add(this.weg);
-            this.Controls.Add(this.dazu);
-            this.Controls.Add(this.Übersicht);
+            this.Controls.Add(this.btn_NettoVonBrutto);
+            this.Controls.Add(this.btn_BruttoVonNetto);
+            this.Controls.Add(this.btn_Satz);
+            this.Controls.Add(this.btn_ProzentVon);
+            this.Controls.Add(this.btn_ProzentWeg);
+            this.Controls.Add(this.btn_ProzentDazu);
+            this.Controls.Add(this.lbl_Uebersicht);
             this.Name = "ProzentForm";
             this.Text = "Prozentrechnung";
             this.ResumeLayout(false);
@@ -131,13 +131,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label Übersicht;
-        private System.Windows.Forms.Button dazu;
-        private System.Windows.Forms.Button weg;
-        private System.Windows.Forms.Button davon;
-        private System.Windows.Forms.Button Satz;
-        private System.Windows.Forms.Button B2N;
-        private System.Windows.Forms.Button N2B;
+        private System.Windows.Forms.Label lbl_Uebersicht;
+        private System.Windows.Forms.Button btn_ProzentDazu;
+        private System.Windows.Forms.Button btn_ProzentWeg;
+        private System.Windows.Forms.Button btn_ProzentVon;
+        private System.Windows.Forms.Button btn_Satz;
+        private System.Windows.Forms.Button btn_BruttoVonNetto;
+        private System.Windows.Forms.Button btn_NettoVonBrutto;
     }
 }
 
