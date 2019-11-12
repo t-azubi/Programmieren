@@ -10,24 +10,36 @@ namespace Taschenrechner
 {
     class Schule
     {
-        public  string helper = string.Empty;
-        public  List<string> output = new List<string>();
-        private  EingabeForm EingabeForm = new EingabeForm();
-        public  delegate void AdviseParentEventHandler(string text);
-        private  void ShowMessage(string Message)
+        public string helper = string.Empty;
+        public List<string> output = new List<string>();
+        private EingabeForm EingabeForm = new EingabeForm();
+        public delegate void AdviseParentEventHandler(string text);
+        private void ShowMessage(string Message)
         {
             MessageBox.Show(Message, "Noteneingabe");
             EingabeForm.ShowDialog();
         }
-        public  void SetFromForm2(string result)
+        public void SetFromForm2(string result)
         {
             helper = result;
         }
-        public  List<string> StartModule(Font font, Color foreColor, Color backColor)
+        public List<string> StartModule(Font font, Color foreColor, Color backColor)
         {
             EingabeForm.Font = font;
             EingabeForm.BackColor = backColor;
             EingabeForm.ForeColor = foreColor;
+            foreach (var button in EingabeForm.Controls.OfType<Button>())
+            {
+                var isInt = int.TryParse(button.Text, out int a);
+                if (isInt && a > 6)
+                {
+                    button.Enabled = false;
+                }
+                if (isInt && a == 0)
+                {
+                    button.Enabled = false;
+                }
+            }
             EingabeForm.AdviseParent += new EingabeForm.AdviseParentEventHandler(SetFromForm2);
             ShowMessage("Bitte geben sie alle Noten an!(mit , Trennen)");
             var noten = helper.Split(',');
@@ -35,7 +47,7 @@ namespace Taschenrechner
             Notenanzahl(noten);
             return output;
         }
-        private  void Notenberechnung(string[] noten)
+        private void Notenberechnung(string[] noten)
         {
             double helper = 0;
             foreach (var item in noten)
@@ -76,9 +88,9 @@ namespace Taschenrechner
                         break;
                 }
             }
-            output.Add("Noten: " + "1x " + counter[0].ToString() + " | 2x " + counter[1].ToString()  + " | 3x " +counter[2].ToString() + " | 4x " +counter[3].ToString() + " | 5x " + counter[4].ToString() + " | 6x " + counter[5].ToString());
+            output.Add("Noten: " + "1x " + counter[0].ToString() + " | 2x " + counter[1].ToString() + " | 3x " + counter[2].ToString() + " | 4x " + counter[3].ToString() + " | 5x " + counter[4].ToString() + " | 6x " + counter[5].ToString());
         }
-        private  void Notenempfehlung(double Note)
+        private void Notenempfehlung(double Note)
         {
             var zahl = new MathCalc().splitExp(Note);
             if ((zahl.Item2 < .5))
