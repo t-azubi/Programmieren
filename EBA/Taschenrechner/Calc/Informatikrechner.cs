@@ -92,6 +92,7 @@ namespace Taschenrechner
         public List<string> NumberSystemConverter(string BinValue, string OctalValue, string decimalValue, string HexaValue, string TerValue)
         {
             List<string> result = new List<string>();
+
             if (BinValue != string.Empty)
             {
                var DecInt = BinaryToDecimal(BinValue);

@@ -91,18 +91,25 @@ namespace Taschenrechner
         private void dec_Click(object sender, EventArgs e)
         {
             ShowMessage("Bitte deine dezimale Zahl eingeben");
-            var digits = returnUserImputValue.ToString().ToCharArray();
-            if (string.Empty == digits[0].ToString())
+            if (!returnUserImputValue.ToString().Contains(','))
             {
-                Close();
+                SetResultInParent("Bitte nur ganze Zahlen eingeben!");
             }
             else
             {
-                foreach (var item in digits)
+                var digits = returnUserImputValue.ToString().ToCharArray();
+                if (string.Empty == digits[0].ToString())
                 {
+                    Close();
                 }
-                var result = ICalc.NumberSystemConverter("", "", returnUserImputValue.ToString(), "", "");
-                SetResultInParent($"Deine dezimale Zahl {returnUserImputValue} ist konvertiert zu Binär: {result[0]}, zu Ternär: {result[1]}, zu Oct: {result[2]}, zu Hex: {result[4]}");
+                else
+                {
+                    foreach (var item in digits)
+                    {
+                    }
+                    var result = ICalc.NumberSystemConverter("", "", returnUserImputValue.ToString(), "", "");
+                    SetResultInParent($"Deine dezimale Zahl {returnUserImputValue} ist konvertiert zu Binär: {result[0]}, zu Ternär: {result[1]}, zu Oct: {result[2]}, zu Hex: {result[4]}");
+                }
             }
         }
     }
