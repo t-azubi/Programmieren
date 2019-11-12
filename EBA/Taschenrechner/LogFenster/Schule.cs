@@ -32,6 +32,16 @@ namespace Taschenrechner
             const char seperator = ',';
             ShowMessage($"Bitte geben sie alle Noten an!(mit {seperator} Trennen)");
             var Noten = helper.Split(seperator);
+
+            foreach (string note in Noten)
+            {
+                if( Convert.ToInt32(note) > 6 || Convert.ToInt32(note) < 1 )
+                {
+                    output.Add("Fehler! Ungültige Eingabe! Das Notensystem besteht aus Zahlen zwischen 1 und 6");
+                    return output;
+                }
+            }
+
             Notenberechnung(Noten);
             Notenanzahl(Noten);
             return output;
