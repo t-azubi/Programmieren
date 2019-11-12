@@ -20,7 +20,7 @@ namespace Taschenrechner
         }
         private string DecimalToTernär(int decimalValue)
         {
-            return DecimalToArbitrarySystem(decimalValue, 8);
+            return DecimalToArbitrarySystem(decimalValue, 3);
         }
         /// <summary>
         /// Converts the given decimal number to the numeral system with the
