@@ -87,5 +87,10 @@ namespace Taschenrechner
                 SetResultInParent($"{y} als ein gemeiner Bruch ist : {x.Item1} / {x.Item2} ");
             }
         }
+
+        private void MatheForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -50,7 +50,7 @@
             // btn_Fakultaet
             // 
             this.btn_Fakultaet.Location = new System.Drawing.Point(125, 94);
-            this.btn_Fakultaet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Fakultaet.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Fakultaet.Name = "btn_Fakultaet";
             this.btn_Fakultaet.Size = new System.Drawing.Size(153, 51);
             this.btn_Fakultaet.TabIndex = 1;
@@ -61,7 +61,7 @@
             // btn_Wurzel
             // 
             this.btn_Wurzel.Location = new System.Drawing.Point(350, 94);
-            this.btn_Wurzel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Wurzel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Wurzel.Name = "btn_Wurzel";
             this.btn_Wurzel.Size = new System.Drawing.Size(151, 51);
             this.btn_Wurzel.TabIndex = 2;
@@ -72,7 +72,7 @@
             // btn_Potenz
             // 
             this.btn_Potenz.Location = new System.Drawing.Point(125, 158);
-            this.btn_Potenz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Potenz.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Potenz.Name = "btn_Potenz";
             this.btn_Potenz.Size = new System.Drawing.Size(153, 53);
             this.btn_Potenz.TabIndex = 3;
@@ -83,7 +83,7 @@
             // btn_Primzahlen
             // 
             this.btn_Primzahlen.Location = new System.Drawing.Point(350, 158);
-            this.btn_Primzahlen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Primzahlen.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Primzahlen.Name = "btn_Primzahlen";
             this.btn_Primzahlen.Size = new System.Drawing.Size(151, 53);
             this.btn_Primzahlen.TabIndex = 4;
@@ -94,7 +94,7 @@
             // btn_Dezimalbruch
             // 
             this.btn_Dezimalbruch.Location = new System.Drawing.Point(125, 225);
-            this.btn_Dezimalbruch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Dezimalbruch.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Dezimalbruch.Name = "btn_Dezimalbruch";
             this.btn_Dezimalbruch.Size = new System.Drawing.Size(153, 54);
             this.btn_Dezimalbruch.TabIndex = 5;
@@ -113,8 +113,10 @@
             this.Controls.Add(this.btn_Wurzel);
             this.Controls.Add(this.btn_Fakultaet);
             this.Controls.Add(this.lbl_Funktionen);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MatheForm";
+            this.Text = "Mathamatische Funktionen";
+            this.Load += new System.EventHandler(this.MatheForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
