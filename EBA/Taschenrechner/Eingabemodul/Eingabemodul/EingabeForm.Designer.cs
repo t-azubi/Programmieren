@@ -1,6 +1,6 @@
 ﻿namespace Taschenrechner
 {
-    partial class btn_EingabeForm
+    partial class EingabeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -169,6 +169,7 @@
             // 
             // tb_VarValue
             // 
+            this.tb_VarValue.Enabled = false;
             this.tb_VarValue.Location = new System.Drawing.Point(97, 24);
             this.tb_VarValue.Name = "tb_VarValue";
             this.tb_VarValue.Size = new System.Drawing.Size(163, 20);
@@ -224,7 +225,7 @@
             this.btn_Two.UseVisualStyleBackColor = true;
             this.btn_Two.Click += new System.EventHandler(this.Two_Click);
             // 
-            // btn_EingabeForm
+            // EingabeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -248,7 +249,7 @@
             this.Controls.Add(this.btn_Three);
             this.Controls.Add(this.btn_One);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "btn_EingabeForm";
+            this.Name = "EingabeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EingabeForm";
             this.ResumeLayout(false);

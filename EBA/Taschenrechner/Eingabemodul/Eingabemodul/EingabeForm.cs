@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace Taschenrechner
 {
-    public partial class btn_EingabeForm : Form
+    public partial class EingabeForm : Form
     {
         public string Equation;
         private GrundrechnerForm GrundrechnerForm = new GrundrechnerForm();
         public delegate void AdviseParentEventHandler(string text);
         public event AdviseParentEventHandler AdviseParent = delegate { };
-        public btn_EingabeForm()
+        public EingabeForm()
         {
             InitializeComponent();
             GrundrechnerForm.AdviseParent += new GrundrechnerForm.AdviseParentEventHandler(SetFromForm2);

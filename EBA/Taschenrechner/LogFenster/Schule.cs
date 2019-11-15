@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,35 +13,49 @@ namespace Taschenrechner
     {
         public string helper = string.Empty;
         public List<string> output = new List<string>();
-        private btn_EingabeForm EingabeForm = new btn_EingabeForm();
+        private EingabeForm eingabeForm = new EingabeForm();
         public delegate void AdviseParentEventHandler(string text);
         private void ShowMessage(string Message)
         {
             MessageBox.Show(Message, "Noteneingabe");
-            EingabeForm.ShowDialog();
+            eingabeForm.ShowDialog();
         }
         public void SetFromForm2(string result)
         {
+            if (Regex.Match(result, @"[-](1,)").Success ||
+               Regex.Match(result, @"[,](1,)").Success ||
+               Regex.Match(result, @"[-](1)").Success ||
+               Regex.Match(result, @"[,]").Success ||
+               Regex.Match(result, @"[,][\d]?").Success)
+            {
+                MessageBox.Show("Deine Eingabe war fehlerhaft!", "Fehlerhafte Eingabe");
+                eingabeForm.Reset
+            }
             helper = result;
         }
         public List<string> StartModule(Font font, Color foreColor, Color backColor)
         {
-            EingabeForm.Font = font;
-            EingabeForm.BackColor = backColor;
-            EingabeForm.ForeColor = foreColor;
-            EingabeForm.AdviseParent += new btn_EingabeForm.AdviseParentEventHandler(SetFromForm2);
+            eingabeForm.Font = font;
+            eingabeForm.BackColor = backColor;
+            eingabeForm.ForeColor = foreColor;
+            eingabeForm.AdviseParent += new EingabeForm.AdviseParentEventHandler(SetFromForm2);
             const char seperator = ',';
+            foreach (var button in eingabeForm.Controls.OfType<Button>())
+            {
+                var isInt = int.TryParse(button.Text, out int a);
+                if (isInt && a > 6)
+                {
+                    button.Enabled = false;
+                }
+                if (isInt && a == 0 || button.Text == "-")
+                {
+                    button.Enabled = false;
+                }
+            }
             ShowMessage($"Bitte geben sie alle Noten an!(mit {seperator} Trennen)");
             var Noten = helper.Split(seperator);
 
-            foreach (string note in Noten)
-            {
-                if( Convert.ToInt32(note) > 6 || Convert.ToInt32(note) < 1 )
-                {
-                    output.Add("Fehler! Ungültige Eingabe! Das Notensystem besteht aus Zahlen zwischen 1 und 6");
-                    return output;
-                }
-            }
+
 
             Notenberechnung(Noten);
             Notenanzahl(Noten);

@@ -21,6 +21,18 @@ namespace Taschenrechner
 
         private void Ter_Click(object sender, EventArgs e)
         {
+            foreach (var button in eingabeForm.Controls.OfType<Button>())
+            {
+                var isInt = int.TryParse(button.Text, out int a);
+                if (isInt && a > 2)
+                {
+                    button.Enabled = false;
+                }
+                if (button.Text == "-" || button.Text == ",")
+                {
+                    button.Enabled = false;
+                }
+            }
             ShowMessage("Bitte deine ternäre Zahl eingeben");
             var digits = returnUserImputValue.ToString().ToCharArray();
             if (string.Empty == digits[0].ToString())
@@ -44,6 +56,19 @@ namespace Taschenrechner
 
         private void Bin_Click(object sender, EventArgs e)
         {
+
+            foreach (var button in eingabeForm.Controls.OfType<Button>())
+            {
+                var isInt = int.TryParse(button.Text, out int a);
+                if (isInt && a > 1)
+                {
+                    button.Enabled = false;
+                }
+                if (button.Text == "-" || button.Text == ",")
+                {
+                    button.Enabled = false;
+                }
+            }
             ShowMessage("Bitte deine binäre Zahl eingeben");
             var digits = returnUserImputValue.ToString().ToCharArray();
             if (string.Empty == digits[0].ToString())
@@ -67,6 +92,19 @@ namespace Taschenrechner
 
         private void oct_Click(object sender, EventArgs e)
         {
+
+            foreach (var button in eingabeForm.Controls.OfType<Button>())
+            {
+                var isInt = int.TryParse(button.Text, out int a);
+                if (isInt && a > 7)
+                {
+                    button.Enabled = false;
+                }
+                if (button.Text == "-" || button.Text == ",")
+                {
+                    button.Enabled = false;
+                }
+            }
             ShowMessage("Bitte deine octale Zahl eingeben");
             var digits = returnUserImputValue.ToString().ToCharArray();
             if (string.Empty == digits[0].ToString())
@@ -90,6 +128,14 @@ namespace Taschenrechner
 
         private void dec_Click(object sender, EventArgs e)
         {
+
+            foreach (var button in eingabeForm.Controls.OfType<Button>())
+            {
+                if (button.Text == "-" || button.Text == ",")
+                {
+                    button.Enabled = false;
+                }
+            }
             ShowMessage("Bitte deine dezimale Zahl eingeben");
             if (!returnUserImputValue.ToString().Contains(','))
             {

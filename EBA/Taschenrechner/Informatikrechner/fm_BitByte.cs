@@ -15,7 +15,7 @@ namespace Taschenrechner
         public fm_BitByte()
         {
             InitializeComponent();
-
+            
         }
 
         private void btn_Weiter_Click(object sender, EventArgs e)

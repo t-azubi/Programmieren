@@ -14,15 +14,15 @@ namespace Taschenrechner
     public partial class BaseForm : Form
     {
         public double returnUserImputValue = 0;
-        private btn_EingabeForm EingabeForm = new btn_EingabeForm();
+        public EingabeForm eingabeForm = new EingabeForm();
         public delegate void AdviseParentEventHandler(string text);
         public event AdviseParentEventHandler AdviseParent;
         public BaseForm()
         {
-            EingabeForm.AdviseParent += new btn_EingabeForm.AdviseParentEventHandler(SetFromForm2);
-            EingabeForm.Font = this.Font;
-            EingabeForm.ForeColor = this.ForeColor;
-            EingabeForm.BackColor = this.BackColor;
+            eingabeForm.AdviseParent += new EingabeForm.AdviseParentEventHandler(SetFromForm2);
+            eingabeForm.Font = this.Font;
+            eingabeForm.ForeColor = this.ForeColor;
+            eingabeForm.BackColor = this.BackColor;
             InitializeComponent();
         }
         public void SetResultInParent(string label)
@@ -31,7 +31,18 @@ namespace Taschenrechner
         }
         public void SetFromForm2(string result)
         {
-            if ((!Regex.Match(result, @"[^\d]").Success))
+            if (Regex.Match(result, @"[-](1,)").Success || 
+                Regex.Match(result, @"[,](1,)").Success || 
+                Regex.Match(result, @"[-](1)").Success  || 
+                Regex.Match(result, @"[,]").Success     || 
+                Regex.Match(result, @"[,][\d]?").Success)
+            {
+                ShowMessage("Deine Eingabe war fehlerhaft!");
+            }
+
+
+
+            if ((Regex.Match(result, @"[-]?[\d]?[,]?[\d]?").Success))
             {
                 returnUserImputValue = Convert.ToDouble(result);
             }
@@ -43,7 +54,7 @@ namespace Taschenrechner
         public void ShowMessage(string Message)
         {
             MessageBox.Show(Message, "Zahleneingabe");
-            EingabeForm.ShowDialog();
+            eingabeForm.ShowDialog();
         }
     }
 }
