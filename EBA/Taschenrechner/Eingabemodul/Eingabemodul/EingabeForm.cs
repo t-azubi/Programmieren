@@ -27,20 +27,31 @@ namespace Taschenrechner
         private void Add_Click(object sender, EventArgs e)
         {
             Equation += ((Button)(sender)).Text;
+            if (Regex.Match(tb_VarValue.Text, @"[-]{2,}").Success ||
+               Regex.Match(tb_VarValue.Text, @"[,]{2,}").Success ||
+               Regex.Match(tb_VarValue.Text, @"[-]{2,}").Success ||
+               Regex.Match(tb_VarValue.Text, @"[,]").Success ||
+               Regex.Match(tb_VarValue.Text, @"[,][\d]+").Success ||
+               Regex.Match(tb_VarValue.Text, @"[-][\d]+").Success)
+
+            {
+                MessageBox.Show("Fehler in der Eingabe!", "Error");
+                Equation = string.Empty;
+            }
             tb_VarValue.Text = Equation;
         }
         private void Delete_Click(object sender, EventArgs e)
         {
             if (Equation.Count() > 0)
             {
-                Equation = Equation.Remove(Equation.Count() -1 );
+                Equation = Equation.Remove(Equation.Count() - 1);
                 tb_VarValue.Text = Equation;
             }
         }
 
         private void Clear_Click(object sender, EventArgs e)
         {
-            tb_VarValue.Text = String.Empty; 
+            tb_VarValue.Text = String.Empty;
             Equation = String.Empty;
         }
 
@@ -56,41 +67,33 @@ namespace Taschenrechner
             if (Regex.IsMatch(result, "="))
             {
                 SetResultInParent(result);
-            }else
-            { 
-            tb_VarValue.Text = result;
-            Equation = result;
+            }
+            else
+            {
+                tb_VarValue.Text = result;
+                Equation = result;
             }
         }
         private void Uebernehmen_Click(object sender, EventArgs e)
         {
-            Equation = tb_VarValue.Text;
-            SetResultInParent(Equation);
-            tb_VarValue.Text = string.Empty;
-            Equation = string.Empty;
-            this.Close();
+            if (Equation == "-" || Equation == ",")
+            {
+                MessageBox.Show("Fehler in deiner Eingabe!", "Error");
+                Equation = string.Empty;
+            }
+            else
+            {
+                Equation = tb_VarValue.Text;
+                SetResultInParent(Equation);
+                tb_VarValue.Text = string.Empty;
+                Equation = string.Empty;
+                this.Close();
+            }
         }
         public void SetResultInParent(string label)
         {
-                AdviseParent(label);
+            AdviseParent(label);
         }
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (Regex.IsMatch(this.tb_VarValue.Text, @"[^\d-,]"))
-            {
-                MessageBox.Show("Please Enter Only Numbers");
-                tb_VarValue.Text = tb_VarValue.Text.Remove(tb_VarValue.Text.Length - 1);
-                Equation = tb_VarValue.Text;
-            }
-            var match = Regex.Match(Regex.Replace(tb_VarValue.Text, @"\s", ""), @"[^\d]{2}");
-            if (match.Success)
-            {
-                tb_VarValue.Text = tb_VarValue.Text.Remove(match.Index, match.Length - 1);
-                Equation = tb_VarValue.Text;
-            }
-            Equation = tb_VarValue.Text;
-        }
-
         private void Two_Click(object sender, EventArgs e)
         {
             Equation += ((Button)(sender)).Text;

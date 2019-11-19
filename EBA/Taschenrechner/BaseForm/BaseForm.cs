@@ -31,17 +31,6 @@ namespace Taschenrechner
         }
         public void SetFromForm2(string result)
         {
-            if (Regex.Match(result, @"[-]{2,}").Success || 
-                Regex.Match(result, @"[,]{2,}").Success || 
-                Regex.Match(result, @"[-]{2,}").Success  || 
-                Regex.Match(result, @"[,]").Success     || 
-                Regex.Match(result, @"[,][\d]+").Success)
-            {
-                return "";
-            }
-
-
-
             if ((Regex.Match(result, @"[-]{0,1}[\d]+[,]{0,1}[\d]+").Success))
             {
                 returnUserImputValue = Convert.ToDouble(result);

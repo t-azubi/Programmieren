@@ -18,6 +18,14 @@ namespace Taschenrechner
         }
         private void Fakultät_Click(object sender, EventArgs e)
         {
+            foreach (var button in eingabeForm.Controls.OfType<Button>())
+            {
+                var isInt = int.TryParse(button.Text, out int a);
+                if (button.Text == "-" || button.Text == ",")
+                {
+                    button.Enabled = false;
+                }
+            }
             ShowMessage("Geben Sie die Zahl an von der Sie die Fakultät berechnen wollen.");
             if (returnUserImputValue % 1 != 0 && returnUserImputValue < 0)
             {
@@ -34,9 +42,13 @@ namespace Taschenrechner
         {
             ShowMessage("Geben Sie die Zahl ein von der Sie eine Wurzel berechnen wollen!");
             double Radikant = returnUserImputValue;
-            if (returnUserImputValue < 0)
+            foreach (var button in eingabeForm.Controls.OfType<Button>())
             {
-                ShowMessage("Wurzeln von negativen Zalen sind leider nicht möglich.");
+                var isInt = int.TryParse(button.Text, out int a);
+                if (button.Text == "-")
+                {
+                    button.Enabled = false;
+                }
             }
             ShowMessage("Geben Sie an die wievielte Wurzel sie von der Zahl berechnen wollen!");
             int Exponent = Convert.ToInt32(returnUserImputValue);
@@ -46,6 +58,14 @@ namespace Taschenrechner
 
         private void Primzahlen_Click(object sender, EventArgs e)
         {
+            foreach (var button in eingabeForm.Controls.OfType<Button>())
+            {
+                var isInt = int.TryParse(button.Text, out int a);
+                if (button.Text == "-" || button.Text == ",")
+                {
+                    button.Enabled = false;
+                }
+            }
             ShowMessage("Geben sie die obere Grenze an, in der sie Primzahlen suchen wollen!");
             int obereGrenze = Convert.ToInt32(returnUserImputValue);
             ShowMessage("Geben sie die untere Grenze an, in der sie Primzahlen suchen wollen!");
