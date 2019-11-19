@@ -19,27 +19,28 @@ namespace Taschenrechner
         private void Fakultät_Click(object sender, EventArgs e)
         {
             ShowMessage("Geben Sie die Zahl an von der Sie die Fakultät berechnen wollen.");
-            if (returnUserImputValue % 1 != 0 && returnUserImputValue < 0)
+
+            if ( (returnUserInputValue % 1 != 0) && returnUserInputValue < 0)
             {
                 ShowMessage("Man kann nur von ganzahligen und positiven Zahlen die Fakultät berechnen!");
             }
 
-            int result = new MathCalc().factorial(Convert.ToInt32(returnUserImputValue));
+            int result = new MathCalc().factorial(Convert.ToInt32(returnUserInputValue));
 
-            SetResultInParent($"{returnUserImputValue}! = {result}");
+            SetResultInParent($"{returnUserInputValue}! = {result}");
 
         }
 
         private void Wurzel_Click(object sender, EventArgs e)
         {
             ShowMessage("Geben Sie die Zahl ein von der Sie eine Wurzel berechnen wollen!");
-            double Radikant = returnUserImputValue;
-            if (returnUserImputValue < 0)
+            double Radikant = returnUserInputValue;
+            if (returnUserInputValue < 0)
             {
                 ShowMessage("Wurzeln von negativen Zalen sind leider nicht möglich.");
             }
             ShowMessage("Geben Sie an die wievielte Wurzel sie von der Zahl berechnen wollen!");
-            int Exponent = Convert.ToInt32(returnUserImputValue);
+            int Exponent = Convert.ToInt32(returnUserInputValue);
             double result = new MathCalc().root(Exponent, Radikant);
             SetResultInParent($"{Exponent}√{Radikant} = {result}");
         }
@@ -47,9 +48,9 @@ namespace Taschenrechner
         private void Primzahlen_Click(object sender, EventArgs e)
         {
             ShowMessage("Geben sie die obere Grenze an, in der sie Primzahlen suchen wollen!");
-            int obereGrenze = Convert.ToInt32(returnUserImputValue);
+            int obereGrenze = Convert.ToInt32(returnUserInputValue);
             ShowMessage("Geben sie die untere Grenze an, in der sie Primzahlen suchen wollen!");
-            int untereGrenze = Convert.ToInt32(returnUserImputValue);
+            int untereGrenze = Convert.ToInt32(returnUserInputValue);
             var result = new MathCalc().Primenumber(untereGrenze, obereGrenze);
             var prim = "";
             foreach (var item in result)
@@ -63,9 +64,9 @@ namespace Taschenrechner
         private void Potenz_Click(object sender, EventArgs e)
         {
             ShowMessage("Geben Sie die Zahl ein, von der Sie eine Potenz haben wollen!");
-            double num = returnUserImputValue;
+            double num = returnUserInputValue;
             ShowMessage("Geben Sie die Zahl ein, mit der Sie potenzieren wollen");
-            double pow = returnUserImputValue;
+            double pow = returnUserInputValue;
 
             double result = new MathCalc().Power(num, pow);
 
@@ -75,7 +76,7 @@ namespace Taschenrechner
         private void Dezimalbruchkonvertierung_Click(object sender, EventArgs e)
         {
             ShowMessage("Geben Sie eine Zahl ein welche Sie als Bruch dargstellt haben wollen!");
-            var y = returnUserImputValue;
+            var y = returnUserInputValue;
             var x = new MathCalc().DoubleToFraction(y);
             if (x.Item1 / x.Item2 > 1)
             {

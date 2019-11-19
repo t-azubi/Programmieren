@@ -13,7 +13,7 @@ namespace Taschenrechner
 {
     public partial class BaseForm : Form
     {
-        public double returnUserImputValue = 0;
+        public double returnUserInputValue = 0;
         private btn_EingabeForm EingabeForm = new btn_EingabeForm();
         public delegate void AdviseParentEventHandler(string text);
         public event AdviseParentEventHandler AdviseParent;
@@ -33,7 +33,7 @@ namespace Taschenrechner
         {
             if ((!Regex.Match(result, @"[^\d]").Success))
             {
-                returnUserImputValue = Convert.ToDouble(result);
+                returnUserInputValue = Convert.ToDouble(result);
             }
             else
             {
