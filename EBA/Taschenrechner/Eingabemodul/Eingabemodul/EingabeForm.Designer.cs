@@ -251,7 +251,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "EingabeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "EingabeForm";
+            this.Text = "Eingabe";
             this.ResumeLayout(false);
             this.PerformLayout();
 

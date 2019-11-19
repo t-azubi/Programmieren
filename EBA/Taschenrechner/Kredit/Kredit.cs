@@ -21,15 +21,15 @@ namespace Taschenrechner
         {
             ShowMessage("Geben sie den Kreditbetrag an");
 
-            double Kreditbetrag = returnUserImputValue;
+            double Kreditbetrag = returnUserInputValue;
 
             ShowMessage("Geben sie den Jahreszins in % an");
 
-            double Zinshöhe = returnUserImputValue;
+            double Zinshöhe = returnUserInputValue;
 
             ShowMessage("Geben sie die Laufzeit in Jahren an!");
 
-            double Laufzeit = returnUserImputValue;
+            double Laufzeit = returnUserInputValue;
 
             double zins =(1 + Zinshöhe / 100);
             double tempresult = new MathCalc().Power(zins, Laufzeit);
@@ -47,15 +47,15 @@ namespace Taschenrechner
         {
             ShowMessage("Geben sie den Kreditbetrag an");
 
-            double Kreditbetrag = returnUserImputValue;
+            double Kreditbetrag = returnUserInputValue;
 
             ShowMessage("Geben sie den Jahreszins in % an");
 
-            double Zinshöhe = returnUserImputValue;
+            double Zinshöhe = returnUserInputValue;
 
             ShowMessage("Geben sie die Laufzeit in Jahren an!");
 
-            double Laufzeit = returnUserImputValue;
+            double Laufzeit = returnUserInputValue;
 
             double zins =(1+ Zinshöhe / 100);
             double tempresult = new MathCalc().Power(zins, Laufzeit);
@@ -71,15 +71,15 @@ namespace Taschenrechner
         {
             ShowMessage("Geben sie den Kreditbetrag an");
 
-            double Kreditbetrag = returnUserImputValue;
+            double Kreditbetrag = returnUserInputValue;
 
             ShowMessage("Geben sie den Jahreszins in % an");
 
-            double Zinshoehe = returnUserImputValue;
+            double Zinshoehe = returnUserInputValue;
 
             ShowMessage("Geben sie die Ratenhöhe pro Monat an!");
 
-            double Ratenhoehe = returnUserImputValue;
+            double Ratenhoehe = returnUserInputValue;
             double counter = 0;
             double zins = (1 + Zinshoehe / 100);
             double Kreditbetrag1 = Kreditbetrag;

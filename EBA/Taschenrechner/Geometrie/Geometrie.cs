@@ -19,7 +19,7 @@ namespace Taschenrechner
         public void Area_Circle()
         {
             ShowMessage("Bitte geben sie den Radius an!");
-            var meineZahl = returnUserImputValue;
+            var meineZahl = returnUserInputValue;
             var area = new Grundrechner().CalcConst("2 *"+new Konstanten().pi.ToString()+" *"+meineZahl.ToString() +" *"+ meineZahl.ToString());
             SetResultInParent("Flächeninhalt Kreis: 2 * (" + new Konstanten().pi.ToString() + " * (" + meineZahl.ToString() + " *" + meineZahl.ToString() + ")) = " + area.ToString());
             Umfang_Circle(meineZahl);
@@ -33,9 +33,9 @@ namespace Taschenrechner
         public void area_gramm()
         {
             ShowMessage("Bitte geben sie die Höhe an!");
-            var meineZahl = returnUserImputValue;
+            var meineZahl = returnUserInputValue;
             ShowMessage("Bitte geben sie die Seitenlänge!");
-            var zweiteZahl = returnUserImputValue;
+            var zweiteZahl = returnUserInputValue;
             var area =new Grundrechner().CalcConst( meineZahl.ToString() + " *"+  zweiteZahl.ToString());
             SetResultInParent("Flächeninhalt Parallelogramm: "+meineZahl.ToString() + " *" + zweiteZahl.ToString() +" = " + area.ToString());
             Umfang_gramm(meineZahl, zweiteZahl);
@@ -48,11 +48,11 @@ namespace Taschenrechner
         public void Umfang_Dreieck()
         {
             ShowMessage("Bitte geben sie die Seite a an!");
-            var meineZahl = returnUserImputValue;
+            var meineZahl = returnUserInputValue;
             ShowMessage("Bitte geben sie die Seite b an!");
-            var zweiteZahl = returnUserImputValue;
+            var zweiteZahl = returnUserInputValue;
             ShowMessage("Bitte geben sie die Seite c an!");
-            var dritteZahl = returnUserImputValue;
+            var dritteZahl = returnUserInputValue;
             if (checkSites(meineZahl, zweiteZahl, dritteZahl))
             {
                 var Umfang = meineZahl + zweiteZahl + dritteZahl;

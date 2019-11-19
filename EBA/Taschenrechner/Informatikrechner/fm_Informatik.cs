@@ -32,11 +32,11 @@ namespace Taschenrechner
         private void btn_Bild_Click(object sender, EventArgs e)
         {
             ShowMessage("Bitte Bildhöhe eingeben");
-            var höhe = returnUserImputValue;
+            var höhe = returnUserInputValue;
             ShowMessage("Bitte Bildbreite eingeben");
-            var breite = returnUserImputValue;
+            var breite = returnUserInputValue;
             ShowMessage("Bitte Farbtiefe eingeben");
-            var tiefe = returnUserImputValue;
+            var tiefe = returnUserInputValue;
             var bild = höhe * breite * tiefe;
             var rückgabe= "Ein Bild mit der Größe " + höhe + " x " + breite + " und einer Farbtiefe von " + tiefe + " hat eine Größe von " + bild + "bit";
             SetResultInParent(rückgabe);
@@ -45,11 +45,11 @@ namespace Taschenrechner
         private void btn_Video_Click(object sender, EventArgs e)
         {
             ShowMessage("Bitte Bildhöhe eingeben");
-            var höhe = returnUserImputValue;
+            var höhe = returnUserInputValue;
             ShowMessage("Bitte Bildbreite eingeben");
-            var breite = returnUserImputValue;
+            var breite = returnUserInputValue;
             ShowMessage("Bitte Farbtiefe eingeben");
-            var tiefe = returnUserImputValue;
+            var tiefe = returnUserInputValue;
             ShowMessage("Bitte Länge des Videos in Sec. angeben");
             var länge = 200; 
             var video = höhe * breite * tiefe * länge;
