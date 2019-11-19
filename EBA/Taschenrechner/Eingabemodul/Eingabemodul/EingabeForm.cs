@@ -30,10 +30,7 @@ namespace Taschenrechner
             if (Regex.Match(tb_VarValue.Text, @"[-]{2,}").Success ||
                Regex.Match(tb_VarValue.Text, @"[,]{2,}").Success ||
                Regex.Match(tb_VarValue.Text, @"[-]{2,}").Success ||
-               Regex.Match(tb_VarValue.Text, @"[,]").Success ||
-               Regex.Match(tb_VarValue.Text, @"[,][\d]+").Success ||
-               Regex.Match(tb_VarValue.Text, @"[-][\d]+").Success)
-
+               Regex.Match(tb_VarValue.Text, @"^[,][\d]+").Success)
             {
                 MessageBox.Show("Fehler in der Eingabe!", "Error");
                 Equation = string.Empty;
@@ -76,7 +73,7 @@ namespace Taschenrechner
         }
         private void Uebernehmen_Click(object sender, EventArgs e)
         {
-            if (Equation == "-" || Equation == ",")
+            if (Equation == "-" || Equation == "," || Regex.Match(tb_VarValue.Text, @"[\d]+[-][\d]+").Success)
             {
                 MessageBox.Show("Fehler in deiner Eingabe!", "Error");
                 Equation = string.Empty;

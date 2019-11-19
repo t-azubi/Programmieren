@@ -15,6 +15,7 @@ namespace Taschenrechner
         public GeometrieForm()
         {
             InitializeComponent();
+          
         }
         public void Area_Circle()
         {
@@ -109,14 +110,38 @@ namespace Taschenrechner
 
         private void button1_Click(object sender, EventArgs e)
         {
+            foreach (var button in this.eingabeForm.Controls.OfType<Button>())
+            {
+                var isInt = int.TryParse(button.Text, out int a);
+                if (button.Text == "-")
+                {
+                    button.Enabled = false;
+                }
+            }
             Area_Circle();
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            foreach (var button in eingabeForm.Controls.OfType<Button>())
+            {
+                var isInt = int.TryParse(button.Text, out int a);
+                if (button.Text == "-")
+                {
+                    button.Enabled = false;
+                }
+            }
             area_gramm();
         }
         private void button3_Click(object sender, EventArgs e)
         {
+            foreach (var button in eingabeForm.Controls.OfType<Button>())
+            {
+                var isInt = int.TryParse(button.Text, out int a);
+                if (button.Text == "-")
+                {
+                    button.Enabled = false;
+                }
+            }
             Umfang_Dreieck();
         }
 
