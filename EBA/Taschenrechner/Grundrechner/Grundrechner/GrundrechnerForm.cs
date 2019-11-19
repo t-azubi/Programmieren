@@ -17,16 +17,16 @@ namespace Taschenrechner
         public GrundrechnerForm()
         {
             InitializeComponent();
-            new Button().Click += Add_Click;
+            new Button().Click += Nbr_Add_Click;
         }
-        private void Add_Click(object sender, EventArgs e)
+        private void Nbr_Add_Click(object sender, EventArgs e)
         {
             Equation += ((Button)(sender)).Text;
-            Input.Text = Equation;
+            tb_input.Text = Equation;
         }
         private void Solve_Click(object sender, EventArgs e)
         {
-           var match = Regex.Match(Regex.Replace(Input.Text, @"\s", ""), @"/0");
+           var match = Regex.Match(Regex.Replace(tb_input.Text, @"\s", ""), @"/0");
            if (match.Success)
            {
                if (Regex.Replace(Equation, @"\s", "").Substring(match.Index + match.Length).IndexOf(',') != 0)
@@ -39,7 +39,7 @@ namespace Taschenrechner
                    var result = new Grundrechner().Solve(Equation, out RechenSchritte);
                    oldEquation = Equation;
                    Equation = result.ToString();
-                   Output.Text = result.ToString();
+                   tb_output.Text = result.ToString();
                }
            }
            else
@@ -48,14 +48,14 @@ namespace Taschenrechner
                var result = new Grundrechner().Solve(Equation, out RechenSchritte);
                oldEquation = Equation;
                Equation = result.ToString();
-               Output.Text = result.ToString();
+               tb_output.Text = result.ToString();
            }
         }
-        private void Clear_Click(object sender, EventArgs e)
+        private void btn_clear_Click(object sender, EventArgs e)
         {
-            RechenschritteOutput.Clear();
+            tb_rechenschritteout.Clear();
             RechenSchritte.Clear();
-            Input.Text = String.Empty;
+            tb_input.Text = String.Empty;
             Equation = String.Empty;
         }
 
@@ -63,7 +63,7 @@ namespace Taschenrechner
         {
             if (Equation == null || Equation == " " || Equation == String.Empty)
             {
-                Input.Text = Equation;
+                tb_input.Text = Equation;
             }
             else
             {
@@ -75,23 +75,23 @@ namespace Taschenrechner
                 {
                     Equation = Equation.Remove(Equation.Count() - 1);
                 }
-                Input.Text = Equation;
+                tb_input.Text = Equation;
             }
         }
-        private void TextBox1_TextChanged(object sender, EventArgs e)
+        private void tb_input_Changed(object sender, EventArgs e)
         {
-            Input.Text = new ErrorHandling().checkForErrors(Input.Text);
-            Input.SelectionStart = Input.TextLength;
-            Input.SelectionLength = 0;
-            Equation = Input.Text;
+            tb_input.Text = new ErrorHandling().checkForErrors(tb_input.Text);
+            tb_input.SelectionStart = tb_input.TextLength;
+            tb_input.SelectionLength = 0;
+            Equation = tb_input.Text;
         }
-        private void Übernehmen_Click(object sender, EventArgs e)
+        private void apply_click(object sender, EventArgs e)
         {
             SetResultInParent(Equation);
         }
         private void History_Click(object sender, EventArgs e)
         {
-            SetResultInParent(oldEquation + " = " + Input.Text);
+            SetResultInParent(oldEquation + " = " + tb_input.Text);
         }
         public void SetResultInParent(string label)
         {
@@ -100,21 +100,21 @@ namespace Taschenrechner
         private void Rechenschritte_Click(object sender, EventArgs e)
         {
             var Count = RechenSchritte.Count;
-            var length = RechenschritteOutput.Text.Length;
+            var length = tb_rechenschritteout.Text.Length;
             for (int i = 0; i < Count; i++)
             {
                 RechenSchritte[i] = Regex.Replace(RechenSchritte[i], "#", @"/-");
                 RechenSchritte[i] = Regex.Replace(RechenSchritte[i], "x", @"*-");
-                RechenschritteOutput.AppendText(RechenSchritte[i] + "\n");
+                tb_rechenschritteout.AppendText(RechenSchritte[i] + "\n");
                 var substring = RechenSchritte[i].Substring(0, RechenSchritte[i].IndexOf(')') + 1);
                 var firstindex = substring.LastIndexOf('(');
                 if (firstindex != -1)
                 {
                     var lastindex = substring.Substring(substring.LastIndexOf('(')).Length;
-                    RechenschritteOutput.Select(firstindex + length, lastindex);
+                    tb_rechenschritteout.Select(firstindex + length, lastindex);
                     length += RechenSchritte[i].Length + 1;
-                    var show = RechenschritteOutput.SelectedText;
-                    RechenschritteOutput.SelectionColor = Color.Red;
+                    var show = tb_rechenschritteout.SelectedText;
+                    tb_rechenschritteout.SelectionColor = Color.Red;
                 }
             }
         }
