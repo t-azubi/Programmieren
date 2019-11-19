@@ -107,15 +107,15 @@ namespace Taschenrechner
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_kreis_Click(object sender, EventArgs e)
         {
             Area_Circle();
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_parallelogramm_Click(object sender, EventArgs e)
         {
             area_gramm();
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void btn_dreieck_Click(object sender, EventArgs e)
         {
             Umfang_Dreieck();
         }

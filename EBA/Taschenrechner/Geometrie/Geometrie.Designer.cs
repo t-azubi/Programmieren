@@ -28,60 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.lbl_geometrie = new System.Windows.Forms.Label();
+            this.btn_kreis = new System.Windows.Forms.Button();
+            this.btn_parallelogramm = new System.Windows.Forms.Button();
+            this.btn_dreieck = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lbl_geometrie
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(174, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Geometrie";
+            this.lbl_geometrie.AutoSize = true;
+            this.lbl_geometrie.Location = new System.Drawing.Point(174, 32);
+            this.lbl_geometrie.Name = "lbl_geometrie";
+            this.lbl_geometrie.Size = new System.Drawing.Size(55, 13);
+            this.lbl_geometrie.TabIndex = 0;
+            this.lbl_geometrie.Text = "Geometrie";
             // 
-            // button1
+            // btn_kreis
             // 
-            this.button1.Location = new System.Drawing.Point(45, 84);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 44);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Kreis";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_kreis.Location = new System.Drawing.Point(45, 84);
+            this.btn_kreis.Name = "btn_kreis";
+            this.btn_kreis.Size = new System.Drawing.Size(114, 44);
+            this.btn_kreis.TabIndex = 1;
+            this.btn_kreis.Text = "Kreis";
+            this.btn_kreis.UseVisualStyleBackColor = true;
+            this.btn_kreis.Click += new System.EventHandler(this.btn_kreis_Click);
             // 
-            // button2
+            // btn_parallelogramm
             // 
-            this.button2.Location = new System.Drawing.Point(219, 84);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 44);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Parallelogramm";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_parallelogramm.Location = new System.Drawing.Point(219, 84);
+            this.btn_parallelogramm.Name = "btn_parallelogramm";
+            this.btn_parallelogramm.Size = new System.Drawing.Size(114, 44);
+            this.btn_parallelogramm.TabIndex = 2;
+            this.btn_parallelogramm.Text = "Parallelogramm";
+            this.btn_parallelogramm.UseVisualStyleBackColor = true;
+            this.btn_parallelogramm.Click += new System.EventHandler(this.btn_parallelogramm_Click);
             // 
-            // button3
+            // btn_dreieck
             // 
-            this.button3.Location = new System.Drawing.Point(45, 158);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(114, 44);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Dreieck";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_dreieck.Location = new System.Drawing.Point(45, 158);
+            this.btn_dreieck.Name = "btn_dreieck";
+            this.btn_dreieck.Size = new System.Drawing.Size(114, 44);
+            this.btn_dreieck.TabIndex = 3;
+            this.btn_dreieck.Text = "Dreieck";
+            this.btn_dreieck.UseVisualStyleBackColor = true;
+            this.btn_dreieck.Click += new System.EventHandler(this.btn_dreieck_Click);
             // 
             // Geometrie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(416, 261);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_dreieck);
+            this.Controls.Add(this.btn_parallelogramm);
+            this.Controls.Add(this.btn_kreis);
+            this.Controls.Add(this.lbl_geometrie);
             this.Name = "Geometrie";
             this.Text = "Geometrie";
             this.ResumeLayout(false);
@@ -91,9 +91,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lbl_geometrie;
+        private System.Windows.Forms.Button btn_kreis;
+        private System.Windows.Forms.Button btn_parallelogramm;
+        private System.Windows.Forms.Button btn_dreieck;
     }
 }
