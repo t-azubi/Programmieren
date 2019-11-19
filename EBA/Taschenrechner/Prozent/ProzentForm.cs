@@ -67,7 +67,7 @@ namespace Taschenrechner
             var meineZahl = returnUserImputValue;
             ShowMessage(" Geben sie ihre Steuern in Prozent an");
             var zweiteZahl = returnUserImputValue;
-            var ergebnis = new Grundrechner().CalcConst(meineZahl.ToString() + "* (1 - (" + zweiteZahl.ToString() + " / 100)");
+            var ergebnis = new Grundrechner().CalcConst(meineZahl.ToString() + "* (1 - (" + zweiteZahl.ToString() + " / 100))");
             SetResultInParent(meineZahl.ToString() + " * ( 1 - ( " + zweiteZahl.ToString() + " / 100 ) ) = " + ergebnis.ToString());
         }
     }

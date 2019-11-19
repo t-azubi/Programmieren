@@ -31,18 +31,18 @@ namespace Taschenrechner
         }
         public void SetFromForm2(string result)
         {
-            if (Regex.Match(result, @"[-](1,)").Success || 
-                Regex.Match(result, @"[,](1,)").Success || 
-                Regex.Match(result, @"[-](1)").Success  || 
+            if (Regex.Match(result, @"[-]{2,}").Success || 
+                Regex.Match(result, @"[,]{2,}").Success || 
+                Regex.Match(result, @"[-]{2,}").Success  || 
                 Regex.Match(result, @"[,]").Success     || 
-                Regex.Match(result, @"[,][\d]?").Success)
+                Regex.Match(result, @"[,][\d]+").Success)
             {
-                ShowMessage("Deine Eingabe war fehlerhaft!");
+                return "";
             }
 
 
 
-            if ((Regex.Match(result, @"[-]?[\d]?[,]?[\d]?").Success))
+            if ((Regex.Match(result, @"[-]{0,1}[\d]+[,]{0,1}[\d]+").Success))
             {
                 returnUserImputValue = Convert.ToDouble(result);
             }
