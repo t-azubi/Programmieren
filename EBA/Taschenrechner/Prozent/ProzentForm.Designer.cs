@@ -58,7 +58,7 @@
             this.btn_ProzentDazu.TabIndex = 1;
             this.btn_ProzentDazu.Text = "%dazu";
             this.btn_ProzentDazu.UseVisualStyleBackColor = true;
-            this.btn_ProzentDazu.Click += new System.EventHandler(this.button1_Click);
+            this.btn_ProzentDazu.Click += new System.EventHandler(this.btn_ProzentDazu_Click);
             // 
             // btn_ProzentWeg
             // 
@@ -68,7 +68,7 @@
             this.btn_ProzentWeg.TabIndex = 2;
             this.btn_ProzentWeg.Text = "%weg";
             this.btn_ProzentWeg.UseVisualStyleBackColor = true;
-            this.btn_ProzentWeg.Click += new System.EventHandler(this.button2_Click);
+            this.btn_ProzentWeg.Click += new System.EventHandler(this.btn_ProzentWeg_Click);
             // 
             // btn_ProzentVon
             // 
@@ -78,7 +78,7 @@
             this.btn_ProzentVon.TabIndex = 3;
             this.btn_ProzentVon.Text = "% davon";
             this.btn_ProzentVon.UseVisualStyleBackColor = true;
-            this.btn_ProzentVon.Click += new System.EventHandler(this.button3_Click);
+            this.btn_ProzentVon.Click += new System.EventHandler(this.btn_ProzentVon_Click);
             // 
             // btn_Satz
             // 
@@ -88,7 +88,7 @@
             this.btn_Satz.TabIndex = 4;
             this.btn_Satz.Text = "% Satz";
             this.btn_Satz.UseVisualStyleBackColor = true;
-            this.btn_Satz.Click += new System.EventHandler(this.button4_Click);
+            this.btn_Satz.Click += new System.EventHandler(this.btn_Satz_Click);
             // 
             // btn_BruttoVonNetto
             // 
@@ -98,7 +98,7 @@
             this.btn_BruttoVonNetto.TabIndex = 5;
             this.btn_BruttoVonNetto.Text = "Brutto von Netto";
             this.btn_BruttoVonNetto.UseVisualStyleBackColor = true;
-            this.btn_BruttoVonNetto.Click += new System.EventHandler(this.button5_Click);
+            this.btn_BruttoVonNetto.Click += new System.EventHandler(this.btn_BruttoVonNetto_Click);
             // 
             // btn_NettoVonBrutto
             // 
@@ -108,7 +108,7 @@
             this.btn_NettoVonBrutto.TabIndex = 6;
             this.btn_NettoVonBrutto.Text = "Netto von Brutto";
             this.btn_NettoVonBrutto.UseVisualStyleBackColor = true;
-            this.btn_NettoVonBrutto.Click += new System.EventHandler(this.button6_Click);
+            this.btn_NettoVonBrutto.Click += new System.EventHandler(this.btn_NettoVonBrutto_Click);
             // 
             // ProzentForm
             // 

@@ -108,7 +108,7 @@ namespace Taschenrechner
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_kreis_Click(object sender, EventArgs e)
         {
             foreach (var button in this.eingabeForm.Controls.OfType<Button>())
             {
@@ -120,7 +120,7 @@ namespace Taschenrechner
             }
             Area_Circle();
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_parallelogramm_Click(object sender, EventArgs e)
         {
             foreach (var button in eingabeForm.Controls.OfType<Button>())
             {
@@ -132,7 +132,7 @@ namespace Taschenrechner
             }
             area_gramm();
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void btn_dreieck_Click(object sender, EventArgs e)
         {
             foreach (var button in eingabeForm.Controls.OfType<Button>())
             {

@@ -9,7 +9,7 @@ namespace Taschenrechner
         {
             InitializeComponent();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_ProzentDazu_Click(object sender, EventArgs e)
         {
             ShowMessage("Gib die Grundzahl ein");
             var meineZahl = returnUserInputValue;
@@ -23,7 +23,7 @@ namespace Taschenrechner
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_ProzentWeg_Click(object sender, EventArgs e)
         {
             ShowMessage("Bitte gib die Grundzahl ein");
             var meineZahl = returnUserInputValue;
@@ -32,7 +32,7 @@ namespace Taschenrechner
             var endergebnis = meineZahl - new Grundrechner().CalcConst(sovielProzent.ToString()+ " / 100 * " +meineZahl.ToString()) ;
             SetResultInParent(meineZahl.ToString() + " - ( " + sovielProzent.ToString() + " / 100 * " + meineZahl.ToString() + ")  = " + endergebnis.ToString());
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void btn_ProzentVon_Click(object sender, EventArgs e)
         {
             ShowMessage("Bitte gib die Grundzahl ein");
             var meineZahl = returnUserInputValue;
@@ -42,7 +42,7 @@ namespace Taschenrechner
             SetResultInParent(sovielProzent.ToString() + " / 100 * " + meineZahl.ToString() + " = " + ergebnis.ToString());
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btn_Satz_Click(object sender, EventArgs e)
         {
             ShowMessage("Bitte gib die Grundzahl ein");
             var meineZahl = returnUserInputValue;
@@ -51,7 +51,7 @@ namespace Taschenrechner
             var ergebnis = new Grundrechner().CalcConst(zweiteZahl.ToString()+ " * 100 / " + meineZahl.ToString());
             SetResultInParent(zweiteZahl.ToString() + " * 100 / " + meineZahl.ToString() + " = " + ergebnis.ToString());
         }
-        private void button5_Click(object sender, EventArgs e)
+        private void btn_BruttoVonNetto_Click(object sender, EventArgs e)
         {
             ShowMessage("Geben sie ihr Netto an!");
             var meineZahl = returnUserInputValue;
@@ -61,7 +61,7 @@ namespace Taschenrechner
             SetResultInParent(meineZahl.ToString() + " * " + zweiteZahl.ToString() + " / 100 + 1 = " + ergebnis.ToString());
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btn_NettoVonBrutto_Click(object sender, EventArgs e)
         {
             ShowMessage("Geben sie ihr Brutto an!");
             var meineZahl = returnUserInputValue;
