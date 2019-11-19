@@ -38,7 +38,7 @@
             // btn_Krediteinmalig
             // 
             this.btn_Krediteinmalig.Location = new System.Drawing.Point(88, 88);
-            this.btn_Krediteinmalig.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Krediteinmalig.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Krediteinmalig.Name = "btn_Krediteinmalig";
             this.btn_Krediteinmalig.Size = new System.Drawing.Size(172, 63);
             this.btn_Krediteinmalig.TabIndex = 0;
@@ -59,7 +59,7 @@
             // btn_Laufzeitkredit
             // 
             this.btn_Laufzeitkredit.Location = new System.Drawing.Point(328, 88);
-            this.btn_Laufzeitkredit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Laufzeitkredit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Laufzeitkredit.Name = "btn_Laufzeitkredit";
             this.btn_Laufzeitkredit.Size = new System.Drawing.Size(172, 63);
             this.btn_Laufzeitkredit.TabIndex = 2;
@@ -70,7 +70,7 @@
             // btn_Ratenhöhekredit
             // 
             this.btn_Ratenhöhekredit.Location = new System.Drawing.Point(88, 207);
-            this.btn_Ratenhöhekredit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Ratenhöhekredit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Ratenhöhekredit.Name = "btn_Ratenhöhekredit";
             this.btn_Ratenhöhekredit.Size = new System.Drawing.Size(172, 63);
             this.btn_Ratenhöhekredit.TabIndex = 3;
@@ -87,9 +87,9 @@
             this.Controls.Add(this.btn_Laufzeitkredit);
             this.Controls.Add(this.lbl_Funktionen);
             this.Controls.Add(this.btn_Krediteinmalig);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "KreditForm";
-            this.Text = "Kreditform";
+            this.Text = "Kreditberechnung";
             this.ResumeLayout(false);
             this.PerformLayout();
 
