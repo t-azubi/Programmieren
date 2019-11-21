@@ -291,7 +291,7 @@
             this.btn_rechenschritte.Name = "btn_rechenschritte";
             this.btn_rechenschritte.Size = new System.Drawing.Size(89, 23);
             this.btn_rechenschritte.TabIndex = 23;
-            this.btn_rechenschritte.Text = "btn_rechenschritte";
+            this.btn_rechenschritte.Text = "Rechenschritte";
             this.btn_rechenschritte.UseVisualStyleBackColor = true;
             this.btn_rechenschritte.Click += new System.EventHandler(this.Rechenschritte_Click);
             // 
