@@ -14,11 +14,25 @@ namespace Taschenrechner
         public delegate void AdviseParentEventHandler(string text);
         public event AdviseParentEventHandler AdviseParent = delegate { };
         public List<string> RechenSchritte = new List<string>();
+        public bool stop = false;
         public GrundrechnerForm()
         {
             InitializeComponent();
+
+            foreach (var button in this.Controls.OfType<Button>())
+            {
+
+                if (button.Name == "btn_apply")
+                {
+                    button.Enabled = false;
+                }
+            }
+
             new Button().Click += Nbr_Add_Click;
         }
+
+
+
         private void Nbr_Add_Click(object sender, EventArgs e)
         {
             Equation += ((Button)(sender)).Text;
@@ -50,6 +64,9 @@ namespace Taschenrechner
                Equation = result.ToString();
                tb_output.Text = result.ToString();
            }
+
+           btn_apply.Enabled = true;
+            
         }
         private void btn_clear_Click(object sender, EventArgs e)
         {
