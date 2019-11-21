@@ -37,8 +37,8 @@ namespace Taschenrechner
             double Zinsen_gesamt = tempresult * Kreditbetrag - Kreditbetrag;
 
 
-            SetResultInParent($"({Kreditbetrag} * ((1+ {Zinshöhe}/100)^{Laufzeit}) = {result}");
-            SetResultInParent($"Kreditbetrag: {Kreditbetrag}, Zinssatz: {Zinshöhe}, Laufzeit: {Laufzeit}");
+            SetResultInParent($"({Kreditbetrag} * ((1+ {Zinshöhe}/100)^{Laufzeit} Jahre) = {result}");
+            SetResultInParent($"Kreditbetrag: {Kreditbetrag}, Zinssatz: {Zinshöhe}, Laufzeit: {Laufzeit} Jahre");
             SetResultInParent($"Ratenhöhe (einmalig): {result} Zinsen insgesamt: {Zinsen_gesamt}");
 
         }
@@ -62,8 +62,8 @@ namespace Taschenrechner
             double Monatsrate = tempresult * Kreditbetrag / (12 * Laufzeit);
             double Zinsen_gesamt = tempresult * Kreditbetrag -Kreditbetrag;
 
-            SetResultInParent($"({Kreditbetrag} * (1+ {Zinshöhe}/100)^{Laufzeit} /12 /Laufzeit= {Monatsrate}");
-            SetResultInParent($"Kreditbetrag: {Kreditbetrag}, Zinssatz: {Zinshöhe}, Laufzeit: {Laufzeit}");
+            SetResultInParent($"({Kreditbetrag} * (1+ {Zinshöhe}/100)^{Laufzeit} Jahre /12 = {Monatsrate}");
+            SetResultInParent($"Kreditbetrag: {Kreditbetrag}, Zinssatz: {Zinshöhe}, Laufzeit: {Laufzeit} Jahre");
             SetResultInParent($"Ratenhöhe (monatlich):  {Monatsrate} Zinsen insgesamt: {Zinsen_gesamt}");
         }
 
@@ -101,7 +101,7 @@ namespace Taschenrechner
 
             //SetResultInParent($"({Kreditbetrag} * {Zinshöhe}/100 *{Laufzeit}/12 + {Kreditbetrag}) / {Laufzeit} = {result}");
             SetResultInParent($"Kreditbetrag: {Kreditbetrag1}, Zinssatz: {Zinshoehe}, Ratenhöhe: (monatlich) {Ratenhoehe}");
-            SetResultInParent($"Laufzeit: {Laufzeit}, Zinsen (gesamt): {Zinsen_gesamt}");
+            SetResultInParent($"Laufzeit: {Laufzeit} Jahre, Zinsen (gesamt): {Zinsen_gesamt}");
         }
     }
 }
