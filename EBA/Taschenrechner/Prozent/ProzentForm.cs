@@ -49,7 +49,7 @@ namespace Taschenrechner
             ShowMessage("Geben sie die zweite Zahl ein!");
             var zweiteZahl = returnUserInputValue;
             var ergebnis = new Grundrechner().CalcConst(zweiteZahl.ToString()+ " * 100 / " + meineZahl.ToString());
-            SetResultInParent(zweiteZahl.ToString() + " * 100 / " + meineZahl.ToString() + " = " + string.Format(ergebnis.ToString(), "0:0.000000"));
+            SetResultInParent(zweiteZahl.ToString() + " * 100 / " + meineZahl.ToString() + " = " + ergebnis.ToString());
         }
         private void btn_BruttoVonNetto_Click(object sender, EventArgs e)
         {

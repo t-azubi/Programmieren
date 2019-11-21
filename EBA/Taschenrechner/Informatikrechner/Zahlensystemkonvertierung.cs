@@ -28,9 +28,13 @@ namespace Taschenrechner
                 {
                     button.Enabled = false;
                 }
-                if (button.Text == "-" || button.Text == ",")
+                else if (button.Text == "-" || button.Text == ",")
                 {
                     button.Enabled = false;
+                }
+                else
+                {
+                    button.Enabled = true;
                 }
             }
             ShowMessage("Bitte deine ternäre Zahl eingeben");
@@ -64,9 +68,13 @@ namespace Taschenrechner
                 {
                     button.Enabled = false;
                 }
-                if (button.Text == "-" || button.Text == ",")
+                else if (button.Text == "-" || button.Text == ",")
                 {
                     button.Enabled = false;
+                }
+                else
+                {
+                    button.Enabled = true;
                 }
             }
             ShowMessage("Bitte deine binäre Zahl eingeben");
@@ -100,9 +108,13 @@ namespace Taschenrechner
                 {
                     button.Enabled = false;
                 }
-                if (button.Text == "-" || button.Text == ",")
+                else if (button.Text == "-" || button.Text == ",")
                 {
                     button.Enabled = false;
+                }
+                else
+                {
+                    button.Enabled = true;
                 }
             }
             ShowMessage("Bitte deine octale Zahl eingeben");
@@ -135,27 +147,24 @@ namespace Taschenrechner
                 {
                     button.Enabled = false;
                 }
+                else
+                {
+                    button.Enabled = true;
+                }
             }
             ShowMessage("Bitte deine dezimale Zahl eingeben");
-            if (!returnUserInputValue.ToString().Contains(','))
+            var digits = returnUserInputValue.ToString().ToCharArray();
+            if (string.Empty == digits[0].ToString())
             {
-                SetResultInParent("Bitte nur ganze Zahlen eingeben!");
+                Close();
             }
             else
             {
-                var digits = returnUserInputValue.ToString().ToCharArray();
-                if (string.Empty == digits[0].ToString())
+                foreach (var item in digits)
                 {
-                    Close();
                 }
-                else
-                {
-                    foreach (var item in digits)
-                    {
-                    }
-                    var result = ICalc.NumberSystemConverter("", "", returnUserInputValue.ToString(), "", "");
-                    SetResultInParent($"Deine dezimale Zahl {returnUserInputValue} ist konvertiert zu Binär: {result[0]}, zu Ternär: {result[1]}, zu Oct: {result[2]}, zu Hex: {result[4]}");
-                }
+                var result = ICalc.NumberSystemConverter("", "", returnUserInputValue.ToString(), "", "");
+                SetResultInParent($"Deine dezimale Zahl {returnUserInputValue} ist konvertiert zu Binär: {result[0]}, zu Ternär: {result[1]}, zu Oct: {result[2]}, zu Hex: {result[4]}");
             }
         }
     }
