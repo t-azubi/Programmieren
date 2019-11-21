@@ -23,11 +23,7 @@ namespace Taschenrechner
         }
         public void SetFromForm2(string result)
         {
-            if (Regex.Match(result, @"[-](1,)").Success ||
-               Regex.Match(result, @"[,](1,)").Success ||
-               Regex.Match(result, @"[-](1)").Success ||
-               Regex.Match(result, @"[,]").Success ||
-               Regex.Match(result, @"[,][\d]?").Success)
+            if (Regex.Match(result, @"[,]{2,}").Success)
             {
                 MessageBox.Show("Deine Eingabe war fehlerhaft!", "Fehlerhafte Eingabe");
                 stop = true;
