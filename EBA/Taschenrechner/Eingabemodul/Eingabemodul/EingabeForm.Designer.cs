@@ -39,7 +39,6 @@
             this.btn_Comma = new System.Windows.Forms.Button();
             this.btn_Zero = new System.Windows.Forms.Button();
             this.btn_Apply = new System.Windows.Forms.Button();
-            this.lbl_VarName = new System.Windows.Forms.Label();
             this.tb_VarValue = new System.Windows.Forms.TextBox();
             this.btn_Minus = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
@@ -158,21 +157,12 @@
             this.btn_Apply.UseVisualStyleBackColor = true;
             this.btn_Apply.Click += new System.EventHandler(this.Uebernehmen_Click);
             // 
-            // lbl_VarName
-            // 
-            this.lbl_VarName.AutoSize = true;
-            this.lbl_VarName.Location = new System.Drawing.Point(8, 27);
-            this.lbl_VarName.Name = "lbl_VarName";
-            this.lbl_VarName.Size = new System.Drawing.Size(83, 13);
-            this.lbl_VarName.TabIndex = 15;
-            this.lbl_VarName.Text = "Variablenname :";
-            // 
             // tb_VarValue
             // 
             this.tb_VarValue.Enabled = false;
-            this.tb_VarValue.Location = new System.Drawing.Point(97, 24);
+            this.tb_VarValue.Location = new System.Drawing.Point(12, 24);
             this.tb_VarValue.Name = "tb_VarValue";
-            this.tb_VarValue.Size = new System.Drawing.Size(163, 20);
+            this.tb_VarValue.Size = new System.Drawing.Size(248, 20);
             this.tb_VarValue.TabIndex = 16;
             // 
             // btn_Minus
@@ -236,7 +226,6 @@
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_Minus);
             this.Controls.Add(this.tb_VarValue);
-            this.Controls.Add(this.lbl_VarName);
             this.Controls.Add(this.btn_Apply);
             this.Controls.Add(this.btn_Zero);
             this.Controls.Add(this.btn_Comma);
@@ -270,7 +259,6 @@
         private System.Windows.Forms.Button btn_Comma;
         private System.Windows.Forms.Button btn_Zero;
         private System.Windows.Forms.Button btn_Apply;
-        private System.Windows.Forms.Label lbl_VarName;
         private System.Windows.Forms.TextBox tb_VarValue;
         private System.Windows.Forms.Button btn_Minus;
         private System.Windows.Forms.Button btn_Delete;

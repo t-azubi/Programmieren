@@ -50,10 +50,22 @@ namespace Taschenrechner
         {
             ShowMessage("Bitte geben sie die Seite a an!");
             var meineZahl = returnUserInputValue;
+            if( meineZahl == 0 )
+            {
+                return;
+            }
             ShowMessage("Bitte geben sie die Seite b an!");
             var zweiteZahl = returnUserInputValue;
+            if (zweiteZahl == 0)
+            {
+                return;
+            }
             ShowMessage("Bitte geben sie die Seite c an!");
             var dritteZahl = returnUserInputValue;
+            if (dritteZahl == 0)
+            {
+                return;
+            }
             if (checkSites(meineZahl, zweiteZahl, dritteZahl))
             {
                 var Umfang = meineZahl + zweiteZahl + dritteZahl;
