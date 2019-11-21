@@ -313,6 +313,7 @@
             this.tb_output.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.tb_output.Size = new System.Drawing.Size(214, 20);
             this.tb_output.TabIndex = 25;
+            this.tb_output.Text = "Ergebnis";
             // 
             // GrundrechnerForm
             // 
