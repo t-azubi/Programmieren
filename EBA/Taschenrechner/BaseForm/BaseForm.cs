@@ -31,7 +31,7 @@ namespace Taschenrechner
         }
         public void SetFromForm2(string result)
         {
-            if ((!result.Contains("=")  ))
+            if ((!result.Contains("=") && !result.Contains(":")))
             {
                 returnUserInputValue = Convert.ToDouble(result);
             }
