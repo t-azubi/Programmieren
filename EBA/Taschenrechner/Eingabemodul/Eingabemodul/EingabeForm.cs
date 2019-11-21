@@ -73,10 +73,11 @@ namespace Taschenrechner
         }
         private void Uebernehmen_Click(object sender, EventArgs e)
         {
-            if (Equation == "-" || Equation == "," || Regex.Match(tb_VarValue.Text, @"[\d]+[-][\d]+").Success)
+            if (Equation == "-" || Equation == "," || Regex.Match(tb_VarValue.Text, @"[\d]+[-][\d]+").Success || Regex.Match(tb_VarValue.Text, @"[\d]+[-]+").Success)
             {
                 MessageBox.Show("Fehler in deiner Eingabe!", "Error");
                 Equation = string.Empty;
+                tb_VarValue.Text = string.Empty;
             }
             else
             {

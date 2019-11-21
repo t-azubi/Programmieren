@@ -57,8 +57,8 @@ namespace Taschenrechner
             var meineZahl = returnUserInputValue;
             ShowMessage("Geben sie ihre Steuern in Prozent an!");
             var zweiteZahl = returnUserInputValue;
-            var ergebnis = new Grundrechner().CalcConst(meineZahl.ToString() +"*"+ zweiteZahl.ToString() +"/ 100 + 1");
-            SetResultInParent(meineZahl.ToString() + " * " + zweiteZahl.ToString() + " / 100 + 1 = " + ergebnis.ToString());
+            var ergebnis = new Grundrechner().CalcConst("((100 +" + zweiteZahl + ")/100) *" + meineZahl) ;
+            SetResultInParent($"(100 + {zweiteZahl}) / 100 * {meineZahl}  = " + ergebnis.ToString());
         }
 
         private void btn_NettoVonBrutto_Click(object sender, EventArgs e)

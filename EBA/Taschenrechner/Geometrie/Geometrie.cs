@@ -117,6 +117,10 @@ namespace Taschenrechner
                 {
                     button.Enabled = false;
                 }
+                else
+                {
+                    button.Enabled = true;
+                }
             }
             Area_Circle();
         }
@@ -129,6 +133,10 @@ namespace Taschenrechner
                 {
                     button.Enabled = false;
                 }
+                else
+                {
+                    button.Enabled = true;
+                }
             }
             area_gramm();
         }
@@ -140,6 +148,10 @@ namespace Taschenrechner
                 if (button.Text == "-")
                 {
                     button.Enabled = false;
+                }
+                else
+                {
+                    button.Enabled = true;
                 }
             }
             Umfang_Dreieck();
