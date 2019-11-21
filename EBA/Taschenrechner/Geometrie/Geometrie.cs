@@ -43,8 +43,8 @@ namespace Taschenrechner
         }
         public void Umfang_gramm(double  meineZahl, double zweiteZahl)
         {
-            var umfang = new Grundrechner().CalcConst(" 2 * (" + meineZahl.ToString()+" *" + zweiteZahl.ToString() + ")");
-            SetResultInParent("Umfang Parallelogramm: 2 * (" + meineZahl.ToString() + " *" + zweiteZahl.ToString() + ") = "+ umfang.ToString());
+            var umfang = new Grundrechner().CalcConst(" 2 * (" + meineZahl.ToString()+" + " + zweiteZahl.ToString() + ")");
+            SetResultInParent("Umfang Parallelogramm: 2 * (" + meineZahl.ToString() + " + " + zweiteZahl.ToString() + ") = "+ umfang.ToString());
         }
         public void Umfang_Dreieck()
         {
@@ -96,14 +96,14 @@ namespace Taschenrechner
         }
         public void area_Dreieck(double meineZahl, double zweiteZahl, double dritteZahl)
         {
-            var umfang = meineZahl.ToString() + " + " + zweiteZahl.ToString() + "+" + dritteZahl.ToString();
-            var root = new Grundrechner().CalcConst("(" + umfang + "/2*("
-                + umfang + "/2 -" + meineZahl.ToString() + ")*(" + umfang + "/2-" + zweiteZahl.ToString() + 
+            var umfang = new Grundrechner().CalcConst(meineZahl.ToString() + " + " + zweiteZahl.ToString() + "+" + dritteZahl.ToString());
+            var root = new Grundrechner().CalcConst("(" + umfang + "/2)*("
+                + umfang + "/2 -" + meineZahl.ToString() + ")*((" + umfang + "/2-" + zweiteZahl.ToString() + 
                 ")*(" + umfang + "/2-" + dritteZahl.ToString() + "))");
             var area = new MathCalc().root(2,root);
              
-            SetResultInParent("Flächeninhalt Dreieck: √(" + umfang + "/2*("
-                + umfang + "/2 -" + meineZahl.ToString() + ")*(" + umfang + "/2-" + zweiteZahl.ToString() +
+            SetResultInParent("Flächeninhalt Dreieck: √(" + umfang + "/2)*("
+                + umfang + "/2 -" + meineZahl.ToString() + ")*((" + umfang + "/2-" + zweiteZahl.ToString() +
                 ")*(" + umfang + "/2-" + dritteZahl.ToString() + ")) = " + area.ToString());
         }
 
@@ -116,10 +116,6 @@ namespace Taschenrechner
                 if (button.Text == "-")
                 {
                     button.Enabled = false;
-                }
-                else
-                {
-                    button.Enabled = true;
                 }
             }
             Area_Circle();
