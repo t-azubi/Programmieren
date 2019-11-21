@@ -72,6 +72,7 @@ namespace Taschenrechner
         {
             tb_rechenschritteout.Clear();
             RechenSchritte.Clear();
+            btn_apply.Enabled = false;
             tb_input.Text = String.Empty;
             Equation = String.Empty;
         }
@@ -81,6 +82,7 @@ namespace Taschenrechner
             if (Equation == null || Equation == " " || Equation == String.Empty)
             {
                 tb_input.Text = Equation;
+                btn_apply.Enabled = false;
             }
             else
             {
