@@ -46,6 +46,11 @@ namespace Taschenrechner
         {
             ShowMessage("Geben Sie die Zahl ein von der Sie eine Wurzel berechnen wollen!");
             double Radikant = returnUserInputValue;
+            if (Radikant <= 0)
+            {
+                SetResultInParent($"Eingabe ungültig!");
+                return;
+            }
             foreach (var button in eingabeForm.Controls.OfType<Button>())
             {
                 var isInt = int.TryParse(button.Text, out int a);
@@ -64,6 +69,11 @@ namespace Taschenrechner
             }
             ShowMessage("Geben Sie an die wievielte Wurzel sie von der Zahl berechnen wollen!");
             int Exponent = Convert.ToInt32(returnUserInputValue);
+            if (Exponent <= 0)
+            {
+                SetResultInParent($"Eingabe ungültig!");
+                return;
+            }
             double result = new MathCalc().root(Exponent, Radikant);
             SetResultInParent($"{Exponent}√{Radikant} = {result}");
         }
@@ -104,6 +114,11 @@ namespace Taschenrechner
             }
             ShowMessage("Geben Sie die Zahl ein, von der Sie eine Potenz haben wollen!");
             double num = returnUserInputValue;
+            if (num <= 0)
+            {
+                SetResultInParent($"Eingabe ungültig!");
+                return;
+            }
             ShowMessage("Geben Sie die Zahl ein, mit der Sie potenzieren wollen");
             double pow = returnUserInputValue;
 
