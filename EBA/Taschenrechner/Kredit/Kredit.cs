@@ -79,29 +79,47 @@ namespace Taschenrechner
 
             ShowMessage("Geben sie die Ratenhöhe pro Monat an!");
 
-            double Ratenhoehe = returnUserInputValue;
+            double Ratenhoehe = (returnUserInputValue * 12);
             double counter = 0;
             double zins = (1 + Zinshoehe / 100);
-            double Kreditbetrag1 = Kreditbetrag;
-            do
+            //Kreditbetrag_Start to store value of this time of code
+            double Kreditbetrag_Start = Kreditbetrag;
+
+            double Tilgung_Start = Ratenhoehe - ( zins * ( Kreditbetrag_Start - Ratenhoehe) );
+
+            double Laufzeit;
+
+            if (Tilgung_Start > 0)
             {
-                Kreditbetrag = (Kreditbetrag - Ratenhoehe) * zins;
-                counter++;
+
+                while (Kreditbetrag > Ratenhoehe)
+                {
+                    Kreditbetrag = (Kreditbetrag - Ratenhoehe) * zins;
+                    counter++;
+                }
+                
+
+                double Restlaufzeit = Kreditbetrag / Ratenhoehe * zins;
+
+                Laufzeit = counter + Restlaufzeit;
+
+
+                double tempresult = new MathCalc().Power(zins, Laufzeit);
+                double Zinsen_gesamt = tempresult * Kreditbetrag_Start - Kreditbetrag_Start;
+
+
+
+                //SetResultInParent($"({Kreditbetrag} * {Zinshöhe}/100 *{Laufzeit}/12 + {Kreditbetrag}) / {Laufzeit} = {result}");
+                SetResultInParent($"Kreditbetrag: {Kreditbetrag_Start}, Zinssatz: {Zinshoehe}, Ratenhöhe: (monatlich) {Ratenhoehe/12}");
+                SetResultInParent($"Laufzeit: {Laufzeit} Jahre, Zinsen (gesamt): {Zinsen_gesamt}");
+
+            } else
+            {
+
+                SetResultInParent($"Ersten Jahr ergibt sich bereits eine Tilgung von {Tilgung_Start/12} pro Monat.");
+                SetResultInParent($"Somit ist der Kredit niemals rückzahlbar!");
+
             }
-            while ( Kreditbetrag > Ratenhoehe );
-            
-            double Laufzeit = counter + Kreditbetrag/Ratenhoehe;
-
-       
-            double tempresult = new MathCalc().Power(zins, Laufzeit);
-            double Monatsrate = tempresult * Kreditbetrag / (12 * Laufzeit);
-            double Zinsen_gesamt = tempresult * Kreditbetrag - Kreditbetrag;
-
-
-
-            //SetResultInParent($"({Kreditbetrag} * {Zinshöhe}/100 *{Laufzeit}/12 + {Kreditbetrag}) / {Laufzeit} = {result}");
-            SetResultInParent($"Kreditbetrag: {Kreditbetrag1}, Zinssatz: {Zinshoehe}, Ratenhöhe: (monatlich) {Ratenhoehe}");
-            SetResultInParent($"Laufzeit: {Laufzeit} Jahre, Zinsen (gesamt): {Zinsen_gesamt}");
         }
     }
 }
