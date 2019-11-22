@@ -22,6 +22,11 @@ namespace Taschenrechner
             ShowMessage("Geben sie den Kreditbetrag an");
 
             double Kreditbetrag = returnUserInputValue;
+            if(Kreditbetrag <= 0)
+            {
+                SetResultInParent($"Eingabe ungültig!");
+                return;
+            }
 
             ShowMessage("Geben sie den Jahreszins in % an");
 
@@ -30,12 +35,16 @@ namespace Taschenrechner
             ShowMessage("Geben sie die Laufzeit in Jahren an!");
 
             double Laufzeit = returnUserInputValue;
+            if (Laufzeit <= 0)
+            {
+                SetResultInParent($"Eingabe ungültig!");
+                return;
+            }
 
             double zins =(1 + Zinshöhe / 100);
             double tempresult = new MathCalc().Power(zins, Laufzeit);
             double result = Kreditbetrag * tempresult;
             double Zinsen_gesamt = tempresult * Kreditbetrag - Kreditbetrag;
-
 
             SetResultInParent($"({Kreditbetrag} * ((1+ {Zinshöhe}/100)^{Laufzeit} Jahre) = {result}");
             SetResultInParent($"Kreditbetrag: {Kreditbetrag}, Zinssatz: {Zinshöhe}, Laufzeit: {Laufzeit} Jahre");
@@ -48,6 +57,11 @@ namespace Taschenrechner
             ShowMessage("Geben sie den Kreditbetrag an");
 
             double Kreditbetrag = returnUserInputValue;
+            if (Kreditbetrag <= 0)
+            {
+                SetResultInParent($"Eingabe ungültig!");
+                return;
+            }
 
             ShowMessage("Geben sie den Jahreszins in % an");
 
@@ -56,6 +70,11 @@ namespace Taschenrechner
             ShowMessage("Geben sie die Laufzeit in Jahren an!");
 
             double Laufzeit = returnUserInputValue;
+            if (Laufzeit <= 0)
+            {
+                SetResultInParent($"Eingabe ungültig!");
+                return;
+            }
 
             double zins =(1+ Zinshöhe / 100);
             double tempresult = new MathCalc().Power(zins, Laufzeit);
@@ -72,6 +91,11 @@ namespace Taschenrechner
             ShowMessage("Geben sie den Kreditbetrag an");
 
             double Kreditbetrag = returnUserInputValue;
+            if (Kreditbetrag <= 0)
+            {
+                SetResultInParent($"Eingabe ungültig!");
+                return;
+            }
 
             ShowMessage("Geben sie den Jahreszins in % an");
 
@@ -80,6 +104,11 @@ namespace Taschenrechner
             ShowMessage("Geben sie die Ratenhöhe pro Monat an!");
 
             double Ratenhoehe = (returnUserInputValue * 12);
+            if (Ratenhoehe <= 0)
+            {
+                SetResultInParent($"Eingabe ungültig!");
+                return;
+            }
             double counter = 0;
             double zins = (1 + Zinshoehe / 100);
             //Kreditbetrag_Start to store value of this time of code
@@ -116,7 +145,7 @@ namespace Taschenrechner
             } else
             {
 
-                SetResultInParent($"Ersten Jahr ergibt sich bereits eine Tilgung von {Tilgung_Start/12} pro Monat.");
+                SetResultInParent($"Ersten Jahr ergibt sich bereits eine Tilgung von {Tilgung_Start/12}€ pro Monat.");
                 SetResultInParent($"Somit ist der Kredit niemals rückzahlbar!");
 
             }

@@ -53,7 +53,7 @@ namespace Taschenrechner
             ShowMessage("Bitte Länge des Videos in Sec. angeben");
             var länge = returnUserInputValue; 
             var video = höhe * breite * tiefe * länge;
-            var rückgabe = "Ein Bild mit der Größe " + höhe + " x " + breite + " und einer Farbtiefe von " + tiefe + " sowie einer Länge von "+länge+" hat eine Größe von " + video + " bit ";
+            var rückgabe = "Ein Video mit der Größe " + höhe + " x " + breite + " und einer Farbtiefe von " + tiefe + " sowie einer Länge von "+länge+" hat eine Größe von " + video + " bit ";
             SetResultInParent(rückgabe);
         }
 
