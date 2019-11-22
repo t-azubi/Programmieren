@@ -42,6 +42,7 @@ namespace Taschenrechner
         }
         public void ShowMessage(string Message)
         {
+            returnUserInputValue = 0;
             MessageBox.Show(Message, "Zahleneingabe");
             eingabeForm.ShowDialog();
         }
