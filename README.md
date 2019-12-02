@@ -3,7 +3,7 @@
 ## Quicklinks
 
 1. [EBA](EBA)
-2. [Code](Coding)
+2. [Code](Coding/backend/)
 
 ## Was soll das ?
 
