@@ -6,7 +6,7 @@ CSS steht für Cascading-Style-Sheets und ist eine Möglichkeit für HTML-Dokume
 
 Mann kann eine CSS-Datei für eine Domain erstellen und diese auf allen Unterseiten als externe Ressource einbinden. Dies kann viel Zeit sparen, wenn feste Vorgaben für meine Designelemente vorhanden sind, die sich zwischen Dokumenten nicht ändern.
 
-Der kaskadierende Teil wird dann klar, wenn man sich mit verschiedenen Klassen beschäftigt. So kann man in der CSS-Datei zB festlegen, dass alle H2-Überschriften (Eltern-Element) in Schriftgröße 46 ausgespielt werden und dann eine Unterklasse der H2-Überschriften einfügen (Kind-Element) die den Text fett druckt, wenn eine bestimmte Klasse (zB. „fett“) definiert wird.
+Der kaskadierende Teil wird dann klar, wenn man sich mit verschiedenen Klassen beschäftigt. So kann man in der CSS-Datei z.B. festlegen, dass alle H2-Überschriften (Eltern-Element) in Schriftgröße 46 ausgespielt werden und dann eine Unterklasse der H2-Überschriften einfügen (Kind-Element) die den Text fett druckt, wenn eine bestimmte Klasse (z.B. „fett“) definiert wird.
 
 Im Dokument muss ich bei der Unterklasse nicht noch einmal die Anweisung zur Schriftgröße wiederholen, da diese von der übergeordneten Anweisung vererbt wird (überschwappt).
 
