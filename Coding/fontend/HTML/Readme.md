@@ -1,7 +1,8 @@
 # HTML
 
 HTML steht für Hyper Text Markup Language, die am häufigsten verwendete Sprache im Web zur Entwicklung von Webseiten. HTML wurde Ende 1991 von Berners-Lee entwickelt, aber "HTML 2.0" war die erste Standard HTML-Spezifikation, die 1995 veröffentlicht wurde. HTML 4.01 war eine Hauptversion von HTML und wurde Ende 1999 veröffentlicht. Obwohl die Version HTML 4.01 weit verbreitet ist, haben wir derzeit die Version HTML-5, die eine Erweiterung zu HTML 4.01 ist, und diese Version wurde 2012 veröffentlicht.
-Warum sollte man HTML lernen?
+
+## Warum sollte man HTML lernen?
 
 Ursprünglich wurde HTML mit der Absicht entwickelt, die Struktur von Dokumenten wie Überschriften, Absätzen, Listen usw. zu definieren, um den Austausch von wissenschaftlichen Informationen zwischen Forschern zu erleichtern. Jetzt wird HTML häufig verwendet, um Webseiten mit Hilfe verschiedener Tags zu formatieren, die in der HTML-Sprache verfügbar sind.
 
