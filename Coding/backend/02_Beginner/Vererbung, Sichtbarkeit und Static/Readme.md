@@ -50,7 +50,6 @@ Console.WriteLine("The area is: " + Rectangle.CalculateArea(5, 4));
 Wir könnten der "Rectangle-Klasse" weitere hilfreiche Methoden hinzufügen, aber vielleicht fragen Sie sich, warum wir Breite und Höhe an die tatsächliche Methode weitergeben, anstatt sie innerhalb der Klasse zu speichern und sie dann bei Bedarf von dort zu entfernen. Weil sie statisch ist! Wir könnten sie speichern, aber nur einen Set von Dimensionen, weil es nur eine Version einer statischen Klasse gibt. Dies ist sehr wichtig zu verstehen.
 
 Stattdessen können wir die Klasse nicht statisch machen und dann die "CalculateArea" als Dienstprogrammfunktion für diese Klasse verwenden:
-Download, Edit & Run this example!
 
 ```csharp
 public class Rectangle
