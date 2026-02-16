@@ -6,46 +6,41 @@ namespace Schleifen_und_Verzweigungen
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hey, hier möchte ich zeigen, wie man mit Schleifen und Verzweigungen umgehen kann");
-            Console.WriteLine("Dafür lass uns doch ein Spielen. Wie wäre es mit Zahlenraten, ich denke mir eine Zahl von 1 bis 100 aus und du musst sie erraten :)");
-            Console.Write("Ok dann dein erster versuch:");
+            Console.WriteLine("Zahlenraten (1 bis 100)");
+            Console.WriteLine("Ich habe mir eine Zahl ausgedacht. Versuche sie zu erraten.");
             Zahlenraten();
-
-
         }
 
         public static void Zahlenraten()
         {
-            int guesses = 0;
-            int guess = 0;
-            int mynumber = new Random().Next(1,101);
-            bool checkinput = false;
+            int versuche = 0;
+            int geheimzahl = new Random().Next(1, 101);
 
-            bool right = false;
-            while (!right)
+            while (true)
             {
-                checkinput = int.TryParse(Console.ReadLine(), out guess);
-                if (!checkinput)
+                Console.Write("Dein Tipp: ");
+                if (!int.TryParse(Console.ReadLine(), out int tipp))
                 {
-                    Console.WriteLine("Gib doch bitte eine Zahl ein :)");
+                    Console.WriteLine("Bitte gib eine gültige Zahl ein.");
                     continue;
                 }
-                guesses++;
-                if (guess > mynumber)
+
+                versuche++;
+
+                if (tipp > geheimzahl)
                 {
-                    Console.WriteLine("Deine Zahl ist zu groß");
+                    Console.WriteLine("Zu groß.");
                     continue;
                 }
-                if (guess < mynumber)
+
+                if (tipp < geheimzahl)
                 {
-                    Console.WriteLine("Deine Zahl ist zu klein");
+                    Console.WriteLine("Zu klein.");
                     continue;
                 }
-                if (guess == mynumber)
-                {
-                    Console.WriteLine($"Coole Sache, du hast es geschafft meine Zahl {mynumber} in nur {guesses} Versuchen zu erraten");
-                    right = true;
-                }
+
+                Console.WriteLine($"Treffer! Die Zahl war {geheimzahl}. Versuche: {versuche}");
+                break;
             }
          }
     }

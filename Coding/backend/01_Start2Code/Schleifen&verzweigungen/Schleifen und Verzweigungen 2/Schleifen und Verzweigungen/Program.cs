@@ -4,94 +4,86 @@ namespace Schleifen_und_Verzweigungen
 {
     class Program
     {
-        private static object math;
-
         static void Main(string[] args)
         {
-            Console.WriteLine("So nun da wir ein Grundgerüst haben, lass uns doch versuchen unser Zahlenraten auszubauen.");
-            Console.Write("Bitte Wähle eine Schwierigkeitsstufe aus. 1(einfach Zahlen von 1 bis 100) | 2 (medium Zahlen von 1 bis 1000) | 3(hard Zahlen von 1 bis 5000 | 4(godlike Zahlen von 1 bis 10000))");
-            
-            Zahlenraten(GetDifficulty());
-
-
+            Console.WriteLine("Zahlenraten mit Schwierigkeit");
+            Console.WriteLine("1 = 1..100 | 2 = 1..1000 | 3 = 1..5000 | 4 = 1..10000");
+            int maxWert = GetDifficulty();
+            Zahlenraten(maxWert);
         }
+
         public static int GetDifficulty()
         {
-            bool input = int.TryParse(Console.ReadLine(), out int dif);
-            while (!input)
+            while (true)
             {
-                Console.Write("Bitte gebe eine Gültige Schwierigkeitsstufe ein:");
-                    input = int.TryParse(Console.ReadLine(), out dif);
+                Console.Write("Schwierigkeit wählen (1-4): ");
+                if (!int.TryParse(Console.ReadLine(), out int schwierigkeit))
+                {
+                    Console.WriteLine("Bitte eine Zahl eingeben.");
+                    continue;
+                }
+
+                return schwierigkeit switch
+                {
+                    1 => 100,
+                    2 => 1000,
+                    3 => 5000,
+                    4 => 10000,
+                    _ => 100
+                };
             }
-            switch (dif)
-            {
-                case 1:
-                    return 100;
-                case 2:
-                    return 1000;
-                case 3:
-                    return 5000;
-                case 4:
-                    return 10000;
-                default:
-                    return 12;
-            }
-            
         }
+
         public static void Zahlenraten(int Dif)
         {
+            Console.WriteLine($"Ich denke mir eine Zahl zwischen 1 und {Dif}.");
+            int geheimzahl = new Random().Next(1, Dif + 1);
+            int versuche = 0;
 
-            Console.Write("Ok dann dein erster versuch:");
-            int guesses = 0;
-            int guess = 0;
-            int mynumber = new Random().Next(1,Dif);
-            bool checkinput = false;
-
-            bool right = false;
-            while (!right)
+            while (true)
             {
-                checkinput = int.TryParse(Console.ReadLine(), out guess);
-                if (!checkinput)
+                Console.Write("Dein Tipp: ");
+                if (!int.TryParse(Console.ReadLine(), out int tipp))
                 {
-                    Console.WriteLine("Gib doch bitte eine Zahl ein :)");
+                    Console.WriteLine("Bitte eine gültige Zahl eingeben.");
                     continue;
                 }
-                guesses++;
-                if (guess > mynumber)
+
+                versuche++;
+
+                if (tipp > geheimzahl)
                 {
-                    Console.WriteLine("Deine Zahl ist zu groß");
+                    Console.WriteLine("Zu groß.");
                     continue;
                 }
-                if (guess < mynumber)
+
+                if (tipp < geheimzahl)
                 {
-                    Console.WriteLine("Deine Zahl ist zu klein");
+                    Console.WriteLine("Zu klein.");
                     continue;
                 }
-                if (guess == mynumber)
-                {
-                    Console.WriteLine(SetWinningMessage(Dif,guesses));
-                      right = true;
-                }
+
+                Console.WriteLine($"Treffer nach {versuche} Versuchen.");
+                Console.WriteLine(SetWinningMessage(Dif, versuche));
+                break;
             }
          }
+
         public static string SetWinningMessage(int dif, int guesses)
         {
-            string message = string.Empty;
-            var Playerstat = (guesses * guesses) / (dif / Math.Pow(guesses, 0.6));
-            if (Playerstat < 0.5)
+            double score = guesses / Math.Sqrt(dif);
+
+            if (score < 0.9)
             {
-                message = "Du bist richtig gut :)";
-            }
-            if (Playerstat < 1 && Playerstat > 0.5)
-            {
-                message = "Das wird doch :)";
-            }
-            if (Playerstat > 1)
-            {
-                message = "Das war aber jetzt nicht so gut";
+                return "Sehr stark gespielt!";
             }
 
-            return message;
+            if (score < 1.5)
+            {
+                return "Gute Runde!";
+            }
+
+            return "Da geht noch was – probier es nochmal.";
         }
     }
 }

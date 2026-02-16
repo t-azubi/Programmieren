@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f8fafc;
+  color: #111827;
+}
+
+.container {
+  max-width: 680px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+form {
+  display: grid;
+  gap: 0.5rem;
+}
+
+input,
+button {
+  font-size: 1rem;
+  padding: 0.55rem;
+}
+
+#message {
+  min-height: 1.5rem;
+  color: #b91c1c;
+}
+
+li {
+  margin: 0.4rem 0;
+}

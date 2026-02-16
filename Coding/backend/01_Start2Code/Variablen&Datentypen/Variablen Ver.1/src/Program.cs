@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading;
 
 namespace Variablen_Ver._1
 {
@@ -8,34 +6,27 @@ namespace Variablen_Ver._1
     {
         static void Main(string[] args)
         {
-            string Zeichenkette;
-            int Ganzzahl = 0;
-            bool Wahrheitswert = false;
-            double GebrocheneZahl= 0;
-            char Zeichen = 'a';
+            Console.WriteLine("Willkommen zum Variablen- und Datentypen-Beispiel.");
 
-            Console.WriteLine("Hallo ich sehen du möchtest etwas über Variablen und Datentypen lernen.");
-            Console.Write("Stimmt das ? Y/N:");
-            Zeichenkette = Console.ReadLine();
-            if (Zeichenkette == "Y" || Zeichenkette == "y")
+            string name = "Dominik";
+            int alter = 21;
+            double lieblingszahl = 7.5;
+            bool istNeugierig = true;
+
+            Console.WriteLine($"Name: {name}");
+            Console.WriteLine($"Alter: {alter}");
+            Console.WriteLine($"Lieblingszahl: {lieblingszahl}");
+            Console.WriteLine($"Neugierig: {istNeugierig}");
+
+            Console.Write("Bitte gib eine ganze Zahl ein: ");
+            if (int.TryParse(Console.ReadLine(), out int eingabe))
             {
-                Wahrheitswert = true;
-                Console.WriteLine("Coole Sache :)");
-                Console.WriteLine("Schau mal die ersten beiden Variablen und Datentypen haben wir verwendet.");
-                Console.WriteLine("Mit dem String welcher eine Zeichenkette darstellt, haben wir deine Eingabe uns angeschaut und da du Y/y eingegeben hast, ist der bool oder Wahrheitswert true/ wahr geworden.");
-                Console.Write("So lass uns doch mal was ausrechnen 7,5 + welche Ganzzahl? :");
-                Ganzzahl = Convert.ToInt16(Console.ReadLine());
-                GebrocheneZahl = 7.5 + Ganzzahl;
-                Console.WriteLine("Mal sehen 7,5 + " + Ganzzahl.ToString()+" = " + GebrocheneZahl.ToString());
-                Console.WriteLine("Also ich wüde sagen, dass das richtig ist oder?");
-                Console.WriteLine("Ok damit haben wir wieder 2 weiter Datentypen abgearbeitet.");
-                Console.WriteLine("Also was haben wir gemacht? Wir haben einen Integer oder Ganzzahl mit einem Double also einer Gebrochenen Zahl/ Gleitkommazahl zusammen gerechnet.");
-                Console.WriteLine("Ich hoffe das dir der keine Einblick geholfen hat :)");
+                double ergebnis = lieblingszahl + eingabe;
+                Console.WriteLine($"{lieblingszahl} + {eingabe} = {ergebnis}");
             }
             else
             {
-                Console.WriteLine("Ok dann wünsche ich dir einen schönen Tag :)");
-                Thread.Sleep(2000);
+                Console.WriteLine("Das war keine gültige ganze Zahl.");
             }
         }
     }

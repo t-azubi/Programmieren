@@ -1,7 +1,18 @@
-# Beginner
+# 02_Beginner
 
-Hey Cool du hast es bis zum Beginner geschafft.
-Hier werden wir uns ein paar einfache aber grundlegende Sachen anschauen. Angefangen bei Arrays, Listen und Enumerationen 
-über Vererbung und Sichtbarkeiten bis zu dem Aufbau von deinem Programm und seiner Ordnung.
+In diesem Abschnitt geht es vom reinen Syntax-Verständnis in Richtung Software-Struktur.
 
-Ich wünsche dir viel Spaß beim Lesen und Verstehen und gerne schick mir Verbesserungsvorschläge.
+## Themen
+
+- [Arrays, Listen und Enums](Arrays,%20Listen%20und%20Enums)
+- [Klassen, Objekte und Methoden](Klassen,%20Objekte%20und%20Methoden)
+- [Vererbung, Sichtbarkeit und Static](Vererbung,%20Sichtbarkeit%20und%20Static)
+
+## Lernziel
+
+Du kannst danach:
+
+- Daten sinnvoll strukturieren,
+- Klassen modellieren,
+- Methoden sauber aufteilen,
+- Zugriffsmodifizierer korrekt einsetzen.

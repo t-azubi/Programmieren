@@ -1,19 +1,20 @@
-# Coding Guid
+# Backend Lernpfad (C#/.NET)
 
-## Der Anfang
+Dieser Bereich ist als Lernpfad aufgebaut: von den Grundlagen bis zu fortgeschritteneren Themen.
 
-Hey  :)
+## Lernstufen
 
-hier findest du meinen Guid, wie man mit dem Coden anfangen kann / sollte. 
-Zuerst schauen wir uns die Grundlagen an, was ist eine Schleifen, was sind Variablen und wie benutzen wir diese.
-Alles was du dafür Wissen musst, findest du [hier](01_Start2Code).
+1. [01_Start2Code](01_Start2Code) – Einstieg mit Variablen, Operatoren, Schleifen und Verzweigungen
+2. [02_Beginner](02_Beginner) – OOP-Basics, Collections und Struktur
+3. [03_Advanced](03_Advanced) – weiterführende Konzepte
+4. [Nett2Know](Nett2Know) – ergänzende Tools und Tipps
 
-Hast du dich schon durchgearbeitet und immer noch Lust weiter zu machen ? 
-Super ;)
+## Ausführung
 
-## Beginner
+Alle C#-Beispiele basieren auf .NET 8:
 
-So, da nun eine Übersicht über Variablen und Schleifen hast, lass uns etwas weiter in die Tiefe gehen.
-[hier](02_Beginner) findest du alles nützliche über Namespaces, Klassen, Konstruktoren und Methoden.
-Auserdem schauen wir uns an was denn eigentlich diese Arrays, Listen und Enums sind.
-Und werden uns anschauen warum wir eine methode public, private oder protected setzen und was es mit dem Static auf sich hat.
+```bash
+dotnet run
+```
+
+im jeweiligen Projektordner.

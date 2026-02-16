@@ -1,26 +1,30 @@
-# ProgrammieЯRepo
+# Programmieren Lern-Repo
 
-## Quicklinks
+Dieses Repository sammelt Lernpfade, Übungen und kleine Projekte rund um Programmierung.
 
-1. [EBA](EBA)
-2. [Code](Coding/backend/)
+## Schnellstart
 
-## Was soll das ?
+- [Backend Lernpfad (C#/.NET)](Coding/backend)
+- [Frontend Lernpfad (HTML/CSS/JavaScript)](Coding/frontend)
+- [EBA Schulprojekte](EBA)
 
-Tja eigentlich nur ne Große Doku für mich oder auch andere zum nachlesen.
-Der Guid ist dafür da, dass neulinge einen einfacheren Start haben, als ich, da ich das wissen hier gesammelt präsentiere.
+## Struktur
 
-Wenn ich dich inspiriert habe, dich mehr mit dem Thema Programmieren und allem Drum und Dran zu beschäftigen, dann kann ich dir die Dokumentationen weiter unten nur empfehlen. Sie beinhalten wesentlich tiefer gehendes Wissen und greifen Themen auf, an die ich mich nicht rangetraut habe.
+- `Coding/backend` enthält die C#- und .NET-Themen von Grundlagen bis Fortgeschritten.
+- `Coding/frontend` enthält die Web-Grundlagen mit direkt ausführbaren Beispielen.
+- `EBA` enthält schulische Aufgaben und Übungsprojekte.
 
-## Ordneraufbau
+## Ziel
 
-Du findest immer einen Überbegriff zu, in diesem Ordner splitte ich dann die Themen in kleinere, einfachere Subthemen. Der Ordner EBA, ist dabei der Ordner wo ich alle Programmieraufgaben aus meiner Schulzeit reinwerfen werde ^^ also seid nicht erschreckt wenn der etwas unübersichtlich und komisch wird. Ich halte mich nur an Lehrervorgaben ^^
+Der Fokus liegt auf praxisnahen, kleinen Beispielen:
 
-## Dokus die ich benutzt habe
+- pro Thema eine kurze Erklärung,
+- danach direkt lauffähiger Beispielcode,
+- und Ideen zur Erweiterung.
 
-1. [Mircosoft Docs basic C#](https://docs.microsoft.com/de-de/dotnet/csharp/)
-2. [git Doku](https://git-scm.com/docs)
-3. [Atlassian git Doku](https://www.atlassian.com/git)
-4. [CSharp Doku](https://en.wikibooks.org/wiki/C_Sharp_Programming)
+## Quellen
 
-Danke, dass du dir die Zeit genommen hast, mich zu lesen. Hab einen schönen Tag und viel Spaß beim Programmieren.
+1. [Microsoft Learn: C#](https://learn.microsoft.com/de-de/dotnet/csharp/)
+2. [Microsoft Learn: .NET](https://learn.microsoft.com/de-de/dotnet/)
+3. [MDN Web Docs](https://developer.mozilla.org/de/)
+4. [Git Dokumentation](https://git-scm.com/docs)
